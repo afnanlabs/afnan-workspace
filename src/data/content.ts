@@ -77,7 +77,7 @@ My primary philosophy revolves around systems thinking: completely understanding
 
   ls: `
   help            about           experience      projects        skills          
-education       languages       certifications  contact         resume          
+education       languages       certifications    contact         resume          
 
 [Project Actions]
 open thinktrack                 open codeglow
