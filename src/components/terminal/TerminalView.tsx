@@ -302,7 +302,7 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
             className="ghost-hint ml-2 mt-1"
             style={{ color: "var(--vs-text-muted)", fontSize: "13px" }}
           >
-            {"  "}→ try: about
+            {"  "}→ try: ls
           </div>
         )}
 
