@@ -527,9 +527,9 @@ interface Contact {
 }
 
 const contact: Contact = {
-  email: "afnan@email.com",
-  linkedin: "linkedin.com/in/afnankhan",
-  github: "github.com/afnankhan",
+  email: "khanafnan1108@gmail.com",
+  linkedin: "linkedin.com/in/afnankhan1108-dev",
+  github: "github.com/afnanlabs",
   resume: "/resume.pdf",
 };
 
