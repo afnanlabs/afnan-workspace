@@ -1,4 +1,3 @@
-````md
 # Afnan Workspace
 
 Interactive developer portfolio inspired by the VS Code experience.
@@ -9,17 +8,7 @@ Live Demo: [afnanlabs.github.io/afnan-workspace](https://afnanlabs.github.io/afn
 
 ## Portfolio Preview
 
-```md
-## Portfolio Preview
-
 ![Afnan Workspace](https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png)
-```
-````
-
----
-
-````
-
 
 ## About
 
@@ -47,7 +36,7 @@ Visitors can browse projects, explore profile data, switch between views, and na
 
 ## Tech Stack
 
-### Frontend
+### Frontend & Core
 
 - React
 - TypeScript
@@ -55,11 +44,19 @@ Visitors can browse projects, explore profile data, switch between views, and na
 - Tailwind CSS v4
 - shadcn/ui
 
-### Tooling
+### Backend & Databases
+
+- PHP
+- Node.js
+- JavaScript
+- MySQL
+
+### Tooling & DevOps
 
 - Git
 - GitHub Actions
 - GitHub Pages
+- Docker
 
 ---
 
@@ -67,15 +64,15 @@ Visitors can browse projects, explore profile data, switch between views, and na
 
 ### ThinkTrack
 
-Collaborative learning and productivity platform designed to help students organize notes, track progress, and improve study workflows.
+A modular academic productivity and classroom management platform built with PHP and MySQL involving a study planner, resource hub, and streamlined workflows.
 
-### CodeGlow
+### Matdaan Secure
 
-VS Code extension that enables persistent code highlighting and improves code readability.
+An advanced, secure online voting platform application built around a tech-forward and clean user dashboard interface.
 
-### DevSight
+### FitScore
 
-Developer-focused web platform built around modern frontend technologies and clean UI principles.
+A specialized fitness analytics and tracking application leveraging Node.js, Express, and structured SQL database constraints.
 
 ---
 
@@ -106,7 +103,7 @@ Developer-focused web platform built around modern frontend technologies and cle
 ├── tsconfig.json
 ├── package.json
 └── components.json
-````
+```
 
 ---
 
