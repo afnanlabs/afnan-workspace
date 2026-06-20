@@ -486,32 +486,83 @@ export default experience;`,
 }`,
 
   certifications: `// certifications.ts
-// Afnan Khan — Credentials
+// Credentials
 
 interface Certification {
   name: string;
   issuer: string;
   year: number;
+  certId: string; // Unique tracking ID for dynamic click/view logic
   description?: string;
 }
 
 const certifications: Certification[] = [
   {
-    name: "Meta Front-End Developer Certificate",
-    issuer: "Coursera / Meta",
-    year: 2024,
-    description: "Professional certificate covering React, JavaScript, HTML/CSS, and UX design fundamentals.",
+    name: "Docker Essentials: A Developer Introduction",
+    issuer: "IBM / Cognitive Class",
+    year: 2026,
+    certId: "ibm-docker-2026",
   },
   {
-    name: "Node.js and Express.js",
-    issuer: "[Platform]",
-    year: 2023,
+    name: "SQL and Relational Databases 101",
+    issuer: "IBM Skills Network",
+    year: 2026,
+    certId: "ibm-sql-2026",
   },
   {
-    name: "MySQL — The Complete Developer's Guide",
-    issuer: "[Platform]",
-    year: 2023,
+    name: "Claude Code 101",
+    issuer: "Anthropic",
+    year: 2026,
+    certId: "anthropic-cc101",
   },
+  {
+    name: "Claude 101",
+    issuer: "Anthropic",
+    year: 2026,
+    certId: "anthropic-c101",
+  },
+  {
+    name: "Claude Code in Action",
+    issuer: "Anthropic",
+    year: 2026,
+    certId: "anthropic-ccia",
+  },
+  {
+    name: "Introduction to Agent Skill",
+    issuer: "Anthropic",
+    year: 2026,
+    certId: "anthropic-ias",
+  },
+  {
+    name: "Introduction to Claude Cowork",
+    issuer: "Anthropic",
+    year: 2026,
+    certId: "anthropic-icc",
+  },
+  {
+    name: "Claude Platform 101",
+    issuer: "Anthropic",
+    year: 2026,
+    certId: "anthropic-cp101",
+  },
+  {
+    name: "Basics of Informational Visuals",
+    issuer: "Cambridge Int. / UniAthena",
+    year: 2026,
+    certId: "athena-visuals",
+  },
+  {
+    name: "Basics of Python",
+    issuer: "Cambridge Int. / UniAthena",
+    year: 2026,
+    certId: "athena-python",
+  },
+  {
+    name: "AI for Beginners",
+    issuer: "Ratan Tata Maharashtra State Skills University",
+    year: 2026,
+    certId: "rtmssu-aibeginner",
+  }
 ];
 
 export default certifications;`,
