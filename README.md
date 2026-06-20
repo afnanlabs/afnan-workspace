@@ -1,76 +1,47 @@
-# Afnan Workspace
+# Afnan Workspace — Developer Portfolio
 
-> Open files. Run commands. Explore my work through a VS Code-inspired experience.
+> Open files. Explore projects. Experience my portfolio through a VS Code-inspired workspace.
 
-## [![Live](https://img.shields.io/badge/live-afnanlabs.github.io%2Fafnan--workspace-2D7D9A?style=flat-square)](https://afnanlabs.github.io/afnan-workspace/)
+[![Live](https://img.shields.io/badge/live-afnanlabs.github.io%2Fafnan--workspace-2D7D9A?style=flat-square)](https://afnanlabs.github.io/afnan-workspace/)
 
 ![Afnan Workspace](https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png)
 
 ---
 
-## About
+## What is this?
 
-Afnan Workspace is a developer portfolio built around a VS Code-inspired interface. Instead of a traditional landing page, the portfolio presents information through an Explorer panel, tabs, and multiple views to create a familiar workspace experience.
+Afnan Workspace is my personal portfolio built around the experience of VS Code. Instead of a traditional landing page, the portfolio presents information through an Explorer panel, tabs, and multiple views to create a familiar workspace experience.
 
-Visitors can browse projects, explore profile data, switch between views, and navigate the portfolio as if working inside an editor.
+Visitors can browse projects, explore profile data, switch themes, and navigate the portfolio as if working inside an editor.
+
+Prefer something simpler? Switch to Standard View for a cleaner browsing experience.
 
 ---
 
 ## Features
 
-- VS Code-inspired interface
-- Explorer-style file system navigation
-- Terminal View
-- Standard View
-- Theme switcher
-- Responsive layout
-- Resume download
-- Profile and experience sections
-- Project explorer
-- TypeScript-based data organization
-- GitHub Pages deployment
+| Feature               | Description                                 |
+| --------------------- | ------------------------------------------- |
+| Explorer Panel        | Navigate sections like files in VS Code     |
+| Terminal View         | Terminal-inspired interface                 |
+| Standard View         | Traditional portfolio layout                |
+| Theme Switcher        | Multiple themes with persistent preferences |
+| Resume Download       | Download my resume directly                 |
+| Responsive Layout     | Optimized for desktop and mobile            |
+| Project Explorer      | Browse projects and technologies            |
+| TypeScript Data Layer | Structured content organization             |
 
 ---
 
 ## Tech Stack
 
-### Frontend & Core
+### Frontend
 
 - React
 - TypeScript
 - Vite
 - Tailwind CSS v4
 - shadcn/ui
-
-### Backend & Databases
-
-- Node.js
-- JavaScript
-- PHP
-- MySQL
-
-### Tooling & DevOps
-
-- Git
-- GitHub Actions
-- GitHub Pages
-- Docker
-
----
-
-## Featured Projects
-
-### ThinkTrack
-
-A modular academic productivity and classroom management platform built with PHP and MySQL, featuring a study planner, resource hub, and streamlined workflows.
-
-### Matdaan Secure
-
-A secure online voting platform with a modern and intuitive dashboard experience.
-
-### FitScore
-
-A fitness analytics and tracking application built with Node.js, Express, and SQL databases.
 
 ---
 
@@ -88,7 +59,6 @@ A fitness analytics and tracking application built with Node.js, Express, and SQ
 │   │   ├── standard/
 │   │   ├── terminal/
 │   │   └── ui/
-│   │
 │   ├── data/
 │   ├── hooks/
 │   ├── lib/
@@ -98,7 +68,6 @@ A fitness analytics and tracking application built with Node.js, Express, and SQ
 │
 ├── index.html
 ├── vite.config.ts
-├── tsconfig.json
 ├── package.json
 └── components.json
 ```
@@ -107,7 +76,7 @@ A fitness analytics and tracking application built with Node.js, Express, and SQ
 
 ## Local Development
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/afnanlabs/afnan-workspace.git
@@ -132,7 +101,7 @@ npm run dev
 npm run build
 ```
 
-### Preview Production Build
+### Preview Build
 
 ```bash
 npm run preview
@@ -140,28 +109,13 @@ npm run preview
 
 ---
 
-## Deployment
-
-This portfolio is deployed using:
-
-- GitHub Actions
-- GitHub Pages
-
----
-
 ## Connect With Me
 
-- GitHub: https://github.com/afnanlabs
+Built by Afnan Khan — Full-Stack Developer.
+
 - LinkedIn: https://linkedin.com/in/afnankhan1108-dev
+- GitHub: https://github.com/afnanlabs
 
 ---
 
-## About Me
-
-I'm a Full-Stack Developer focused on building practical applications, developer tools, and interactive user experiences using React, TypeScript, and modern web technologies.
-
-I enjoy creating projects that combine clean interfaces with functionality and continuously improving my engineering skills through hands-on development.
-
----
-
-Built with ❤️ by **Afnan Khan**
+_"Building practical applications, interactive experiences, and continuously improving through hands-on development."_
