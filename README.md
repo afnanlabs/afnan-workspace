@@ -2,13 +2,16 @@
 
 Interactive developer portfolio inspired by the VS Code experience.
 
-Live Demo: [afnanlabs.github.io/afnan-workspace](https://afnanlabs.github.io/afnan-workspace/)
+🌐 **Live Demo:**  
+https://afnanlabs.github.io/afnan-workspace/
 
 ---
 
 ## Portfolio Preview
 
 ![Afnan Workspace](https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png)
+
+---
 
 ## About
 
@@ -46,9 +49,9 @@ Visitors can browse projects, explore profile data, switch between views, and na
 
 ### Backend & Databases
 
-- PHP
 - Node.js
 - JavaScript
+- PHP
 - MySQL
 
 ### Tooling & DevOps
@@ -64,15 +67,15 @@ Visitors can browse projects, explore profile data, switch between views, and na
 
 ### ThinkTrack
 
-A modular academic productivity and classroom management platform built with PHP and MySQL involving a study planner, resource hub, and streamlined workflows.
+A modular academic productivity and classroom management platform built with PHP and MySQL, featuring a study planner, resource hub, and streamlined workflows.
 
 ### Matdaan Secure
 
-An advanced, secure online voting platform application built around a tech-forward and clean user dashboard interface.
+A secure online voting platform with a modern and intuitive dashboard experience.
 
 ### FitScore
 
-A specialized fitness analytics and tracking application leveraging Node.js, Express, and structured SQL database constraints.
+A fitness analytics and tracking application built with Node.js, Express, and SQL databases.
 
 ---
 
@@ -109,32 +112,32 @@ A specialized fitness analytics and tracking application leveraging Node.js, Exp
 
 ## Local Development
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/afnanlabs/afnan-workspace.git
 cd afnan-workspace
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Start development server
+### Start Development Server
 
 ```bash
 npm run dev
 ```
 
-### Build for production
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-### Preview production build
+### Preview Production Build
 
 ```bash
 npm run preview
@@ -144,7 +147,7 @@ npm run preview
 
 ## Deployment
 
-The portfolio is deployed using:
+This portfolio is deployed using:
 
 - GitHub Actions
 - GitHub Pages
@@ -153,8 +156,8 @@ The portfolio is deployed using:
 
 ## Connect With Me
 
-- LinkedIn: https://linkedin.com/in/afnankhan1108-dev
 - GitHub: https://github.com/afnanlabs
+- LinkedIn: https://linkedin.com/in/afnankhan1108-dev
 
 ---
 
@@ -166,4 +169,4 @@ I enjoy creating projects that combine clean interfaces with functionality and c
 
 ---
 
-Built by **Afnan Khan**.
+Built with ❤️ by **Afnan Khan**
