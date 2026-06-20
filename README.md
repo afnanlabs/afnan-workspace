@@ -1,11 +1,8 @@
 # Afnan Workspace
 
-Interactive developer portfolio inspired by the VS Code experience.
+> Open files. Run commands. Explore my work through a VS Code-inspired experience.
 
-🌐 **Live Demo:**  
-https://afnanlabs.github.io/afnan-workspace/
-
----
+## [![Live](https://img.shields.io/badge/live-afnanlabs.github.io%2Fafnan--workspace-2D7D9A?style=flat-square)](https://afnanlabs.github.io/afnan-workspace/)
 
 ## Portfolio Preview
 
