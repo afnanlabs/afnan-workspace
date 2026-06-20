@@ -8,13 +8,13 @@ Live Demo: **https://afnanlabs.github.io/afnan-workspace/**
 
 ## Portfolio Preview
 
-```md
+````md
 ## Portfolio Preview
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png" alt="Afnan Workspace" width="100%">
-</p>
-```
+````md
+## Portfolio Preview
+
+![Afnan Workspace](https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png)
 
 ---
 
@@ -104,6 +104,8 @@ Developer-focused web platform built around modern frontend technologies and cle
 ├── package.json
 └── components.json
 ```
+````
+````
 
 ---
 
