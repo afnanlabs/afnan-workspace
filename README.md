@@ -1,22 +1,25 @@
+````md
 # Afnan Workspace
 
 Interactive developer portfolio inspired by the VS Code experience.
 
-Live Demo: **https://afnanlabs.github.io/afnan-workspace/**
+Live Demo: [afnanlabs.github.io/afnan-workspace](https://afnanlabs.github.io/afnan-workspace/)
 
 ---
 
 ## Portfolio Preview
 
-````md
-## Portfolio Preview
-
-````md
+```md
 ## Portfolio Preview
 
 ![Afnan Workspace](https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png)
+```
+````
 
 ---
+
+````
+
 
 ## About
 
@@ -103,8 +106,6 @@ Developer-focused web platform built around modern frontend technologies and cle
 ├── tsconfig.json
 ├── package.json
 └── components.json
-```
-````
 ````
 
 ---
