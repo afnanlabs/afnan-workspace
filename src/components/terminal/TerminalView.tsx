@@ -234,6 +234,36 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
           </div>
         );
       }
+      if (line.includes("[") && line.includes("]")) {
+        const label = line.split("[")[0];
+        const text = line.match(/\[(.*?)\]/)?.[1] ?? "";
+
+        let href = "";
+
+        if (text.includes("@")) {
+          href = `mailto:${text}`;
+        } else {
+          href = `https://${text}`;
+        }
+
+        return (
+          <div key={i}>
+            {label}
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "var(--vs-accent)",
+                textDecoration: "underline",
+              }}
+            >
+              [{text}]
+            </a>
+          </div>
+        );
+      }
+
       return <div key={i}>{line || "\u00A0"}</div>;
     });
   }

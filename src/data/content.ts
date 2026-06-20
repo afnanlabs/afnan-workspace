@@ -290,9 +290,12 @@ Spoken Languages
   ]),
 
   contact: `
-Email      khanafnan1108@gmail.com
-LinkedIn   linkedin.com/in/afnankhan1108-dev
-GitHub     github.com/afnanlabs
+Email      [khanafnan1108@gmail.com]
+LinkedIn   [linkedin.com/in/afnankhan1108-dev]
+GitHub     [github.com/afnanlabs]
+Blog       [afnankhan.dev]
+X          [x.com/afnanlabs]
+LeetCode   [leetcode.com/afnanlabs]
 Resume     → resume (downloads PDF)
 `,
 
