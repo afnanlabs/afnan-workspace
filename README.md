@@ -8,7 +8,13 @@ Live Demo: **https://afnanlabs.github.io/afnan-workspace/**
 
 ## Portfolio Preview
 
-<!-- Add screenshot here -->
+```md
+## Portfolio Preview
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png" alt="Afnan Workspace" width="100%">
+</p>
+```
 
 ---
 
