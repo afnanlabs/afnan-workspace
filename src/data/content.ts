@@ -76,17 +76,20 @@ My primary philosophy revolves around systems thinking: completely understanding
 `,
 
   ls: `
-  help            about           experience      projects        skills          
-education       languages       certifications    contact         resume          
+CORE NAVIGATION
+ ├── help          ├── about         ├── experience
+ ├── projects      ├── skills        ├── education
+ ├── languages     ├── certifications└── contact
+ └── resume
 
-[Project Actions]
-open thinktrack                 open codeglow
+ PROJECT ACTIONS
+ └── open thinktrack                 └── open codeglow
 
-[Arcade Games]
-snake                           tetris
+ ARCADE GAMES
+ ├── snake                           └── tetris
 
-[System Utilities]
-sounds          clear
+ SYSTEM UTILITIES
+ └── sounds                          └── clear
   `,
 
   experience: `
