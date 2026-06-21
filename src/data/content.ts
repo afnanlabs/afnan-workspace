@@ -295,7 +295,7 @@ LinkedIn   [linkedin.com/in/afnankhan1108-dev]
 GitHub     [github.com/afnanlabs]
 Blog       [afnankhan.dev]
 X          [x.com/afnanlabs]
-LeetCode   [leetcode.com/afnanlabs]
+LeetCode   [leetcode.com/afnankhan110805]
 Resume     → resume (downloads PDF)
 `,
 
