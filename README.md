@@ -4,7 +4,7 @@
 
 [![Live](https://img.shields.io/badge/live-afnanlabs.github.io%2Fafnan--workspace-2D7D9A?style=flat-square)](https://afnanlabs.github.io/afnan-workspace/)
 
-![Afnan Workspace](https://raw.githubusercontent.com/afnanlabs/afnan-workspace/master/Terminal%20View.png)
+![Afnan Workspace](https://github.com/afnanlabs/afnan-workspace/blob/34bd483bba8240e16682c6d5f222b83ab2ee5eb0/public/Terminal%20View.png)
 
 ---
 
