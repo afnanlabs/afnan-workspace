@@ -95,14 +95,18 @@ CORE NAVIGATION
   `,
 
   experience: `
-Work History & Engineering Professional Experience
+Full-Stack Software Engineer | Self-Directed Architecture
+Period: 2024 – Present
+Location: Mumbai, India
 
-Freelance Web Developer | Self-Employed Workstation
-Period: 2023 – Present
-• Designed, architected, and deployed robust full-stack web software installations for diverse businesses and engineering clients.
-• Fabricated high-performance responsive landing systems and highly integrated e-commerce transactional applications.
-• Successfully owned end-to-end technical requirements gathering, development sprint timelines, and iterative feedback lifecycles.
-`,
+• Architected modular full-stack web architectures utilizing modern tech stacks 
+  including React, TypeScript and procedural PHP with MySQL backends.
+• Engineered a secure academic productivity engine featuring custom Role-Based 
+  Access Control (RBAC) and third-party Google OAuth integration.
+• Designed fully normalized relational database schemas down to Third Normal Form 
+  (3NF) to enforce high data integrity and optimize execution runtime.
+• Managed local codebases systematically using Git version control, implementing 
+  atomic commits and descriptive documentation practices.`,
 
   projects: `
 Active Project Repositories & Software Implementations
@@ -439,7 +443,7 @@ const profile: Profile = {
 export default profile;`,
 
   experience: `// experience.ts
-// Afnan Khan — Work History
+// Afnan Khan — Technical Contributions
 
 interface Experience {
   role: string;
@@ -451,15 +455,15 @@ interface Experience {
 
 const experience: Experience[] = [
   {
-    role: "Freelance Web Developer",
-    company: "Self-employed",
-    location: "Remote",
-    period: "2023 – Present",
+    role: "Full-Stack Software Engineer (Independent Labs)",
+    company: "Self-Directed Architecture",
+    location: "Mumbai, India",
+    period: "2024 – Present",
     responsibilities: [
-      "Designed and developed full-stack web applications for clients",
-      "Built responsive landing pages and e-commerce storefronts",
-      "Managed client requirements, timelines, and feedback cycles",
-      "Delivered projects using React, PHP, and MySQL",
+      "Architected modular full-stack web architectures utilizing modern tech stacks including React, Node.js, and procedural PHP with MySQL backends.",
+      "Engineered a secure academic productivity engine featuring custom Role-Based Access Control (RBAC) and third-party Google OAuth integration.",
+      "Designed fully normalized relational database schemas down to Third Normal Form (3NF) to enforce high data integrity and optimize execution runtime.",
+      "Managed local codebases systematically using Git version control, implementing atomic commits and descriptive documentation practices.",
     ],
   },
 ];
