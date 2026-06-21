@@ -33,7 +33,9 @@ This shell exposes direct parameters to inspect my architectural logic,
 underlying technology choices, and project lifecycles.
 
 Type 'help' to audit the environment or to list active commands.
-Prefer a structural document view? Toggle 'Standard View' in the top right.`;
+Prefer a structural document view? Toggle 'Standard View' in the top right.
+
+Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🥚`;
 
 export const PROMPT = "afnan@workspace:~$ ";
 
@@ -130,6 +132,8 @@ Traditional study groups lack unified memory tracking systems. Valuable session 
 The Engineered Solution:
 A comprehensive web platform that enables structured engineering study groups to seamlessly share workspace learning sessions, track performance velocity transparently across all active members, and maintain team accountability using real-time progress visibility matrices instead of superficial gamified design patterns.
 
+Source Registry: [github.com/afnanlabs/thinktrack]
+
 Core Architectural Decisions:
 • Implemented Role-Based Access Control (RBAC) securely at the application root from day zero. Every route, feature flag, and mutation was built around defensive permission checks.
 • Fully normalized the underlying MySQL database schema into Third Normal Form (3NF) before writing a single line of procedural PHP logic to ensure strict data validation boundaries.
@@ -150,6 +154,8 @@ The native visual highlighting subsystem within modern IDEs is strictly session-
 
 The Engineered Solution:
 A robust desktop editor extension that persists developer visual contexts securely across runtime sessions. The tracking mechanism links highlighting indices specifically to file paths and stable line text contents rather than highly volatile absolute line positions, ensuring highlights survive manual updates and large file refactors.
+
+Source Registry: [github.com/afnanlabs/CodeGlow-exe]
 
 Core Architectural Decisions:
 • Built a specialized line content hashing parser to replace fragile absolute line number markers. Line numbers drift constantly during edits, whereas cryptographic hashes persist until code blocks change.
