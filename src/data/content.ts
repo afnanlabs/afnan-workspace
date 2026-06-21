@@ -171,7 +171,7 @@ Frontend
   HTML5 · CSS3 · JavaScript · TypeScript · React · Tailwind CSS
 
 Backend
-  Node.js · Express.js · REST APIs · PHP
+  REST APIs · PHP
 
 Database
   MySQL
@@ -302,8 +302,8 @@ Spoken Languages
 Email      [khanafnan1108@gmail.com]
 LinkedIn   [linkedin.com/in/afnankhan1108-dev]
 GitHub     [github.com/afnanlabs]
-Blog       [afnankhan.dev]
-X          [x.com/afnanlabs]
+Blog       []
+X          []
 LeetCode   [leetcode.com/afnankhan110805]
 Resume     → resume (downloads PDF)
 `,
@@ -608,8 +608,6 @@ export default contact;`,
     "Tailwind CSS"
   ],
   "backend": [
-    "Node.js",
-    "Express.js",
     "REST APIs",
     "PHP"
   ],
