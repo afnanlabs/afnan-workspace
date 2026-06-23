@@ -6,16 +6,17 @@ export const TERMINAL_COMMANDS = [
   "skills",
   "education",
   "languages",
-  "certifications",
+  "certs",
   "contact",
   "resume",
   "open thinktrack",
   "open codeglow",
   "clear",
   "sounds",
-  "ls",
   "snake",
   "tetris",
+  "whoami",
+  "neofetch",
 ];
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
@@ -25,15 +26,14 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
 [OK] Latency handshake: Open-Meteo API uplink synchronized to Mumbai, India.
 [OK] Verification: Normalizing relational data structures to 3NF schema layer.
 
-----------------------------------------------------------------------
-Welcome to the interactive environment of Afnan Khan.
-----------------------------------------------------------------------
-I am a Frontend Developer transitioning into Full-Stack Systems.
-This shell exposes direct parameters to inspect my architectural logic,
-underlying technology choices, and project lifecycles.
+──────────────────────────────────────────────────────────────────
+  Welcome to the workspace of Afnan Khan.
+  Frontend Engineer  ·  Mumbai, India  ·  github.com/afnankhan
+──────────────────────────────────────────────────────────────────
 
-Type 'help' to audit the environment or to list active commands.
-Prefer a structural document view? Toggle 'Standard View' in the top right.
+Type 'help' to list available commands.
+Type 'about' to learn more about me.
+Prefer a document view? Toggle 'Standard View' top-right.
 
 Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🥚`;
 
@@ -43,55 +43,94 @@ export const commandOutputs: Record<string, string> = {
   help: `
 Available commands:
 
-  about           Who I am and what I build
-  experience      Work history and responsibilities
-  projects        Projects overview
-  skills          Technical skills by category
-  education       Academic background
-  languages       Spoken languages
-  certifications  Credentials and courses
-  contact         How to reach me
-  resume          Download my resume
+about              Who I am and what I build
+  experience         Work history and impact
+  projects           What I've shipped
+  skills             Technical stack by category
+  education          Academic background
+  languages          Spoken languages
+  certifications     Credentials and training
+  contact            How to reach me
+  resume             Download resume PDF
 
-  open thinktrack    Deep-dive into ThinkTrack
-  open codeglow      Deep-dive into CodeGlow
+  open thinktrack    Architecture deep-dive: ThinkTrack
+  open codeglow      Architecture deep-dive: CodeGlow
 
   sounds             Toggle workspace audio on/off
 
-  snake              Launch retro Snake arcade game
-  tetris             Launch retro Tetris arcade game
+  snake              Retro Snake arcade
+  tetris             Retro Tetris arcade
 
-  clear           Clear the terminal
-  ls              List all the commands
+  neofetch           System information
+  whoami             Identity probe
+
+  clear              Clear the terminal
 
 Type any command to run it.
 `,
 
+  whoami: `
+afnan
+
+uid=1000(afnan)
+gid=1000(developers)
+groups=4(adm),24(cdrom),27(sudo),46(plugdev),1000(developers)
+
+Role:      Full Stack Engineer
+Location:  Mumbai, India
+Focus:     Full-Stack Development & Developer Tools
+
+→ Run 'about' for full profile
+`,
+
+  neofetch: `
+             .            afnan@workspace
+           .o8.           ──────────────────────────────
+         .o8888.          OS:        AfnanOS 2.0
+       .o88888888.        Host:      Developer Workspace
+      o8888888888888.     Shell:     afnan-sh
+      88888888888888P'    Role:      Full Stack Engineer
+      '988888888888'      Location:  Mumbai, India
+         'Y888P'          Stack:     React · TypeScript · Node.js · MySQL
+            '             Tools:     Git · Docker · Vercel
+                          Focus:     Developer Tools & Practical Software
+                          Building:  Since 2021
+                          GitHub:    github.com/afnanlabs
+                          Contact:   → run 'contact'
+`,
+
   about: `
-Afnan Khan — Personal Workspace Runtime
+Afnan Khan
 
-I am a Frontend Developer transitioning into Full-Stack Engineering, currently based in Mumbai, India. My passion lies in building highly practical software products, advanced productivity systems, developer tooling, and modern full-stack web applications backed by deliberate architecture decisions. 
+Full Stack Engineer · Mumbai, India
 
-My primary philosophy revolves around systems thinking: completely understanding why an engineered problem exists before writing a single line of code, establishing clear architectural structures, and engineering clean, optimized software that remains easily maintainable for the next developer down the line. I am currently spending my cycles deeply exploring backend distributed architecture, advanced database design optimization, relational normalization methodologies, and shipping specialized tools that developers genuinely want to use.
+I build software that solves real problems — productivity systems, developer tooling, and full-stack web applications with deliberate architecture.
 
-→ Type 'contact' to get in touch | Type 'resume' to view credentials | Type 'projects' to audit active builds
+My focus is systems thinking: understanding why a problem exists before deciding how to solve it, making explicit architecture decisions, and writing code that makes sense to the next person who reads it.
+
+Currently deepening: backend architecture, database design, and building tools developers actually want to use.
+
+2+ years building. 10+ shipped products. Always learning.
+
+→ experience    → projects    → contact
 `,
 
   ls: `
 CORE NAVIGATION
  ├── help          ├── about         ├── experience
  ├── projects      ├── skills        ├── education
- ├── languages     ├── certifications└── contact
+ ├── languages     ├── certs         └── contact
  └── resume
 
- PROJECT ACTIONS
- └── open thinktrack                 └── open codeglow
+PROJECT ACTIONS
+ ├── open thinktrack                 └── open codeglow
 
- ARCADE GAMES
+ARCADE GAMES
  ├── snake                           └── tetris
 
- SYSTEM UTILITIES
- └── sounds                          └── clear
+SYSTEM UTILITIES
+ ├── sounds        ├── clear         ├── whoami
+ └── neofetch
   `,
 
   experience: `
@@ -222,7 +261,7 @@ Spoken Languages
   Marathi    Native
 `,
 
-  certifications: JSON.stringify([
+  certs: JSON.stringify([
     {
       title: "Docker Essentials: A Developer Introduction",
       issuer: "IBM / Cognitive Class",
