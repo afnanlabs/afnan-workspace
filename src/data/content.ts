@@ -21,20 +21,25 @@ export const TERMINAL_COMMANDS = [
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
 
-[OK] Subsystem allocation: JetBrains Mono typography loaded.
-[OK] Core routing protocol: Standard View cross-layer synchronization initialized.
-[OK] Latency handshake: Open-Meteo API uplink synchronized to Mumbai, India.
-[OK] Verification: Normalizing relational data structures to 3NF schema layer.
+[OK] Typography subsystem loaded.
+[OK] Standard View synchronization initialized.
+[OK] Environment synchronized: Mumbai, India.
+[OK] Workspace ready.
 
-──────────────────────────────────────────────────────────────────
-  Welcome to the workspace of Afnan Khan.
-  Frontend Engineer  ·  Mumbai, India  ·  github.com/afnankhan
-──────────────────────────────────────────────────────────────────
+╭──────────────────────────────────────╮
+│ Welcome to the workspace of          │
+│ Afnan Khan · Frontend Engineer       │
+│ Mumbai, India · github.com/afnanlabs │
+╰──────────────────────────────────────╯
 
-Type 'help' to list available commands.
+Building practical software, developer tools, and full-stack systems.
+
+Type 'help' to explore available commands.
 Type 'about' to learn more about me.
-Prefer a document view? Toggle 'Standard View' top-right.
+Type 'projects' to inspect active builds.
+Prefer a document view? Toggle 'Standard View' in the top-right.
 
+Tip: Use ↑ ↓ for history, Tab for autocomplete, and explore hidden commands 🥚
 Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🥚`;
 
 export const PROMPT = "afnan@workspace:~$ ";
