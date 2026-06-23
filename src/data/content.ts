@@ -350,7 +350,7 @@ Spoken Languages
 Email      [khanafnan1108@gmail.com]
 LinkedIn   [linkedin.com/in/afnankhan1108-dev]
 GitHub     [github.com/afnanlabs]
-Blog       []
+Blog       [https://dev.to/afnanlabs]s
 X          []
 LeetCode   [leetcode.com/afnankhan110805]
 Resume     → resume (downloads PDF)
