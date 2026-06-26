@@ -26,15 +26,15 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
 [OK] Environment synchronized: Mumbai, India.
 [OK] Workspace ready.
 
-┌── [ SYSTEM MONITOR // AFNAN-WORKSPACE ] ────────────────────────────────────────┐
+┌── ── SYSTEM MONITOR // AFNAN-WORKSPACE ─────────────────────────────────────────┐
 │ STATUS: ACTIVE ONLINE  │ HOST: MUMBAI, INDIA │ SUBSYSTEMS: SYNCHRONIZED         │
 ├─────────────────────────────────────────┬───────────────────────────────────────┤
-│  [ SYSTEM ENVIRONMENT ]                 │ [ QUICK PATHS ]                       │
+│  ■ SYSTEM ENVIRONMENT                   │ ■ QUICK PATHS                         │
 │                                         │                                       │
-│  [MODE]   Full-Stack Architecture       │   /blog    │ Read technical articles  │
-│  [STACK]  Node.js, React, MySQL, PHP    │   /about   │ Know more about me       │
-│  [FOCUS]  Scalability & Performance     │   /skills  │ View tech stack          │
-│  [STATUS] Pragmatic Building            │   /contact │ Get in touch             │
+│  ▶ MODE:   Full-Stack Architecture      │   /blog      │ Read technical articles│
+│  ▶ STACK:  Node.js, React, MySQL, PHP   │   /about     │ Know more about me     │
+│  ▶ FOCUS:  Scalability & Performance    │   /skills    │ View tech stack        │
+│  ▶ STATUS: Pragmatic Building           │   /contact   │ Get in touch           │
 └─────────────────────────────────────────┴───────────────────────────────────────┘
 
 Building practical software, developer tools, and full-stack systems.
