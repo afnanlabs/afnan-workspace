@@ -26,23 +26,16 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
 [OK] Environment synchronized: Mumbai, India.
 [OK] Workspace ready.
 
-┌────────────────────────────────────────┬──────────────────────────────────────────┐
-│         AFNAN WORKSPACE  v2.0.0        │  RECENT ACTIVITY                         │
-│                                        │                                          │
-│          Glad to have you here!        │   2h ago   │ Refined portfolio animations│
-│                                        │   6h ago   │ Improved terminal UX        │
-│                 + - - - +              │   1d ago   │ Added new projects          │
-│                 |  /-\  |              │   2d ago   │ Updated runtime engine      │
-│                 |  |A|  |              │   ...      │ /activity for more          │
-│                 |  \_/  |              │──────────────────────────────────────────│
-│                 + - - - +              │  QUICK ACCESS                            │
-│                     ↓                  │                                          │
-│              Full-Stack Engineer       │   /blog    │ Read technical articles     │
-│                 Mumbai, India          │   /about   │ Know more about me          │
-│             github.com/afnanlabs       │   /skills  │ View tech stack             │
-│                                        │   /contact │ Get in touch                │
-│                                        │   ...      │ /help for all commands      │
-└────────────────────────────────────────┴──────────────────────────────────────────┘
+┌── [ SYSTEM MONITOR // AFNAN-WORKSPACE ] ────────────────────────────────────────┐
+│ STATUS: ACTIVE ONLINE  │ HOST: MUMBAI, INDIA │ SUBSYSTEMS: SYNCHRONIZED         │
+├─────────────────────────────────────────┬───────────────────────────────────────┤
+│  [ SYSTEM ENVIRONMENT ]                 │ [ QUICK PATHS ]                       │
+│                                         │                                       │
+│  [MODE]   Full-Stack Architecture       │   /blog    │ Read technical articles  │
+│  [STACK]  Node.js, React, MySQL, PHP    │   /about   │ Know more about me       │
+│  [FOCUS]  Scalability & Performance     │   /skills  │ View tech stack          │
+│  [STATUS] Pragmatic Building            │   /contact │ Get in touch             │
+└─────────────────────────────────────────┴───────────────────────────────────────┘
 
 Building practical software, developer tools, and full-stack systems.
 
