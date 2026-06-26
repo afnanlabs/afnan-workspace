@@ -26,11 +26,20 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
 [OK] Environment synchronized: Mumbai, India.
 [OK] Workspace ready.
 
-╭──────────────────────────────────────╮
-│ Welcome to the workspace of          │
-│ Afnan Khan · Frontend Engineer       │
-│ Mumbai, India · github.com/afnanlabs │
-╰──────────────────────────────────────╯
+┌─── Afnan Workspace v2.0.0 ──────────────────────────────────────────┐
+│                                     │  Recent activity              │
+│       Welcome back Afnan!           │  1m ago    Updated FitScore   │
+│                                     │  2h ago    Pushed to devlog   │
+│             ░░████░░                │  2d ago    Optimized MySQL    │
+│           ░░████████░░              │  1w ago    Refactored hooks   │
+│             ██▒▒▒▒██                │  ... /resume for more         │
+│             ████████                │───────────────────────────────│
+│             ██░░░░██                │  What's new                   │
+│            ░░░░  ░░░░               │  /projects  to inspect builds │
+│                                     │  /about     to learn more     │
+│        Full-Stack Engineer          │  /help      available commands│
+│     /users/afnan/workspace          │  ... /posts for articles      │
+└─────────────────────────────────────┴───────────────────────────────┘
 
 Building practical software, developer tools, and full-stack systems.
 
