@@ -26,20 +26,23 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
 [OK] Environment synchronized: Mumbai, India.
 [OK] Workspace ready.
 
-┌─── Afnan Workspace v2.0.0 ──────────────────────────────────────────┐
-│                                     │  Recent activity              │
-│       Welcome back Afnan!           │  1m ago    Updated FitScore   │
-│                                     │  2h ago    Pushed to devlog   │
-│             ░░████░░                │  2d ago    Optimized MySQL    │
-│           ░░████████░░              │  1w ago    Refactored hooks   │
-│             ██▒▒▒▒██                │  ... /resume for more         │
-│             ████████                │───────────────────────────────│
-│             ██░░░░██                │  What's new                   │
-│            ░░░░  ░░░░               │  /projects  to inspect builds │
-│                                     │  /about     to learn more     │
-│        Full-Stack Engineer          │  /help      available commands│
-│     /users/afnan/workspace          │  ... /posts for articles      │
-└─────────────────────────────────────┴───────────────────────────────┘
+┌────────────────────────────────────────┬──────────────────────────────────────────┐
+│         AFNAN WORKSPACE  v2.0.0        │  RECENT ACTIVITY                         │
+│                                        │                                          │
+│          Glad to have you here!        │   2h ago   │ Refined portfolio animations│
+│                                        │   6h ago   │ Improved terminal UX        │
+│                 + - - - +              │   1d ago   │ Added new projects          │
+│                 |  /-\  |              │   2d ago   │ Updated runtime engine      │
+│                 |  |A|  |              │   ...      │ /activity for more          │
+│                 |  \_/  |              │──────────────────────────────────────────│
+│                 + - - - +              │  QUICK ACCESS                            │
+│                     ↓                  │                                          │
+│              Full-Stack Engineer       │   /blog    │ Read technical articles     │
+│                 Mumbai, India          │   /about   │ Know more about me          │
+│             github.com/afnanlabs       │   /skills  │ View tech stack             │
+│                                        │   /contact │ Get in touch                │
+│                                        │   ...      │ /help for all commands      │
+└────────────────────────────────────────┴──────────────────────────────────────────┘
 
 Building practical software, developer tools, and full-stack systems.
 
@@ -48,8 +51,8 @@ Type 'about' to learn more about me.
 Type 'projects' to inspect active builds.
 Prefer a document view? Toggle 'Standard View' in the top-right.
 
-Tip: Use ↑ ↓ for history, Tab for autocomplete, and explore hidden commands 🥚
-Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🥚`;
+Tip:   Use ↑ ↓ for history, Tab for autocomplete, and explore hidden commands ⚡
+Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🎉`;
 
 export const PROMPT = "afnan@workspace:~$ ";
 
