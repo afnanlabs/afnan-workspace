@@ -26,8 +26,7 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
 [OK] Standard View synchronization initialized.
 [OK] Environment synchronized: Mumbai, India.
 [OK] Workspace ready.
-                                                                              
-
+                                
         ▄████▄   ████████  ███    ██▄   ▄████▄   ███    ██▄
       ██▓  ▓██  ██▓       ████   ███  ██▓  ▓██  ████   ███
       ████████  ██████    ██▓██  ███  ████████  ██▓██  ███
