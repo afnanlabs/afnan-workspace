@@ -22,10 +22,10 @@ export const TERMINAL_COMMANDS = [
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
 
-  [OK] Typography subsystem loaded.
-  [OK] Standard View synchronization initialized.
-  [OK] Environment synchronized: Mumbai, India.
-  [OK] Workspace ready.
+[OK] Typography subsystem loaded.
+[OK] Standard View synchronization initialized.
+[OK] Environment synchronized: Mumbai, India.
+[OK] Workspace ready.
                                                                               
 
         ▄████▄   ████████  ███    ██▄   ▄████▄   ███    ██▄
