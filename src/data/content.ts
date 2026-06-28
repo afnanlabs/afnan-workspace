@@ -17,37 +17,116 @@ export const TERMINAL_COMMANDS = [
   "tetris",
   "whoami",
   "neofetch",
+  "ls",
 ];
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
 
-[OK] Typography subsystem loaded.
-[OK] Standard View synchronization initialized.
-[OK] Environment synchronized: Mumbai, India.
-[OK] Workspace ready.
+  [OK] Typography subsystem loaded.
+  [OK] Standard View synchronization initialized.
+  [OK] Environment synchronized: Mumbai, India.
+  [OK] Workspace ready.
+                                                                              
 
-┌── ── SYSTEM MONITOR // AFNAN-WORKSPACE ─────────────────────────────────────────┐
-│ STATUS: ACTIVE ONLINE  │ HOST: MUMBAI, INDIA │ SUBSYSTEMS: SYNCHRONIZED         │
-├─────────────────────────────────────────┬───────────────────────────────────────┤
-│  ■ SYSTEM ENVIRONMENT                   │ ■ QUICK PATHS                         │
-│                                         │                                       │
-│  ▶ MODE:   Full-Stack Architecture      │   /blog      │ Read technical articles│
-│  ▶ STACK:  Node.js, React, MySQL, PHP   │   /about     │ Know more about me     │
-│  ▶ FOCUS:  Scalability & Performance    │   /skills    │ View tech stack        │
-│  ▶ STATUS: Pragmatic Building           │   /contact   │ Get in touch           │
-└─────────────────────────────────────────┴───────────────────────────────────────┘
+        ▄████▄   ████████  ███    ██▄   ▄████▄   ███    ██▄
+      ██▓  ▓██  ██▓       ████   ███  ██▓  ▓██  ████   ███
+      ████████  ██████    ██▓██  ███  ████████  ██▓██  ███
+      ██▓  ▓██  ██▓       ███ ██ ███  ██▓  ▓██  ███ ██ ███
+      ██▓  ▓██  ██▓       ███  █████  ██▓  ▓██  ███  █████
 
-Building practical software, developer tools, and full-stack systems.
+    ██   ██  ██████  ██████  ██   ██ ▄████▄   ███████ ██████   ▄████▄    ██████ ████████
+    ██   ██ ██    ██ ██   ██ ██  ██  ██▓  ▓██ ██      ██   ██ ██▓  ▓██  ██      ██▓
+    ██ █ ██ ██    ██ ██████  █████   ████████ ███████ ██████  ████████ ██       ██████
+    ███████ ██    ██ ██   ██ ██  ██  ██▓  ▓██      ██ ██      ██▓  ▓██ ██       ██▓
+    ██  ██  ██████  ██   ██ ██   ██ ██▓  ▓██ ███████ ██      ██▓  ▓██  ██████  ████████
+                              
+  Type 'help' to explore available commands.
+  Prefer a document view? Toggle 'Standard View' in the top-right.
 
-Type 'help' to explore available commands.
-Type 'about' to learn more about me.
-Type 'projects' to inspect active builds.
-Prefer a document view? Toggle 'Standard View' in the top-right.
-
-Tip:   Use ↑ ↓ for history, Tab for autocomplete, and explore hidden commands ⚡
-Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🎉`;
+  Tip:   Use ↑ ↓ for history, Tab for autocomplete, and explore hidden commands ⚡
+  Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🎉`;
 
 export const PROMPT = "afnan@workspace:~$ ";
+
+const CERTIFICATIONS = [
+  {
+    title: "Docker Essentials: A Developer Introduction",
+    issuer: "IBM / Cognitive Class",
+    year: 2026,
+    url: "https://courses.cognitiveclass.ai/certificates/f59b4e19579741cfaaaed5d024f1ca01",
+  },
+
+  {
+    title: "SQL and Relational Databases 101",
+    issuer: "IBM Skills Network",
+    year: 2026,
+    url: "https://courses.cognitiveclass.ai/certificates/2e6fa7a8100c4c42a499db89cb7dd36b",
+  },
+
+  {
+    title: "Claude Code 101",
+    issuer: "Anthropic",
+    year: 2026,
+    url: "https://verify.skilljar.com/c/det4i2mxn2gx",
+  },
+
+  {
+    title: "Claude 101",
+    issuer: "Anthropic",
+    year: 2026,
+    url: "https://verify.skilljar.com/c/c9zpbmug7qrv",
+  },
+
+  {
+    title: "Claude Code in Action",
+    issuer: "Anthropic",
+    year: 2026,
+    url: "https://verify.skilljar.com/c/kontttnmh9w5",
+  },
+
+  {
+    title: "Introduction to Agent Skill",
+    issuer: "Anthropic",
+    year: 2026,
+    url: "https://verify.skilljar.com/c/s542sj62st5o",
+  },
+
+  {
+    title: "Introduction to Claude Cowork",
+    issuer: "Anthropic",
+    year: 2026,
+    url: "https://verify.skilljar.com/c/xjt83iky8pzf",
+  },
+
+  {
+    title: "Claude Platform 101",
+    issuer: "Anthropic",
+    year: 2026,
+    url: "https://verify.skilljar.com/c/9fix4umqz8u8",
+  },
+
+  {
+    title: "Basics of Informational Visuals",
+    issuer: "Cambridge Int. / UniAthena",
+    year: 2026,
+    url: "https://docs.uniathena.com/prod/course/certificate/345_1777894534_certificate.jpg",
+  },
+
+  {
+    title: "Basics of Python",
+    issuer: "Cambridge Int. / UniAthena",
+    year: 2026,
+    url: "https://docs.uniathena.com/prod/course/certificate/323_1777897137_certificate.jpg",
+  },
+
+  {
+    //AI for Beginners - Ratan Tata Maharashtra State Skills University (2026)
+    title: "AI for Beginners",
+    issuer: "Ratan Tata Maharashtra State Skills University (2026)",
+    year: 2026,
+    url: "http://apps.mssu.ac.in/stc/TrainingPartner/StudentCertificateValidation?SrNo=2500005235",
+  },
+];
 
 export const commandOutputs: Record<string, string> = {
   help: `
@@ -59,7 +138,7 @@ about              Who I am and what I build
   skills             Technical stack by category
   education          Academic background
   languages          Spoken languages
-  certifications     Credentials and training
+  certs              Credentials and training
   contact            How to reach me
   resume             Download resume PDF
 
@@ -271,91 +350,17 @@ Spoken Languages
   Marathi    Native
 `,
 
-  certs: JSON.stringify([
-    {
-      title: "Docker Essentials: A Developer Introduction",
-      issuer: "IBM / Cognitive Class",
-      year: 2026,
-      url: "https://courses.cognitiveclass.ai/certificates/f59b4e19579741cfaaaed5d024f1ca01",
-    },
-
-    {
-      title: "SQL and Relational Databases 101",
-      issuer: "IBM Skills Network",
-      year: 2026,
-      url: "https://courses.cognitiveclass.ai/certificates/2e6fa7a8100c4c42a499db89cb7dd36b",
-    },
-
-    {
-      title: "Claude Code 101",
-      issuer: "Anthropic",
-      year: 2026,
-      url: "https://verify.skilljar.com/c/det4i2mxn2gx",
-    },
-
-    {
-      title: "Claude 101",
-      issuer: "Anthropic",
-      year: 2026,
-      url: "https://verify.skilljar.com/c/c9zpbmug7qrv",
-    },
-
-    {
-      title: "Claude Code in Action",
-      issuer: "Anthropic",
-      year: 2026,
-      url: "https://verify.skilljar.com/c/kontttnmh9w5",
-    },
-
-    {
-      title: "Introduction to Agent Skill",
-      issuer: "Anthropic",
-      year: 2026,
-      url: "https://verify.skilljar.com/c/s542sj62st5o",
-    },
-
-    {
-      title: "Introduction to Claude Cowork",
-      issuer: "Anthropic",
-      year: 2026,
-      url: "https://verify.skilljar.com/c/xjt83iky8pzf",
-    },
-
-    {
-      title: "Claude Platform 101",
-      issuer: "Anthropic",
-      year: 2026,
-      url: "https://verify.skilljar.com/c/9fix4umqz8u8",
-    },
-
-    {
-      title: "Basics of Informational Visuals",
-      issuer: "Cambridge Int. / UniAthena",
-      year: 2026,
-      url: "https://docs.uniathena.com/prod/course/certificate/345_1777894534_certificate.jpg",
-    },
-
-    {
-      title: "Basics of Python",
-      issuer: "Cambridge Int. / UniAthena",
-      year: 2026,
-      url: "https://docs.uniathena.com/prod/course/certificate/323_1777897137_certificate.jpg",
-    },
-
-    {
-      //AI for Beginners - Ratan Tata Maharashtra State Skills University (2026)
-      title: "AI for Beginners",
-      issuer: "Ratan Tata Maharashtra State Skills University (2026)",
-      year: 2026,
-      url: "http://apps.mssu.ac.in/stc/TrainingPartner/StudentCertificateValidation?SrNo=2500005235",
-    },
-  ]),
+  certs: `
+${CERTIFICATIONS.map(
+  (cert) => `[${cert.title}](${cert.url}) — ${cert.issuer} · ${cert.year}`,
+).join("\n\n")}
+`,
 
   contact: `
 Email      [khanafnan1108@gmail.com]
 LinkedIn   [linkedin.com/in/afnankhan1108-dev]
 GitHub     [github.com/afnanlabs]
-Blog       [https://dev.to/afnanlabs]s
+Blog       [https://dev.to/afnanlabs]
 X          []
 LeetCode   [leetcode.com/afnankhan110805]
 Resume     → resume (downloads PDF)

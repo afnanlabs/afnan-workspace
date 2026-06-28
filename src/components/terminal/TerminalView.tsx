@@ -235,6 +235,39 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
         );
       }
       if (line.includes("[") && line.includes("]")) {
+        // Supports:
+        // [Email]
+        // [github.com/...]
+        // [Certificate Name](https://certificate-url.com)
+
+        const markdownMatch = line.match(/\[(.*?)\]\((.*?)\)/);
+
+        if (markdownMatch) {
+          const label = line.split("[")[0];
+          const text = markdownMatch[1];
+          const href = markdownMatch[2];
+          const suffix = line.slice(markdownMatch[0].length);
+
+          return (
+            <div key={i}>
+              {label}
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "var(--vs-accent)",
+                  textDecoration: "underline",
+                }}
+              >
+                {text}
+              </a>
+              {suffix}
+            </div>
+          );
+        }
+
+        // Existing behaviour for contact command
         const label = line.split("[")[0];
         const text = line.match(/\[(.*?)\]/)?.[1] ?? "";
 
@@ -258,7 +291,7 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
                 textDecoration: "underline",
               }}
             >
-              [{text}]
+              {text}
             </a>
           </div>
         );
