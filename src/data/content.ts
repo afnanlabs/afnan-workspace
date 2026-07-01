@@ -22,6 +22,7 @@ export const TERMINAL_COMMANDS = [
   "fortune",
   "cowsay",
   "history",
+  "stats",
 ];
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
@@ -293,6 +294,21 @@ FUN & EASTER EGGS
 SYSTEM UTILITIES
  ├── whoami       ├── neofetch       ├── sounds
  ├── history      └── clear
+`,
+
+  stats: `
+Portfolio Statistics
+
+  Projects          : 10+
+  Technologies      : 15+
+  Certificates      : 14
+  Languages         : 5
+  Experience        : 1+ Years
+
+  Current Focus
+  → React
+  → TypeScript
+  → Django
 `,
 
   experience: `
