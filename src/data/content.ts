@@ -31,7 +31,6 @@ export const TERMINAL_COMMANDS = [
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
 
 [OK] Typography subsystem loaded.
-[OK] Standard View synchronization initialized.
 [OK] Environment synchronized: Mumbai, India.
 [OK] Workspace ready.
                                 
@@ -47,9 +46,8 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
     ███████ ██    ██ ██   ██ ██  ██  ██▓  ▓██      ██ ██      ██▓  ▓██ ██       ██▓
     ██  ██  ██████  ██   ██ ██   ██ ██▓  ▓██ ███████ ██      ██▓  ▓██  ██████  ████████
                               
-  Type 'help' to explore available commands.
-  Prefer a document view? Toggle 'Standard View' in the top-right.
-  Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🎉`;
+  Type 'help' to explore available commands.  
+  Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands!`;
 
 export const PROMPT = "afnan@workspace:~$ ";
 
