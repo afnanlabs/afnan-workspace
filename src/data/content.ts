@@ -19,6 +19,9 @@ export const TERMINAL_COMMANDS = [
   "neofetch",
   "ls",
   "ascii",
+  "fortunes",
+  "cowsay",
+  "history",
 ];
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
@@ -126,6 +129,45 @@ const CERTIFICATIONS = [
   },
 ];
 
+export const FORTUNES = [
+  `"The best error message is the one that never shows up."
+                         — Thomas Fuchs`,
+
+  `"Programs must be written for people to read,
+and only incidentally for machines to execute."
+                         — Harold Abelson`,
+
+  `"First, solve the problem.
+Then, write the code."
+                         — John Johnson`,
+
+  `"Talk is cheap.
+Show me the code."
+                         — Linus Torvalds`,
+
+  `"Code never lies,
+comments sometimes do."
+                         — Ron Jeffries`,
+
+  `"Any fool can write code that a computer can understand.
+Good programmers write code that humans can understand."
+                         — Martin Fowler`,
+
+  `"Simplicity is the soul of efficiency."
+                         — Austin Freeman`,
+
+  `"Experience is the name everyone gives to their mistakes."
+                         — Oscar Wilde`,
+
+  `"The only way to learn a new programming language
+is by writing programs in it."
+                         — Dennis Ritchie`,
+
+  `"Make it work.
+Make it right.
+Make it fast."
+                         — Kent Beck`,
+];
 export const commandOutputs: Record<string, string> = {
   ascii: `
         ▄████▄   ████████  ███    ██▄   ▄████▄   ███    ██▄
@@ -134,6 +176,7 @@ export const commandOutputs: Record<string, string> = {
       ██▓  ▓██  ██▓       ███ ██ ███  ██▓  ▓██  ███ ██ ███
       ██▓  ▓██  ██▓       ███  █████  ██▓  ▓██  ███  █████
 `,
+
   help: `
 Available Commands:
 
