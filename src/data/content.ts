@@ -19,7 +19,7 @@ export const TERMINAL_COMMANDS = [
   "neofetch",
   "ls",
   "ascii",
-  "fortunes",
+  "fortune",
   "cowsay",
   "history",
 ];
@@ -188,6 +188,9 @@ export const commandOutputs: Record<string, string> = {
                 ||     ||
 `,
 
+  history: `
+ Use arrow keys (↑ ↓) to navigate command history`,
+
   help: `
 Available Commands:
 
@@ -207,6 +210,9 @@ Available Commands:
 
   Fun:
     sounds              Toggle workspace audio on/off
+    ascii               Display my name in ASCII art
+    fortune             Show a random programming quote
+    cowsay              ASCII cow delivers wisdom
 
     snake               Retro Snake arcade
     tetris              Retro Tetris arcade
@@ -216,6 +222,7 @@ Available Commands:
 
   File System:
     ls                  List directory contents
+    history             Show previously entered commands
 
   Utility:
     help                Show available commands
