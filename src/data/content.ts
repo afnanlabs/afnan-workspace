@@ -25,6 +25,7 @@ export const TERMINAL_COMMANDS = [
   "stats",
   "coffee",
   "uptime",
+  "date",
 ];
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
