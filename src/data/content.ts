@@ -469,7 +469,7 @@ ${CERTIFICATIONS.map(
 Email      [khanafnan1108@gmail.com]
 LinkedIn   [linkedin.com/in/afnankhan1108-dev]
 GitHub     [github.com/afnanlabs]
-Blog       [https://dev.to/afnanlabs]
+Blog       [afnan-log.vercel.app]
 X          []
 LeetCode   [leetcode.com/afnankhan110805]
 Resume     → resume (downloads PDF)
