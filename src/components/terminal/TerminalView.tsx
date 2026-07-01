@@ -32,6 +32,22 @@ function processCommand(cmd: string): string | null {
   if (trimmed === "fortune") {
     return FORTUNES[Math.floor(Math.random() * FORTUNES.length)];
   }
+  if (trimmed === "uptime") {
+    const launchDate = new Date("2026-06-20T00:00:00");
+
+    const now = new Date();
+    const diff = now.getTime() - launchDate.getTime();
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    return `
+Portfolio online for:
+
+${days} days, ${hours} hours, ${minutes} minutes
+`;
+  }
 
   const output = commandOutputs[trimmed];
   if (output === undefined) {
