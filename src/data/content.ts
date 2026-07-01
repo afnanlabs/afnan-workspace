@@ -18,6 +18,7 @@ export const TERMINAL_COMMANDS = [
   "whoami",
   "neofetch",
   "ls",
+  "ascii",
 ];
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
@@ -126,6 +127,13 @@ const CERTIFICATIONS = [
 ];
 
 export const commandOutputs: Record<string, string> = {
+  ascii: `
+        ▄████▄   ████████  ███    ██▄   ▄████▄   ███    ██▄
+      ██▓  ▓██  ██▓       ████   ███  ██▓  ▓██  ████   ███
+      ████████  ██████    ██▓██  ███  ████████  ██▓██  ███
+      ██▓  ▓██  ██▓       ███ ██ ███  ██▓  ▓██  ███ ██ ███
+      ██▓  ▓██  ██▓       ███  █████  ██▓  ▓██  ███  █████
+`,
   help: `
 Available Commands:
 
