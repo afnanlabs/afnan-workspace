@@ -42,9 +42,7 @@ function processCommand(cmd: string): string | null {
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
-    return `
-Portfolio online for:
-
+    return `Portfolio online for:
 ${days} days, ${hours} hours, ${minutes} minutes
 `;
   }
