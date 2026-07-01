@@ -188,8 +188,7 @@ export const commandOutputs: Record<string, string> = {
                 ||     ||
 `,
 
-  history: `
- Use arrow keys (↑ ↓) to navigate command history`,
+  history: `Use arrow keys (↑ ↓) to navigate command history`,
 
   help: `
 Available Commands:
@@ -287,13 +286,14 @@ CORE NAVIGATION
 PROJECT ACTIONS
  ├── open thinktrack                 └── open codeglow
 
-ARCADE GAMES
- ├── snake                           └── tetris
+FUN & EASTER EGGS
+ ├── ascii        ├── fortune        ├── cowsay
+ ├── snake        └── tetris
 
 SYSTEM UTILITIES
- ├── sounds        ├── clear         ├── whoami
- └── neofetch
-  `,
+ ├── whoami       ├── neofetch       ├── sounds
+ ├── history      └── clear
+`,
 
   experience: `
 Full-Stack Software Engineer | Self-Directed Architecture
