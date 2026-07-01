@@ -177,6 +177,17 @@ export const commandOutputs: Record<string, string> = {
       ██▓  ▓██  ██▓       ███  █████  ██▓  ▓██  ███  █████
 `,
 
+  cowsay: `
+ _______________________
+< Keep shipping. 🚀 >
+ -----------------------
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||
+`,
+
   help: `
 Available Commands:
 
