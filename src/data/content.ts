@@ -216,18 +216,20 @@ Available Commands:
     ascii               Display my name in ASCII art
     fortune             Show a random programming quote
     cowsay              ASCII cow delivers wisdom
-
+    coffee              Brew a virtual coffee
     snake               Retro Snake arcade
     tetris              Retro Tetris arcade
 
-    neofetch            System information
+  System:
     whoami              Identity probe
-
-  File System:
-    ls                  List directory contents
-    history             Show previously entered commands
+    neofetch            System information
+    history             Show command history
+    uptime              Portfolio uptime
+    date                Current system date & time
+    stats               Portfolio statistics
 
   Utility:
+    ls                  List available commands
     help                Show available commands
     clear               Clear the terminal
 
@@ -284,7 +286,7 @@ Currently deepening: backend architecture, database design, and building tools d
 CORE NAVIGATION
  ├── help          ├── about         ├── experience
  ├── projects      ├── skills        ├── education
- ├── languages     ├── certs         └── contact
+ ├── languages     ├── certs         ├── contact
  └── resume
 
 PROJECT ACTIONS
@@ -292,11 +294,16 @@ PROJECT ACTIONS
 
 FUN & EASTER EGGS
  ├── ascii        ├── fortune        ├── cowsay
- ├── snake        └── tetris
+ ├── coffee       ├── snake          └── tetris
 
-SYSTEM UTILITIES
- ├── whoami       ├── neofetch       ├── sounds
- ├── history      └── clear
+SYSTEM
+ ├── whoami       ├── neofetch       ├── uptime
+ ├── date         ├── stats          ├── history
+ └── sounds
+
+UTILITY
+ ├── help         ├── ls
+ └── clear
 `,
 
   stats: `
@@ -309,8 +316,8 @@ Portfolio Statistics
   Experience        : 1+ Years
 
   Current Focus
-  → React
-  → TypeScript
+  → Node.js
+  → Express.js
   → PostgreSQL
 `,
 
