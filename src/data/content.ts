@@ -23,6 +23,8 @@ export const TERMINAL_COMMANDS = [
   "cowsay",
   "history",
   "stats",
+  "coffee",
+  "uptime",
 ];
 
 export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0.0...
@@ -308,7 +310,20 @@ Portfolio Statistics
   Current Focus
   → React
   → TypeScript
-  → Django
+  → PostgreSQL
+`,
+
+  coffee: `
+        ( (
+         ) )
+      ........
+      |      |]
+      \\      /
+       \`----'
+
+Brewing coffee...
+
+Error: Coffee machine not connected ☕
 `,
 
   experience: `
