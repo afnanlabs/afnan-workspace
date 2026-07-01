@@ -4,6 +4,7 @@ import {
   PROMPT,
   TERMINAL_COMMANDS,
   commandOutputs,
+  FORTUNES,
 } from "@/data/content";
 import { useAudio } from "@/hooks/use-audio.ts";
 import type { ArcadeGame } from "@/App";
@@ -28,6 +29,9 @@ function processCommand(cmd: string): string | null {
   if (trimmed === "sounds") return "__SOUNDS_TOGGLE__";
   if (trimmed === "snake") return "__LAUNCH_SNAKE__";
   if (trimmed === "tetris") return "__LAUNCH_TETRIS__";
+  if (trimmed === "fortune") {
+    return FORTUNES[Math.floor(Math.random() * FORTUNES.length)];
+  }
 
   const output = commandOutputs[trimmed];
   if (output === undefined) {
