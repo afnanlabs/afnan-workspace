@@ -118,4 +118,4 @@ Built by Afnan Khan — Full-Stack Developer.
 
 ---
 
-_"Building practical applications, interactive experiences, and continuously improving through hands-on development."_
+### "Building practical applications, interactive experiences, and continuously improving through hands-on development."

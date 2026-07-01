@@ -41,8 +41,6 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
                               
   Type 'help' to explore available commands.
   Prefer a document view? Toggle 'Standard View' in the top-right.
-
-  Tip:   Use ↑ ↓ for history, Tab for autocomplete, and explore hidden commands ⚡
   Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands! 🎉`;
 
 export const PROMPT = "afnan@workspace:~$ ";
@@ -129,30 +127,37 @@ const CERTIFICATIONS = [
 
 export const commandOutputs: Record<string, string> = {
   help: `
-Available commands:
+Available Commands:
 
-about              Who I am and what I build
-  experience         Work history and impact
-  projects           What I've shipped
-  skills             Technical stack by category
-  education          Academic background
-  languages          Spoken languages
-  certs              Credentials and training
-  contact            How to reach me
-  resume             Download resume PDF
+  Portfolio:
+    about               Who I am and what I build
+    experience          Work history and impact
+    projects            What I've shipped
+    skills              Technical stack by category
+    education           Academic background
+    languages           Spoken languages
+    certs               Credentials and training
+    contact             How to reach me
+    resume              Download resume PDF
 
-  open thinktrack    Architecture deep-dive: ThinkTrack
-  open codeglow      Architecture deep-dive: CodeGlow
+    open thinktrack     Architecture deep-dive: ThinkTrack
+    open codeglow       Architecture deep-dive: CodeGlow
 
-  sounds             Toggle workspace audio on/off
+  Fun:
+    sounds              Toggle workspace audio on/off
 
-  snake              Retro Snake arcade
-  tetris             Retro Tetris arcade
+    snake               Retro Snake arcade
+    tetris              Retro Tetris arcade
 
-  neofetch           System information
-  whoami             Identity probe
+    neofetch            System information
+    whoami              Identity probe
 
-  clear              Clear the terminal
+  File System:
+    ls                  List directory contents
+
+  Utility:
+    help                Show available commands
+    clear               Clear the terminal
 
 Type any command to run it.
 `,
