@@ -48,6 +48,19 @@ Portfolio online for:
 ${days} days, ${hours} hours, ${minutes} minutes
 `;
   }
+  if (trimmed === "date") {
+    return new Date().toLocaleString("en-IN", {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+      timeZoneName: "short",
+    });
+  }
 
   const output = commandOutputs[trimmed];
   if (output === undefined) {
