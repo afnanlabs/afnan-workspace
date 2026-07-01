@@ -247,21 +247,20 @@ Focus:     Full-Stack Development & Developer Tools
 
 → Run 'about' for full profile
 `,
-
   neofetch: `
              .            afnan@workspace
            .o8.           ──────────────────────────────
-         .o8888.          OS:        AfnanOS 2.0
-       .o88888888.        Host:      Developer Workspace
-      o8888888888888.     Shell:     afnan-sh
-      88888888888888P'    Role:      Full Stack Engineer
-      '988888888888'      Location:  Mumbai, India
-         'Y888P'          Stack:     React · TypeScript · Node.js · MySQL
-            '             Tools:     Git · Docker · Vercel
-                          Focus:     Developer Tools & Practical Software
-                          Building:  Since 2021
-                          GitHub:    github.com/afnanlabs
-                          Contact:   → run 'contact'
+         .o8888.          Environment: Portfolio v2.0
+       .o88888888.        Host:        portfolio.local
+      o8888888888888.     Shell:       afnan-sh
+      88888888888888P'    Role:        Full Stack Developer
+      '988888888888'      Location:    Mumbai, India
+         'Y888P'          Stack:       React · TypeScript · Node.js · MySQL
+            '             Tools:       Git · Docker · Vercel
+                          Focus:       Developer Tools & Practical Software
+                          Building:    Since 2025
+                          GitHub:      github.com/afnanlabs
+                          Contact:     → run 'contact'
 `,
 
   about: `
