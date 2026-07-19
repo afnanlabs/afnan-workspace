@@ -263,9 +263,8 @@ function PlaceholderPanel({ section }: { section: ActivitySection }) {
 
   return (
     <div
-      className="flex flex-col shrink-0"
+      className="flex flex-col shrink-0 w-[180px] lg:w-[220px]"
       style={{
-        width: 220,
         background: "var(--vs-surface)",
         borderRight: "1px solid var(--vs-border)",
       }}
