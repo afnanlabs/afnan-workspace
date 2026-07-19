@@ -50,7 +50,7 @@ export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderPr
 
   return (
     <header
-      className="flex items-center justify-between px-4 h-10 shrink-0 border-b select-none"
+      className="flex items-center justify-between px-2 sm:px-4 h-10 shrink-0 border-b select-none min-w-0"
       onMouseDown={onDragStart}
       style={{
         background: 'var(--vs-surface)',
@@ -60,76 +60,85 @@ export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderPr
       }}
     >
       {/* Left: hostname | clock | location temp */}
-      <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--vs-text-muted)' }}>
+      <div className="flex items-center gap-1 sm:gap-2 text-xs min-w-0 overflow-hidden" style={{ color: 'var(--vs-text-muted)' }}>
         <button
           onClick={() => onModeChange('terminal')}
-          className="hover:opacity-80 transition-opacity"
-          style={{ color: 'var(--vs-accent)', fontWeight: 500 }}
+          className="hover:opacity-80 transition-opacity shrink-0"
+          style={{ color: 'var(--vs-accent)', fontWeight: 500, whiteSpace: 'nowrap' }}
         >
           afnan@workspace
         </button>
-        <span className="opacity-40">|</span>
-        <span>{clock}</span>
-        <span className="opacity-40">|</span>
-        <span>Mumbai{temp ? `, ${temp}` : ''}</span>
+        <span className="opacity-40 shrink-0 hidden sm:inline">|</span>
+        <span className="hidden sm:inline shrink-0">{clock}</span>
+        <span className="opacity-40 shrink-0 hidden md:inline">|</span>
+        <span className="hidden md:inline shrink-0 truncate">Mumbai{temp ? `, ${temp}` : ''}</span>
       </div>
 
       {/* Right: icon row + view switch */}
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
         {/* Theme toggle */}
         <IconButton onClick={toggleTheme} title="Toggle theme">
           {isDark ? <Sun size={14} /> : <Moon size={14} />}
         </IconButton>
 
-        {/* Gmail */}
-        <IconButton as="a" href="mailto:afnan@email.com" title="Email">
-          <MailIcon />
-        </IconButton>
+        {/* Gmail — hidden on tiny screens */}
+        <span className="hidden sm:inline">
+          <IconButton as="a" href="mailto:afnan@email.com" title="Email">
+            <MailIcon />
+          </IconButton>
+        </span>
 
-        {/* LinkedIn */}
-        <IconButton
-          as="a"
-          href="https://www.linkedin.com/in/afnankhan1108-dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-        >
-          <LinkedInIcon />
-        </IconButton>
+        {/* LinkedIn — hidden on tiny screens */}
+        <span className="hidden sm:inline">
+          <IconButton
+            as="a"
+            href="https://www.linkedin.com/in/afnankhan1108-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+          >
+            <LinkedInIcon />
+          </IconButton>
+        </span>
 
-        {/* GitHub */}
-        <IconButton
-          as="a"
-          href="https://github.com/afnanlabs"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub"
-        >
-          <GitHubIcon />
-        </IconButton>
+        {/* GitHub — hidden on tiny screens */}
+        <span className="hidden sm:inline">
+          <IconButton
+            as="a"
+            href="https://github.com/afnanlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+          >
+            <GitHubIcon />
+          </IconButton>
+        </span>
 
-        {/* Resume download */}
-        <IconButton as="a" href="/resume.pdf" download title="Download resume">
-          <Download size={14} />
-        </IconButton>
+        {/* Resume download — hidden on tiny screens */}
+        <span className="hidden sm:inline">
+          <IconButton as="a" href="/resume.pdf" download title="Download resume">
+            <Download size={14} />
+          </IconButton>
+        </span>
 
-        {/* Divider */}
-        <div className="w-px h-4 mx-1" style={{ background: 'var(--vs-border)' }} />
+        {/* Divider — hidden on tiny screens */}
+        <div className="w-px h-4 mx-1 hidden sm:block" style={{ background: 'var(--vs-border)' }} />
 
-        {/* View switch — text button */}
+        {/* View switch — compact on small screens */}
         <button
           onClick={() => onModeChange(mode === 'terminal' ? 'standard' : 'terminal')}
-          className="flex items-center gap-1.5 px-2.5 py-1 text-xs rounded transition-colors hover:opacity-80"
+          className="flex items-center gap-1 px-1.5 sm:px-2.5 py-1 text-xs rounded transition-colors hover:opacity-80"
           style={{
             background: 'var(--vs-surface-alt)',
             color: 'var(--vs-text)',
             fontFamily: 'var(--font-sans)',
             fontWeight: 500,
-            fontSize: '11px',
+            fontSize: 'clamp(9px, 2.5vw, 11px)',
             letterSpacing: '0.01em',
           }}
         >
-          {mode === 'terminal' ? 'Standard View →' : 'Terminal View →'}
+          <span className="hidden sm:inline">{mode === 'terminal' ? 'Standard' : 'Terminal'}</span>
+          <span className="sm:ml-0.5">→</span>
         </button>
       </div>
     </header>
