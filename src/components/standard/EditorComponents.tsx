@@ -66,9 +66,8 @@ export function Explorer({
 
   return (
     <div
-      className="flex flex-col shrink-0 overflow-y-auto"
+      className="flex flex-col shrink-0 overflow-y-auto w-[180px] lg:w-[220px]"
       style={{
-        width: 220,
         background: "var(--vs-surface)",
         borderRight: "1px solid var(--vs-border)",
         fontFamily: "var(--font-mono)",
@@ -289,8 +288,8 @@ function LineGutter({ count }: { count: number }) {
         lineHeight: 1.6,
         borderRight: "1px solid var(--vs-border)",
         minWidth: 48,
-        paddingLeft: 8,
-        paddingRight: 12,
+        paddingLeft: 6,
+        paddingRight: 10,
       }}
     >
       {Array.from({ length: count }, (_, i) => (
@@ -308,8 +307,8 @@ function MarkdownRenderer({ content }: { content: string }) {
     <div className="flex h-full">
       <LineGutter count={lines.length} />
       <div
-        className="flex-1 px-8 py-4 overflow-y-auto"
-        style={{ maxWidth: 740 }}
+        className="flex-1 px-3 sm:px-6 lg:px-8 py-4 overflow-y-auto"
+        style={{ maxWidth: "min(740px, 100%)" }}
       >
         {renderMarkdownLines(lines)}
       </div>
