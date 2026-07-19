@@ -175,9 +175,18 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    overflow-x: hidden;
+    width: 100%;
+  }
+  #root {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
@@ -254,14 +263,14 @@
   .app-canvas {
     align-items: center;
     justify-content: center;
-    padding: 28px;
+    padding: 20px;
   }
 
   .app-window {
     flex: none;
 
-    width: min(68vw, 850px);
-    height: min(84vh, 850px);
+    width: min(82vw, 750px);
+    height: min(88vh, 700px);
 
     background: var(--vs-bg);
     border: 1px solid var(--vs-border);
@@ -272,14 +281,47 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .app-canvas {
+    padding: 24px;
+  }
+
+  .app-window {
+    width: min(75vw, 820px);
+    height: min(86vh, 800px);
+  }
+}
+
 @media (min-width: 1280px) {
+  .app-canvas {
+    padding: 28px;
+  }
+
+  .app-window {
+    width: min(70vw, 950px);
+    height: min(84vh, 860px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .app-canvas {
+    padding: 32px;
+  }
+
+  .app-window {
+    width: min(68vw, 1020px);
+    height: min(84vh, 920px);
+  }
+}
+
+@media (min-width: 1920px) {
   .app-canvas {
     padding: 40px;
   }
 
   .app-window {
-    width: min(70vw, 1000px);
-    height: min(84vh, 900px);
+    width: min(65vw, 1100px);
+    height: min(82vh, 960px);
   }
 }
 

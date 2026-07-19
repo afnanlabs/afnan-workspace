@@ -338,7 +338,7 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
       style={{
         background: "var(--vs-bg)",
         fontFamily: "var(--font-mono)",
-        fontSize: "14px",
+        fontSize: "clamp(12px, 2.5vw, 14px)",
         lineHeight: 1.6,
         color: "var(--vs-text)",
       }}
@@ -346,8 +346,8 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
     >
       {/* Zone 1 — scrollable history buffer (welcome message + command log) */}
       <div
-        className="flex-1 min-h-0 overflow-y-auto px-4 pt-4"
-        style={{ overscrollBehavior: "contain" }}
+        className="flex-1 min-h-0 overflow-y-auto px-2 sm:px-4 pt-4"
+        style={{ overscrollBehavior: "contain", overflowWrap: "break-word", wordBreak: "break-word" }}
       >
         <div style={{ whiteSpace: "pre-wrap", marginBottom: "0.5em" }}>
           {renderOutput(WELCOME_MESSAGE)}
@@ -405,12 +405,13 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
       </div>
 
       {/* Zone 2 — active prompt row, pinned above footer */}
-      <div className="shrink-0 flex items-start px-4 py-2">
+      <div className="shrink-0 flex items-start px-2 sm:px-4 py-2">
         <span
           style={{
             color: "var(--vs-accent)",
             userSelect: "none",
             whiteSpace: "nowrap",
+            fontSize: "clamp(11px, 2.5vw, 13px)",
           }}
         >
           {PROMPT}
@@ -448,20 +449,22 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
 
       {/* Zone 3 — ground floor copyright, pinned at bottom */}
       <div
-        className="shrink-0 flex items-center justify-center pb-2 mt-auto select-none"
+        className="shrink-0 flex items-center justify-center pb-2 mt-auto select-none px-2"
         style={{
           fontFamily: "var(--font-mono)",
-          fontSize: "11px",
+          fontSize: "clamp(9px, 1.8vw, 11px)",
           color: "var(--vs-text-muted)",
           opacity: 0.35,
         }}
       >
-        © Afnan Khan | All rights reserved |{" "}
+        <span className="truncate">
+          © Afnan Khan | All rights reserved
+        </span>
         <a
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:opacity-80 transition-opacity ml-1"
+          className="underline hover:opacity-80 transition-opacity ml-1 shrink-0"
           style={{ color: "var(--vs-accent)" }}
           onClick={(e) => e.stopPropagation()}
         >

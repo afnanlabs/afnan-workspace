@@ -138,7 +138,7 @@ export function SnakeGame() {
 
   return (
     <div className="flex flex-col items-center gap-2" style={{ fontFamily: 'var(--font-mono)' }}>
-      <div className="flex w-full justify-between items-center px-1" style={{ fontSize: '11px', color: 'var(--vs-text-muted)' }}>
+      <div className="flex w-full justify-between items-center px-1" style={{ fontSize: 'clamp(10px, 2.5vw, 11px)', color: 'var(--vs-text-muted)' }}>
         <span>WASD / Arrows to move</span>
         <span style={{ color: 'var(--vs-accent)' }}>score: {score}</span>
       </div>
@@ -147,7 +147,7 @@ export function SnakeGame() {
           ref={canvasRef}
           width={COLS * CELL}
           height={ROWS * CELL}
-          style={{ display: 'block', border: '1px solid var(--vs-border)' }}
+          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto' }}
         />
         {dead && (
           <div

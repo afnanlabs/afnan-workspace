@@ -38,6 +38,7 @@ export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
         boxShadow: '0 12px 48px rgba(0,0,0,0.6)',
         fontFamily: 'var(--font-mono)',
         minWidth: 0,
+        maxWidth: 'min(95vw, 500px)',
       }}
     >
       {/* Title bar — drag handle */}
@@ -47,8 +48,8 @@ export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '0 8px',
-          height: 32,
+          padding: '0 6px',
+          height: 28,
           background: 'var(--vs-surface)',
           borderBottom: '1px solid var(--vs-border)',
           cursor: isDragging ? 'grabbing' : 'grab',
@@ -56,7 +57,7 @@ export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
           borderRadius: '3px 3px 0 0',
         }}
       >
-        <span style={{ fontSize: '11px', color: 'var(--vs-text-muted)', letterSpacing: '0.03em' }}>
+        <span style={{ fontSize: 'clamp(10px, 2.5vw, 11px)', color: 'var(--vs-text-muted)', letterSpacing: '0.03em' }}>
           {TITLES[game]}
         </span>
         <button
@@ -91,7 +92,7 @@ export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
       </div>
 
       {/* Game content */}
-      <div style={{ padding: '10px' }}>
+      <div style={{ padding: '6px' }}>
         {game === 'snake' && <SnakeGame />}
         {game === 'tetris' && <TetrisGame />}
       </div>

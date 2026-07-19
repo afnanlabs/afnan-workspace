@@ -32,7 +32,7 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
 
 [OK] Typography subsystem loaded.
 [OK] Environment synchronized: Mumbai, India.
-[OK] Workspace ready.
+[OK] Workspace ready. 
                                 
        ▄████▄   ████████  ███    ██▄   ▄████▄   ███    ██▄
       ██▓  ▓██  ██▓       ████   ███  ██▓  ▓██  ████   ███

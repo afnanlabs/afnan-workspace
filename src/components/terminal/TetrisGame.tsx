@@ -252,13 +252,13 @@ export function TetrisGame() {
   }, [dead])
 
   return (
-    <div className="flex gap-3" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>
+    <div className="flex gap-3 flex-wrap" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(10px, 2.5vw, 11px)' }}>
       <div style={{ position: 'relative' }}>
         <canvas
           ref={canvasRef}
           width={COLS * CELL}
           height={ROWS * CELL}
-          style={{ display: 'block', border: '1px solid var(--vs-border)' }}
+          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto' }}
         />
         {dead && (
           <div
@@ -296,7 +296,7 @@ export function TetrisGame() {
             ref={nextCanvasRef}
             width={64}
             height={64}
-            style={{ border: '1px solid var(--vs-border)', display: 'block' }}
+            style={{ border: '1px solid var(--vs-border)', display: 'block', maxWidth: '100%', height: 'auto' }}
           />
         </div>
         <div style={{ color: 'var(--vs-text-muted)' }}>
