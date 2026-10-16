@@ -5,9 +5,13 @@ import {
   TERMINAL_COMMANDS,
   commandOutputs,
   FORTUNES,
+  AFNAN_FILES,
+  PROJECTS_FILES,
+  ASSETS_FILES,
 } from "@/data/content";
 import { useAudio } from "@/hooks/use-audio.ts";
 import { RESUME_URL, downloadResume } from "@/lib/resume";
+import { resolveFileId } from "@/lib/commands";
 import type { ArcadeGame } from "@/App";
 
 interface HistoryEntry {
@@ -25,11 +29,23 @@ function nextId() {
 function processCommand(cmd: string): string | null {
   const trimmed = cmd.trim().toLowerCase();
   if (trimmed === "") return null;
-  if (trimmed === "clear") return "__CLEAR__";
+  if (trimmed === "clear" || trimmed === "reset") return "__CLEAR__";
   if (trimmed === "resume") return "__DOWNLOAD_RESUME__";
   if (trimmed === "sounds") return "__SOUNDS_TOGGLE__";
   if (trimmed === "snake") return "__LAUNCH_SNAKE__";
   if (trimmed === "tetris") return "__LAUNCH_TETRIS__";
+  if (trimmed === "pwd") return "\n/workspace/afnan\n";
+  if (trimmed === "banner") return WELCOME_MESSAGE + "\n";
+
+  if (trimmed === "ls projects" || trimmed === "ls project") {
+    return `\n${PROJECTS_FILES.map((f) => `  ${f.displayName}`).join("\n")}\n\nUse 'code <file>' to open in VS Code, or 'open <name>' for a case study.\n`;
+  }
+  if (trimmed === "ls afnan" || trimmed === "ls profile") {
+    return `\n${AFNAN_FILES.map((f) => `  ${f.displayName}`).join("\n")}\n`;
+  }
+  if (trimmed === "ls assets" || trimmed === "ls asset") {
+    return `\n${ASSETS_FILES.map((f) => `  ${f.displayName}`).join("\n")}\n`;
+  }
   if (trimmed === "fortune") {
     return FORTUNES[Math.floor(Math.random() * FORTUNES.length)];
   }
@@ -77,9 +93,11 @@ function autocomplete(input: string): string {
 
 interface TerminalViewProps {
   onLaunchArcade: (game: ArcadeGame) => void;
+  onOpenInStandard?: (fileId: string) => void;
+  onSwitchMode?: (mode: 'terminal' | 'standard') => void;
 }
 
-export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
+export function TerminalView({ onLaunchArcade, onOpenInStandard, onSwitchMode }: TerminalViewProps) {
   const [entries, setEntries] = useState<HistoryEntry[]>([]);
   const [input, setInput] = useState("");
   const [inputHistory, setInputHistory] = useState<string[]>([]);
@@ -193,6 +211,39 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
       addEntry(cmd, "\nLaunching retro-arcade://tetris...\n");
       onLaunchArcade("tetris");
       return;
+    }
+
+    // cross-view commands
+    if (cmd.toLowerCase() === "terminal" || cmd.toLowerCase() === "term") {
+      onSwitchMode?.('terminal')
+      addEntry(cmd, "\nSwitched to Terminal view.\n")
+      setInput("")
+      setInputHistory((prev) => [cmd, ...prev])
+      return
+    }
+    if (cmd.toLowerCase() === "standard" || cmd.toLowerCase() === "vs" || cmd.toLowerCase() === "vscode") {
+      onSwitchMode?.('standard')
+      addEntry(cmd, "\nSwitched to VS Code view.\n")
+      setInput("")
+      setInputHistory((prev) => [cmd, ...prev])
+      return
+    }
+
+    const codeMatch = cmd.match(/^code\s+(.+)$/i)
+    if (codeMatch) {
+      const fid = resolveFileId(codeMatch[1])
+      if (fid && onOpenInStandard) {
+        onOpenInStandard(fid)
+        addEntry(cmd, `\nOpening ${fid} in VS Code view...\n`)
+        setInput("")
+        setInputHistory((prev) => [cmd, ...prev])
+        return
+      } else {
+        addEntry(cmd, `\nFile not found: ${codeMatch[1].trim()}\n`)
+        setInput("")
+        setInputHistory((prev) => [cmd, ...prev])
+        return
+      }
     }
 
     if (result === null) {
