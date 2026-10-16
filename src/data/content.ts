@@ -33,7 +33,6 @@ export const TERMINAL_COMMANDS = [
   "arcade",
   "whoami",
   "neofetch",
-  "ls",
   "ascii",
   "fortune",
   "cowsay",
@@ -63,7 +62,7 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
      ██  ██  ██████  ██   ██ ██   ██  ███████ ██      ██▓  ▓██  ██████  ████████
                               
   Type 'help' to explore available commands.  
-  Shortcuts: Ctrl+T, Ctrl+E, Alt+F4. Try hidden commands!`;
+  Tip: press Tab to autocomplete · try the hidden commands!`;
 
 export const PROMPT = "afnan@workspace:~$ ";
 
@@ -333,7 +332,7 @@ Portfolio Statistics
 
   Projects          : 10+
   Technologies      : 15+
-  Certificates      : 14
+  Certificates      : 11
   Languages         : 5
   Experience        : 1+ Years
 
@@ -630,20 +629,9 @@ Email      [khanafnan1108@gmail.com]
 LinkedIn   [linkedin.com/in/afnankhan1108-dev]
 GitHub     [github.com/afnanlabs]
 Blog       [afnan-log.vercel.app]
-X          []
 LeetCode   [leetcode.com/afnankhan110805]
 Resume     → resume (downloads PDF)
 `,
-
-  resume: "__DOWNLOAD_RESUME__",
-
-  sounds: "__SOUNDS_TOGGLE__",
-
-  snake: "__LAUNCH_SNAKE__",
-  tetris: "__LAUNCH_TETRIS__",
-  galaga: "__LAUNCH_GALAGA__",
-  pacman: "__LAUNCH_PACMAN__",
-  arcade: "__LAUNCH_ARCADE__",
 };
 
 // Standard view file definitions
@@ -741,12 +729,6 @@ export const PROJECTS_FILES: FileEntry[] = [
 
 export const ASSETS_FILES: FileEntry[] = [
   { id: "resume", name: "resume", extension: "pdf", displayName: "Afnan_Khan_Resume.pdf" },
-  {
-    id: "profile",
-    name: "profile",
-    extension: "webp",
-    displayName: "profile.webp",
-  },
 ];
 
 export const EXPLORER_FOLDERS: FolderEntry[] = [
