@@ -7,7 +7,7 @@ import { useDraggable } from '@/hooks/use-draggable'
 import { ArcadeWindow } from '@/components/terminal/ArcadeWindow'
 
 type Mode = 'terminal' | 'standard'
-export type ArcadeGame = 'snake' | 'tetris' | null
+export type ArcadeGame = 'snake' | 'tetris' | 'galaga' | null
 
 function getInitialMode(): Mode {
   if (typeof window !== 'undefined') {
