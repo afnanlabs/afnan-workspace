@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { useAudio } from '@/hooks/use-audio.ts'
+import { useHighScore } from '@/lib/arcade'
+import { ArcadeDPad, useArcadeSwipe, type ArcadeDir } from './ArcadeControls'
 
 const COLS = 20
 const ROWS = 16
@@ -7,6 +10,8 @@ const TICK_MS = 130
 
 type Dir = 'U' | 'D' | 'L' | 'R'
 type Point = { x: number; y: number }
+
+const DIR_FROM_TOUCH: Record<ArcadeDir, Dir> = { up: 'U', down: 'D', left: 'L', right: 'R' }
 
 function rng(max: number) { return Math.floor(Math.random() * max) }
 
@@ -28,18 +33,45 @@ export function SnakeGame() {
   const nextDir = useRef<Dir>('R')
   const [score, setScore] = useState(0)
   const [dead, setDead] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const [newBest, setNewBest] = useState(false)
   const rafRef = useRef<number | null>(null)
   const lastTickRef = useRef(0)
+  const pausedRef = useRef(false)
+
+  const audio = useAudio()
+  const { best, submit } = useHighScore('snake')
+  const audioRef = useRef(audio)
+  audioRef.current = audio
+  const submitRef = useRef(submit)
+  submitRef.current = submit
+
+  const pushDir = useCallback((d: Dir) => {
+    const cur = stateRef.current.dir
+    const opp: Record<Dir, Dir> = { U: 'D', D: 'U', L: 'R', R: 'L' }
+    if (d !== opp[cur]) nextDir.current = d
+  }, [])
 
   const restart = useCallback(() => {
     stateRef.current = initState()
     nextDir.current = 'R'
+    pausedRef.current = false
+    setPaused(false)
+    setNewBest(false)
     setScore(0)
     setDead(false)
   }, [])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'p' || e.key === 'P' || e.key === 'Escape') {
+        if (stateRef.current.dead) return
+        e.preventDefault()
+        pausedRef.current = !pausedRef.current
+        setPaused(pausedRef.current)
+        lastTickRef.current = 0
+        return
+      }
       const map: Record<string, Dir> = {
         ArrowUp: 'U', w: 'U', W: 'U',
         ArrowDown: 'D', s: 'D', S: 'D',
@@ -49,13 +81,11 @@ export function SnakeGame() {
       const d = map[e.key]
       if (!d) return
       e.preventDefault()
-      const cur = stateRef.current.dir
-      const opp: Record<Dir, Dir> = { U: 'D', D: 'U', L: 'R', R: 'L' }
-      if (d !== opp[cur]) nextDir.current = d
+      pushDir(d)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [])
+  }, [pushDir])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -97,6 +127,11 @@ export function SnakeGame() {
     }
 
     function tick(ts: number) {
+      if (pausedRef.current) {
+        draw()
+        rafRef.current = requestAnimationFrame(tick)
+        return
+      }
       if (ts - lastTickRef.current >= TICK_MS) {
         lastTickRef.current = ts
         const s = stateRef.current
@@ -114,6 +149,8 @@ export function SnakeGame() {
           if (s.snake.some((seg) => seg.x === next.x && seg.y === next.y)) {
             s.dead = true
             setDead(true)
+            audioRef.current.play('gameover')
+            setNewBest(submitRef.current(s.score))
             draw()
             return
           }
@@ -125,6 +162,7 @@ export function SnakeGame() {
             s.apple = newApple(s.snake)
             s.score++
             setScore(s.score)
+            audioRef.current.play('eat')
           }
         }
       }
@@ -136,18 +174,23 @@ export function SnakeGame() {
     return () => { if (rafRef.current !== null) cancelAnimationFrame(rafRef.current) }
   }, [dead])
 
+  const swipe = useArcadeSwipe((dir) => pushDir(DIR_FROM_TOUCH[dir]))
+
   return (
     <div className="flex flex-col items-center gap-2" style={{ fontFamily: 'var(--font-mono)' }}>
       <div className="flex w-full justify-between items-center px-1" style={{ fontSize: 'clamp(10px, 2.5vw, 11px)', color: 'var(--vs-text-muted)' }}>
-        <span>WASD / Arrows to move</span>
-        <span style={{ color: 'var(--vs-accent)' }}>score: {score}</span>
+        <span>WASD / Arrows to move · P pause</span>
+        <span>
+          <span style={{ color: 'var(--vs-accent)' }}>score: {score}</span>
+          <span style={{ marginLeft: 10, color: '#7cc36b' }}>best: {best}</span>
+        </span>
       </div>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative' }} {...swipe}>
         <canvas
           ref={canvasRef}
           width={COLS * CELL}
           height={ROWS * CELL}
-          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto' }}
+          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto', touchAction: 'none' }}
         />
         {dead && (
           <div
@@ -162,7 +205,8 @@ export function SnakeGame() {
             }}
           >
             <div style={{ fontSize: '15px', color: '#e74c3c', letterSpacing: '0.1em' }}>GAME OVER</div>
-            <div style={{ fontSize: '12px', color: 'var(--vs-text-muted)' }}>score: {score}</div>
+            {newBest && <div style={{ fontSize: '12px', color: '#7cc36b', letterSpacing: '0.08em' }}>★ NEW BEST</div>}
+            <div style={{ fontSize: '12px', color: 'var(--vs-text-muted)' }}>score: {score} · best: {best}</div>
             <button
               onClick={restart}
               style={{
@@ -181,7 +225,22 @@ export function SnakeGame() {
             </button>
           </div>
         )}
+        {paused && !dead && (
+          <div
+            style={{
+              position: 'absolute', inset: 0,
+              background: 'rgba(0,0,0,0.6)',
+              display: 'flex', flexDirection: 'column',
+              alignItems: 'center', justifyContent: 'center', gap: 6,
+              fontFamily: 'var(--font-mono)', color: 'var(--vs-text)',
+            }}
+          >
+            <div style={{ fontSize: '15px', color: 'var(--vs-accent)', letterSpacing: '0.2em' }}>PAUSED</div>
+            <div style={{ fontSize: '11px', color: 'var(--vs-text-muted)' }}>press P to resume</div>
+          </div>
+        )}
       </div>
+      <ArcadeDPad onDirection={(dir) => pushDir(DIR_FROM_TOUCH[dir])} />
     </div>
   )
 }
