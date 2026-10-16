@@ -5,6 +5,7 @@ import { StandardView } from '@/components/standard/StandardView'
 import { CursorManager } from '@/hooks/use-cursor.tsx'
 import { useDraggable } from '@/hooks/use-draggable'
 import { ArcadeWindow } from '@/components/terminal/ArcadeWindow'
+import { track } from '@/lib/analytics'
 
 type Mode = 'terminal' | 'standard'
 export type ArcadeGame = 'arcade' | 'snake' | 'tetris' | 'galaga' | 'pacman' | null
@@ -78,6 +79,14 @@ export function App() {
     setMode('standard')
     updateHash({ mode: 'standard', file: fid })
   }
+
+  useEffect(() => {
+    track('mode_change', { mode })
+  }, [mode])
+
+  useEffect(() => {
+    if (arcadeGame) track('arcade_open', { game: arcadeGame })
+  }, [arcadeGame])
 
   return (
     <div className="app-canvas">
