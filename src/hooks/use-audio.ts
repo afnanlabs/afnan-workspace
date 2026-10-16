@@ -1,6 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-type SoundType = 'fileOpen' | 'tabSwitch' | 'commandExecute' | 'folderToggle' | 'themeToggle' | 'error'
+type SoundType =
+  | 'fileOpen'
+  | 'tabSwitch'
+  | 'commandExecute'
+  | 'folderToggle'
+  | 'themeToggle'
+  | 'error'
+  // Retro-arcade cues
+  | 'eat'
+  | 'shoot'
+  | 'hit'
+  | 'explode'
+  | 'clear'
+  | 'powerup'
+  | 'gameover'
 
 const STORAGE_KEY = 'afnan-portfolio-sounds'
 
@@ -24,6 +38,14 @@ function playSound(ctx: AudioContext, type: SoundType) {
     folderToggle: { freq: 550, duration: 0.03, type: 'triangle', volume: 0.07 },
     themeToggle: { freq: 770, duration: 0.08, type: 'sine', volume: 0.1 },
     error: { freq: 220, duration: 0.1, type: 'sawtooth', volume: 0.08 },
+    // Arcade cues — short, chiptune-flavoured blips.
+    eat: { freq: 620, duration: 0.05, type: 'square', volume: 0.05 },
+    shoot: { freq: 940, duration: 0.05, type: 'square', volume: 0.05 },
+    hit: { freq: 360, duration: 0.07, type: 'square', volume: 0.06 },
+    explode: { freq: 160, duration: 0.18, type: 'sawtooth', volume: 0.09 },
+    clear: { freq: 780, duration: 0.1, type: 'triangle', volume: 0.07 },
+    powerup: { freq: 520, duration: 0.16, type: 'sine', volume: 0.08 },
+    gameover: { freq: 180, duration: 0.32, type: 'sawtooth', volume: 0.1 },
   }
 
   const profile = profiles[type]
