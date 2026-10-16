@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import {
   FolderOpen,
   Search,
@@ -6,17 +6,25 @@ import {
   Package,
   User,
   Settings,
-  AlertCircle,
-  AlertTriangle,
-  RefreshCw,
   FileCode2,
 } from "lucide-react";
-import { AFNAN_FILES, ALL_FILES, PROJECTS_FILES } from "@/data/content";
+import { AFNAN_FILES, ALL_FILES, PROJECTS_FILES, fileContents } from "@/data/content";
 import { Explorer, TabBar, EditorContent, fileIcon } from "./EditorComponents";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useAudio } from "@/hooks/use-audio.ts";
+import { downloadResume } from "@/lib/resume";
+import { Menubar } from "./Menubar";
+import { SearchPanel } from "./SearchPanel";
+import { SettingsPanel } from "./SettingsPanel";
+import { StatusBar } from "./StatusBar";
 
-type ActivitySection = "files" | "search" | "git" | "extensions";
+// The command palette pulls in cmdk, so it is code-split and only fetched the
+// first time the user actually opens it (Ctrl+Shift+P).
+const CommandPalette = lazy(() =>
+  import("./CommandPalette").then((m) => ({ default: m.CommandPalette })),
+);
+
+type ActivitySection = "files" | "search" | "git" | "extensions" | "settings";
 
 const DEFAULT_FILE = "profile";
 
@@ -27,6 +35,7 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
   const [activeSection, setActiveSection] = useState<ActivitySection>("files");
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showQuickOpen, setShowQuickOpen] = useState(false);
+  const [showPalette, setShowPalette] = useState(false);
   const audio = useAudio();
 
   useEffect(() => {
@@ -41,9 +50,38 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "p") {
+      const mod = e.ctrlKey || e.metaKey;
+      if (!mod) return;
+      const key = e.key.toLowerCase();
+      if (e.shiftKey && key === "p") {
+        e.preventDefault();
+        setShowPalette((v) => !v);
+      } else if (e.shiftKey && key === "f") {
+        e.preventDefault();
+        setActiveSection("search");
+        setSidebarOpen(true);
+      } else if (e.shiftKey && key === "e") {
+        e.preventDefault();
+        setActiveSection("files");
+        setSidebarOpen(true);
+      } else if (e.shiftKey && key === "g") {
+        e.preventDefault();
+        setActiveSection("git");
+        setSidebarOpen(true);
+      } else if (e.shiftKey && key === "x") {
+        e.preventDefault();
+        setActiveSection("extensions");
+        setSidebarOpen(true);
+      } else if (key === "p") {
         e.preventDefault();
         setShowQuickOpen((v) => !v);
+      } else if (key === "b") {
+        e.preventDefault();
+        setSidebarOpen((v) => !v);
+      } else if (e.key === ",") {
+        e.preventDefault();
+        setActiveSection("settings");
+        setSidebarOpen(true);
       }
     }
     window.addEventListener("keydown", onKey);
@@ -85,6 +123,11 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
   }
 
   const activeFileEntry = ALL_FILES.find((f) => f.id === activeFile);
+  const activeLineCount = activeFile
+    ? (fileContents[activeFile]?.split("\n").length ?? 0)
+    : undefined;
+
+  const switchToTerminal = () => onOpenInTerminal?.();
 
   return (
     <div
@@ -92,7 +135,33 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
       style={{ background: "var(--vs-bg)" }}
     >
       {/* Menubar */}
-      <Menubar />
+      <Menubar
+        onQuickOpen={() => setShowQuickOpen(true)}
+        onCommandPalette={() => setShowPalette(true)}
+        onToggleSidebar={() => setSidebarOpen((v) => !v)}
+        onOpenExplorer={() => {
+          setActiveSection("files");
+          setSidebarOpen(true);
+        }}
+        onOpenSearch={() => {
+          setActiveSection("search");
+          setSidebarOpen(true);
+        }}
+        onOpenSourceControl={() => {
+          setActiveSection("git");
+          setSidebarOpen(true);
+        }}
+        onOpenExtensions={() => {
+          setActiveSection("extensions");
+          setSidebarOpen(true);
+        }}
+        onOpenSettings={() => {
+          setActiveSection("settings");
+          setSidebarOpen(true);
+        }}
+        onSwitchToTerminal={switchToTerminal}
+        onDownloadResume={() => downloadResume()}
+      />
 
       {/* Main row: Activity Bar + Sidebar + Editor */}
       <div className="flex flex-1 overflow-hidden">
@@ -111,6 +180,10 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
               onFileOpen={() => audio.play("fileOpen")}
               onFolderToggle={() => audio.play("folderToggle")}
             />
+          ) : activeSection === "search" ? (
+            <SearchPanel onFileSelect={openFile} />
+          ) : activeSection === "settings" ? (
+            <SettingsPanel onSwitchToTerminal={switchToTerminal} />
           ) : (
             <PlaceholderPanel section={activeSection} />
           ))}
@@ -147,45 +220,37 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
         />
       )}
 
+      {showPalette && (
+        <Suspense fallback={null}>
+          <CommandPalette
+            open
+            onClose={() => setShowPalette(false)}
+            onOpenFile={openFile}
+            onOpenSearch={() => {
+              setActiveSection("search");
+              setSidebarOpen(true);
+            }}
+            onOpenExplorer={() => {
+              setActiveSection("files");
+              setSidebarOpen(true);
+            }}
+            onOpenExtensions={() => {
+              setActiveSection("extensions");
+              setSidebarOpen(true);
+            }}
+            onOpenSettings={() => {
+              setActiveSection("settings");
+              setSidebarOpen(true);
+            }}
+            onSwitchToTerminal={switchToTerminal}
+            onToggleSidebar={() => setSidebarOpen((v) => !v)}
+            onDownloadResume={() => downloadResume()}
+          />
+        </Suspense>
+      )}
+
       {/* Status Bar — full width at bottom */}
-      <StatusBar extension={activeFileEntry?.extension} />
-    </div>
-  );
-}
-
-// ─── Menubar ───────────────────────────────────────────────────────────────────
-
-function Menubar() {
-  const items = ["File", "Edit", "View", "Go", "Run", "Terminal", "Help"];
-
-  return (
-    <div
-      className="flex items-center shrink-0 border-b select-none"
-      style={{
-        height: 22,
-        background: "var(--vs-surface)",
-        borderColor: "var(--vs-border)",
-        paddingLeft: 4,
-        fontFamily: "var(--font-sans)",
-        fontSize: "12px",
-      }}
-    >
-      {items.map((item) => (
-        <button
-          key={item}
-          className="px-2 h-full hover:opacity-80 transition-opacity"
-          style={{
-            color: "var(--vs-text-muted)",
-            background: "transparent",
-            border: "none",
-            cursor: "pointer",
-            fontFamily: "var(--font-sans)",
-            fontSize: "12px",
-          }}
-        >
-          {item}
-        </button>
-      ))}
+      <StatusBar extension={activeFileEntry?.extension} lineCount={activeLineCount} />
     </div>
   );
 }
@@ -241,8 +306,8 @@ function ActivityBar({ activeSection, onSectionClick }: ActivityBarProps) {
         />
         <ActivityButton
           icon={<Settings size={22} />}
-          isActive={false}
-          onClick={() => {}}
+          isActive={activeSection === "settings"}
+          onClick={() => onSectionClick("settings")}
           title="Settings"
         />
       </div>
@@ -398,6 +463,7 @@ function PlaceholderPanel({ section }: { section: ActivitySection }) {
     search: "Search",
     git: "Source Control",
     extensions: "Extensions",
+    settings: "Settings",
   };
 
   return (
@@ -430,94 +496,6 @@ function PlaceholderPanel({ section }: { section: ActivitySection }) {
         <span style={{ opacity: 0.5 }}>No content yet</span>
       </div>
     </div>
-  );
-}
-
-// ─── Status Bar ───────────────────────────────────────────────────────────────
-
-function StatusBar({ extension }: { extension?: string }) {
-  const langMap: Record<string, string> = {
-    md: "Markdown",
-    ts: "TypeScript",
-    json: "JSON",
-    pdf: "PDF",
-    webp: "Image",
-  };
-  const lang = extension ? (langMap[extension] ?? "Plain Text") : "Plain Text";
-
-  return (
-    <div
-      className="flex items-center shrink-0 select-none overflow-x-auto"
-      style={{
-        height: 22,
-        background: "var(--vs-status-bar)",
-        color: "#FFFFFF",
-        fontFamily: "var(--font-mono)",
-        fontSize: "11px",
-        paddingLeft: 8,
-        paddingRight: 8,
-        gap: 0,
-        whiteSpace: "nowrap",
-      }}
-    >
-      {/* Left cluster */}
-      <StatusItem>
-        <GitBranch size={11} style={{ flexShrink: 0 }} />
-        <span>main</span>
-      </StatusItem>
-      <StatusItem>
-        <RefreshCw size={10} style={{ flexShrink: 0 }} />
-        <span>0↓ 0↑</span>
-      </StatusItem>
-
-      {/* Spacer */}
-      <div style={{ flex: 1 }} />
-
-      {/* Right cluster */}
-      <StatusItem>
-        <AlertCircle size={10} style={{ flexShrink: 0 }} />
-        <span>0</span>
-        <AlertTriangle size={10} style={{ flexShrink: 0, marginLeft: 4 }} />
-        <span>0</span>
-      </StatusItem>
-      <StatusDivider />
-      <StatusItem>Ln 1, Col 1</StatusItem>
-      <StatusDivider />
-      <StatusItem>Spaces: 2</StatusItem>
-      <StatusDivider />
-      <StatusItem>UTF-8</StatusItem>
-      <StatusDivider />
-      <StatusItem>LF</StatusItem>
-      <StatusDivider />
-      <StatusItem style={{ color: "rgba(255,255,255,0.95)", fontWeight: 500 }}>
-        {lang}
-      </StatusItem>
-    </div>
-  );
-}
-
-function StatusItem({
-  children,
-  style,
-}: {
-  children: React.ReactNode;
-  style?: React.CSSProperties;
-}) {
-  return (
-    <div
-      className="flex items-center gap-1 px-2 h-full hover:bg-white/10 transition-colors cursor-default"
-      style={{ fontSize: "11px", ...style }}
-    >
-      {children}
-    </div>
-  );
-}
-
-function StatusDivider() {
-  return (
-    <div
-      style={{ width: 1, height: 12, background: "rgba(255,255,255,0.2)" }}
-    />
   );
 }
 
