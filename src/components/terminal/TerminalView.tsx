@@ -12,6 +12,7 @@ import {
 import { useAudio } from "@/hooks/use-audio.ts";
 import { RESUME_URL, downloadResume } from "@/lib/resume";
 import { resolveFileId } from "@/lib/commands";
+import { ARCADE_GAMES, ARCADE_GAME_LABELS, getAllHighScores } from "@/lib/arcade";
 import type { ArcadeGame } from "@/App";
 
 interface HistoryEntry {
@@ -37,6 +38,7 @@ function processCommand(cmd: string): string | null {
   if (trimmed === "galaga") return "__LAUNCH_GALAGA__";
   if (trimmed === "pacman") return "__LAUNCH_PACMAN__";
   if (trimmed === "arcade") return "__LAUNCH_ARCADE__";
+  if (trimmed === "scores") return "__SHOW_SCORES__";
   if (trimmed === "pwd") return "\n/workspace/afnan\n";
   if (trimmed === "banner") return WELCOME_MESSAGE + "\n";
 
@@ -231,6 +233,18 @@ export function TerminalView({ onLaunchArcade, onOpenInStandard, onSwitchMode }:
     if (result === "__LAUNCH_ARCADE__") {
       addEntry(cmd, "\nOpening retro-arcade://arcade...\n");
       onLaunchArcade("arcade");
+      return;
+    }
+
+    if (result === "__SHOW_SCORES__") {
+      const scores = getAllHighScores();
+      const body = ARCADE_GAMES.map(
+        (g) => `  ${ARCADE_GAME_LABELS[g].padEnd(10)}${scores[g] > 0 ? scores[g] : "—"}`,
+      ).join("\n");
+      addEntry(
+        cmd,
+        `\nRetro Arcade — Personal Bests\n\n${body}\n\nPlay with 'arcade' to open the lobby.\n`,
+      );
       return;
     }
 
