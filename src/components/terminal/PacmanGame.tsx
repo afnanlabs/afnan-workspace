@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { useAudio } from '@/hooks/use-audio.ts'
+import { useHighScore } from '@/lib/arcade'
+import { ArcadeDPad, useArcadeSwipe } from './ArcadeControls'
 
 // ---------------------------------------------------------------------------
 // Layout
@@ -199,16 +202,37 @@ export function PacmanGame() {
   const [lives, setLives] = useState(3)
   const [level, setLevel] = useState(1)
   const [dead, setDead] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const [newBest, setNewBest] = useState(false)
+  const pausedRef = useRef(false)
+
+  const audio = useAudio()
+  const { best, submit } = useHighScore('pacman')
+  const audioRef = useRef(audio)
+  audioRef.current = audio
+  const submitRef = useRef(submit)
+  submitRef.current = submit
 
   if (!stateRef.current) stateRef.current = initState(performance.now())
 
   const restart = useCallback(() => {
     stateRef.current = initState(performance.now())
     lastScoreRef.current = 0
+    pausedRef.current = false
+    setPaused(false)
+    setNewBest(false)
     setScore(0)
     setLives(3)
     setLevel(1)
     setDead(false)
+  }, [])
+
+  const pushDir = useCallback((dir: Dir) => {
+    const s = stateRef.current
+    if (s) {
+      s.pac.desired = dir
+      s.pac.moving = true
+    }
   }, [])
 
   // ---- keyboard ----
@@ -218,6 +242,16 @@ export function PacmanGame() {
       w: 'up', s: 'down', a: 'left', d: 'right', W: 'up', S: 'down', A: 'left', D: 'right',
     }
     const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'p' || e.key === 'P' || e.key === 'Escape') {
+        const s = stateRef.current
+        if (!s || s.dead) return
+        e.preventDefault()
+        pausedRef.current = !pausedRef.current
+        setPaused(pausedRef.current)
+        s.lastTs = 0
+        return
+      }
+      if (pausedRef.current) return
       const dir = map[e.key]
       if (dir) {
         e.preventDefault()
@@ -292,12 +326,14 @@ export function PacmanGame() {
         s.grid[ty][tx] = ' '
         s.pellets--
         s.score += DOT_POINTS
+        audioRef.current.play('eat')
       } else if (ch === 'o') {
         s.grid[ty][tx] = ' '
         s.pellets--
         s.score += POWER_POINTS
         s.frightUntil = now + Math.max(3500, FRIGHT_MS - (s.level - 1) * 600)
         s.combo = 0
+        audioRef.current.play('powerup')
         s.ghosts.forEach((g) => {
           if (g.state !== 'eaten') {
             g.state = 'frightened'
@@ -404,9 +440,12 @@ export function PacmanGame() {
     function loseLife(s: GameState, now: number) {
       s.lives--
       setLives(s.lives)
+      audioRef.current.play('explode')
       if (s.lives <= 0) {
         s.dead = true
         setDead(true)
+        audioRef.current.play('gameover')
+        setNewBest(submitRef.current(s.score))
       } else {
         resetPositions(s, now)
       }
@@ -443,6 +482,7 @@ export function PacmanGame() {
             s.score += pts
             g.state = 'eaten'
             g.lastTile = ''
+            audioRef.current.play('hit')
           } else if (g.state === 'normal') {
             loseLife(s, now)
             break
@@ -596,6 +636,11 @@ export function PacmanGame() {
     function tick(ts: number) {
       const s = stateRef.current!
       if (s.dead) { draw(s, ts); return }
+      if (pausedRef.current) {
+        draw(s, ts)
+        raf = requestAnimationFrame(tick)
+        return
+      }
       const dt = s.lastTs ? Math.min(50, ts - s.lastTs) / 1000 : 1 / 60
       s.lastTs = ts
 
@@ -613,14 +658,16 @@ export function PacmanGame() {
     return () => { if (raf !== null) cancelAnimationFrame(raf) }
   }, [dead])
 
+  const swipe = useArcadeSwipe((dir) => pushDir(dir))
+
   return (
     <div className="flex gap-3 flex-wrap" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(10px, 2.5vw, 11px)' }}>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative' }} {...swipe}>
         <canvas
           ref={canvasRef}
           width={W}
           height={H}
-          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto' }}
+          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto', touchAction: 'none' }}
         />
         {dead && (
           <div
@@ -633,7 +680,8 @@ export function PacmanGame() {
             }}
           >
             <div style={{ fontSize: '14px', color: '#ef9a9a', letterSpacing: '0.1em' }}>GAME OVER</div>
-            <div style={{ color: 'var(--vs-text-muted)', fontSize: '11px' }}>score: {score}</div>
+            {newBest && <div style={{ fontSize: '11px', color: '#7cc36b', letterSpacing: '0.08em' }}>★ NEW BEST</div>}
+            <div style={{ color: 'var(--vs-text-muted)', fontSize: '11px' }}>score: {score} · best: {best}</div>
             <button
               onClick={restart}
               style={{
@@ -649,12 +697,30 @@ export function PacmanGame() {
             </button>
           </div>
         )}
+        {paused && !dead && (
+          <div
+            style={{
+              position: 'absolute', inset: 0,
+              background: 'rgba(0,0,0,0.6)',
+              display: 'flex', flexDirection: 'column',
+              alignItems: 'center', justifyContent: 'center', gap: 6,
+              fontFamily: 'var(--font-mono)', color: 'var(--vs-text)',
+            }}
+          >
+            <div style={{ fontSize: '15px', color: 'var(--vs-accent)', letterSpacing: '0.2em' }}>PAUSED</div>
+            <div style={{ fontSize: '11px', color: 'var(--vs-text-muted)' }}>press P to resume</div>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col gap-3" style={{ minWidth: 72 }}>
         <div style={{ color: 'var(--vs-text-muted)' }}>
           <div>SCORE</div>
           <div style={{ color: 'var(--vs-accent)', fontSize: '13px' }}>{score}</div>
+        </div>
+        <div style={{ color: 'var(--vs-text-muted)' }}>
+          <div>BEST</div>
+          <div style={{ color: '#7cc36b', fontSize: '13px' }}>{best}</div>
         </div>
         <div style={{ color: 'var(--vs-text-muted)' }}>
           <div>LEVEL</div>
@@ -670,7 +736,11 @@ export function PacmanGame() {
           <div>eat power</div>
           <div>pellets to</div>
           <div>hunt ghosts</div>
+          <div>P pause</div>
         </div>
+      </div>
+      <div style={{ flexBasis: '100%' }}>
+        <ArcadeDPad onDirection={(dir) => pushDir(dir)} />
       </div>
     </div>
   )
