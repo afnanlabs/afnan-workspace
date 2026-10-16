@@ -4,6 +4,7 @@ import { useDraggable } from '@/hooks/use-draggable'
 import { SnakeGame } from './SnakeGame'
 import { TetrisGame } from './TetrisGame'
 import { GalagaGame } from './GalagaGame'
+import { PacmanGame } from './PacmanGame'
 import type { ArcadeGame } from '@/App'
 
 interface ArcadeWindowProps {
@@ -15,6 +16,7 @@ const TITLES: Record<NonNullable<ArcadeGame>, string> = {
   snake: 'retro-arcade://snake',
   tetris: 'retro-arcade://tetris',
   galaga: 'retro-arcade://galaga',
+  pacman: 'retro-arcade://pacman',
 }
 
 export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
@@ -98,6 +100,7 @@ export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
         {game === 'snake' && <SnakeGame />}
         {game === 'tetris' && <TetrisGame />}
         {game === 'galaga' && <GalagaGame />}
+        {game === 'pacman' && <PacmanGame />}
       </div>
     </div>
   )
