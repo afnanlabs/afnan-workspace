@@ -249,8 +249,8 @@ uid=1000(afnan)
 gid=1000(developers)
 groups=4(adm),24(cdrom),27(sudo),46(plugdev),1000(developers)
 
-Role:      Full Stack Engineer
-Location:  Mumbai, India
+Role:      Full Stack Developer Intern
+Location:  Andheri, Mumbai
 Focus:     Full-Stack Development & Developer Tools
 
 → Run 'about' for full profile
@@ -262,7 +262,7 @@ Focus:     Full-Stack Development & Developer Tools
        .o88888888.        Host:        portfolio.local
       o8888888888888.     Shell:       afnan-sh
       88888888888888P'    Role:        Full Stack Developer
-      '988888888888'      Location:    Mumbai, India
+      '988888888888'      Location:    Andheri, Mumbai
          'Y888P'          Stack:       JavaScript · TypeScript · React · Node.js
             '             Tools:       Git · Docker · Postman · Burp Suite · Jira
                           Focus:       Developer Tools & Practical Software
@@ -274,7 +274,7 @@ Focus:     Full-Stack Development & Developer Tools
   about: `
 Afnan Khan
 
-Full Stack Developer Intern · Mumbai, India
+Full Stack Developer Intern · Andheri, Mumbai
 
 I build software that solves real problems — productivity systems, developer tooling, and full-stack web applications with deliberate architecture.
 
@@ -282,7 +282,7 @@ My focus is systems thinking: understanding why a problem exists before deciding
 
 Currently deepening: backend architecture, database design, and building tools developers actually want to use.
 
-2+ years building. 10+ shipped products. Always learning.
+2+ years building. 6+ featured projects. Always learning.
 
 → experience    → projects    → contact
 `,
@@ -341,21 +341,15 @@ Error: Coffee machine not connected ☕
 `,
 
   experience: `
-Full-Stack Developer Intern | Marcos Quay Sporting Excellence Pvt Ltd
+Full Stack Developer Intern | Marcos Quay Sporting Excellence Pvt Ltd
 Period: July 2026 - Oct 2026
-Location: Mumbai, India
+Location: Andheri, Mumbai
 
-• Led the Human Resources Management System (HRMS) project as the sole developer,
-developing recruitment automation functionality to enable HR to manage hiring workflows and track
-candidates throughout the recruitment process.
-• Contributed to the company’s main website-to-mobile conversion project, implementing and integrating
-mobile app features with existing authentication APIs and navigation workflows.
-• Developed and maintained full-stack features across HRMS, Coach, School Management, and
-administrative platforms using Vue.js, Node.js, Express.js, MariaDB/MySQL, and REST APIs.
-• Resolved 15+ bugs and integration issues through systematic debugging, SQL analysis, and backend
-troubleshooting.
-• Delivered PDF generation, email automation, responsive UI improvements, and role-based
-administrative workflows across internal applications.`,
+• Led the Human Resources Management System (HRMS) project as the sole developer, developing recruitment automation functionality to enable HR to manage hiring workflows and track candidates throughout the recruitment process.
+• Contributed to the company’s main website-to-mobile conversion project, implementing and integrating mobile app features with existing authentication APIs and navigation workflows.
+• Developed and maintained full-stack features across HRMS, Coach, School Management, and administrative platforms using Vue.js, Node.js, Express.js, MariaDB/MySQL, and REST APIs.
+• Resolved 15+ bugs and integration issues through systematic debugging, SQL analysis, and backend troubleshooting.
+• Delivered PDF generation, email automation, responsive UI improvements, and role-based administrative workflows across internal applications.`,
 
   projects: `
 Active Project Repositories & Software Implementations
