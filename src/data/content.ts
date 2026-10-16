@@ -266,7 +266,7 @@ Focus:     Full-Stack Development & Developer Tools
   about: `
 Afnan Khan
 
-Full Stack Engineer · Mumbai, India
+Full Stack Developer Intern · Mumbai, India
 
 I build software that solves real problems — productivity systems, developer tooling, and full-stack web applications with deliberate architecture.
 
@@ -332,18 +332,21 @@ Error: Coffee machine not connected ☕
 `,
 
   experience: `
-Full-Stack Software Engineer | Self-Directed Architecture
-Period: 2024 – Present
+Full-Stack Developer Intern | Marcos Quay Sporting Excellence Pvt Ltd
+Period: July 2026 - Oct 2026
 Location: Mumbai, India
 
-• Architected modular full-stack web architectures utilizing modern tech stacks 
-  including React, TypeScript and procedural PHP with MySQL backends.
-• Engineered a secure academic productivity engine featuring custom Role-Based 
-  Access Control (RBAC) and third-party Google OAuth integration.
-• Designed fully normalized relational database schemas down to Third Normal Form 
-  (3NF) to enforce high data integrity and optimize execution runtime.
-• Managed local codebases systematically using Git version control, implementing 
-  atomic commits and descriptive documentation practices.`,
+• Led the Human Resources Management System (HRMS) project as the sole developer,
+developing recruitment automation functionality to enable HR to manage hiring workflows and track
+candidates throughout the recruitment process.
+• Contributed to the company’s main website-to-mobile conversion project, implementing and integrating
+mobile app features with existing authentication APIs and navigation workflows.
+• Developed and maintained full-stack features across HRMS, Coach, School Management, and
+administrative platforms using Vue.js, Node.js, Express.js, MariaDB/MySQL, and REST APIs.
+• Resolved 15+ bugs and integration issues through systematic debugging, SQL analysis, and backend
+troubleshooting.
+• Delivered PDF generation, email automation, responsive UI improvements, and role-based
+administrative workflows across internal applications.`,
 
   projects: `
 Active Project Repositories & Software Implementations
@@ -354,12 +357,24 @@ Active Project Repositories & Software Implementations
 • Execution Parameter: Type 'open thinktrack' to audit the full structural lifecycle logs.
  → open thinktrack
 
+ Afnkit — Express-Inspired HTTP Framework
+• Engineered Afnkit, an original Express-inspired HTTP framework in strict TypeScript on Node.js
+native HTTP APIs with zero runtime dependencies, using a layered Application / Router /
+Route / Layer architecture driven by a single next() dispatch closure.
+• Implemented method-aware routing and ordered middleware chaining via next() that runs exactly
+one handler per call, with error propagation for synchronous throws and rejected async handlers and
+deliberate 404, 405 (with Allow), and 500 responses.
+• Built developer-facing res.status(), res.send(), and res.json() helpers with correct content types and
+per-request request/response prototype extension, plus 31 automated tests authored with Node’s
+built-in node:test against real HTTP servers; published on npm as afnkit@0.1.0 (npm i afnkit).
 
  CodeGlow — Persistent Visual Code Highlighting Workspace Extension
-• Architecture Focus: Content Hashing Algorithms, State Sync, Extension Engine Lifecycles
-• Core Stack: TypeScript, Node.js runtime environment, VS Code Extension Engine API
-• Execution Parameter: Type 'open codeglow' to audit the full structural lifecycle logs.
- → open codeglow
+• Developed a TypeScript VS Code extension providing persistent color-coded code annotations through
+native Command Palette and editor context menu integrations.
+• Engineered highlight tracking using serialized range data structures and VS Code event APIs, maintaining
+annotation accuracy across code edits and undo/redo operations.
+• Built a lightweight architecture using the VS Code Decoration API with zero backend dependencies and
+packaged the extension as a production-ready VSIX build.
 `,
 
   "open thinktrack": `
@@ -406,13 +421,34 @@ Core Architectural Decisions:
 Key Engineering Metrics & Learnings:
 While extensible editor APIs are incredibly powerful, managing state mutations across a running editor viewport lifecycle has distinct performance constraints. Building direct developer tooling means your core audience notices every microsecond of rendering layout latency immediately.
 `,
+  "open afnkit": `
+────────────────────────────────────────────────────────────────────────────────────────
+Afnkit — Express-Inspired HTTP Framework
+────────────────────────────────────────────────────────────────────────────────────────
+
+The Problem Space:
+Express is the de-facto standard for Node HTTP servers, yet its middleware pipeline, routing, and error propagation are effectively a black box to anyone learning backend engineering. At the other extreme, Node's native http module is honest but low-level — every project re-implements routing, method dispatch, and response helpers from scratch. Developers are stuck choosing between "too magic" and "too raw," with no readable, type-safe middle ground.
+
+The Engineered Solution:
+An original HTTP framework that faithfully reproduces Express's programming model — the express() factory, app.get / app.post / app.use, a real next() middleware chain, and Router / Layer / Route — built directly on Node's native http APIs in strict TypeScript. The entire request lifecycle is explicit and type-checked, so the framework doubles as a working server and a reference implementation of how Express-style routing actually works.
+
+Source Registry: [github.com/afnanlabs/afnkit-core]
+
+Core Architectural Decisions:
+- Explicit middleware advancement over nested callbacks. Middleware is modeled as a linear Layer stack advanced by a next() function, making request flow — including the transition into error-handling layers — deterministic and individually testable. This design also exposes and fixes the classic "handler forgets to call next()" failure mode where a request hangs.
+- Correct HTTP semantics at the router boundary. The router distinguishes path existence from method support, returning 404 for unknown paths but 405 Method Not Allowed with a proper Allow header when a path exists without the requested method — instead of collapsing both cases into 404.
+- Prototype enrichment instead of wrapper objects. Node's IncomingMessage / ServerResponse are augmented via prototype chaining (Object.setPrototypeOf) to add status(), send(), and json() helpers plus correct content handling (Content-Length, Buffer → application/octet-stream) — no wrapping or copying, so native performance and object identity are preserved.
+
+Key Engineering Metrics & Learnings:
+Achieved zero runtime dependencies (TypeScript and @types/node are dev-only), compiled under strict TypeScript with no any or @ts-ignore, and validated by 31 tests written against Node's native node:test runner — no test framework dependency. The package is MIT-licensed and containerized with a multi-stage, non-root Docker image. Building an API that other developers compose on top of turns every "edge case" into a contract you must honor; a forensic audit that surfaced and fixed nine latent defects (method dispatch, hang-on-missing-route, double-send, error-handler arity, and more) demonstrated just how much real correctness lives in the seams between abstractions.
+`,
 
   skills: `
 Frontend
   HTML5 · CSS3 · JavaScript · TypeScript · React · Tailwind CSS
 
 Backend
-  REST APIs · PHP
+  REST APIs · 
 
 Database
   MySQL

@@ -7,6 +7,7 @@ import {
   FORTUNES,
 } from "@/data/content";
 import { useAudio } from "@/hooks/use-audio.ts";
+import { RESUME_URL, downloadResume } from "@/lib/resume";
 import type { ArcadeGame } from "@/App";
 
 interface HistoryEntry {
@@ -168,10 +169,7 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
     }
 
     if (result === "__DOWNLOAD_RESUME__") {
-      const a = document.createElement("a");
-      a.href = "/resume.pdf";
-      a.download = "AfnanKhan_Resume.pdf";
-      a.click();
+      downloadResume();
       addEntry(cmd, "\nDownloading resume...\n");
       return;
     }
@@ -461,7 +459,7 @@ export function TerminalView({ onLaunchArcade }: TerminalViewProps) {
           © Afnan Khan | All rights reserved
         </span>
         <a
-          href="/resume.pdf"
+          href={RESUME_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:opacity-80 transition-opacity ml-1 shrink-0"

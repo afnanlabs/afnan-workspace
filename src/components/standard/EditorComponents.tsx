@@ -9,6 +9,7 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
+import { downloadResume } from "@/lib/resume";
 import {
   EXPLORER_FOLDERS,
   ALL_FILES,
@@ -124,10 +125,7 @@ export function Explorer({
                     isActive={file.id === activeFile}
                     onClick={() => {
                       if (file.extension === "pdf") {
-                        const a = document.createElement("a");
-                        a.href = "/resume.pdf";
-                        a.download = "AfnanKhan_Resume.pdf";
-                        a.click();
+                        downloadResume();
                       } else if (file.extension !== "webp") {
                         onFileSelect(file.id);
                         onFileOpen?.(file.id);

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Sun, Moon, Download } from 'lucide-react'
 import { useTheme } from '@/components/theme-provider'
 import { useAudio } from '@/hooks/use-audio.ts'
+import { RESUME_URL } from '@/lib/resume'
 
 interface HeaderProps {
   mode: 'terminal' | 'standard'
@@ -116,7 +117,7 @@ export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderPr
 
         {/* Resume download — hidden on tiny screens */}
         <span className="hidden sm:inline">
-          <IconButton as="a" href="/resume.pdf" download title="Download resume">
+          <IconButton as="a" href={RESUME_URL} download title="Download resume">
             <Download size={14} />
           </IconButton>
         </span>
