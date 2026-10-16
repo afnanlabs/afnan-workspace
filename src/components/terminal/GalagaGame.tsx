@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { useAudio } from '@/hooks/use-audio.ts'
+import { useHighScore } from '@/lib/arcade'
+import { ArcadeButtonBar } from './ArcadeControls'
 
 const COLS = 22
 const ROWS = 25
@@ -102,13 +105,26 @@ export function GalagaGame() {
   const [wave, setWave] = useState(1)
   const [lives, setLives] = useState(3)
   const [dead, setDead] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const [newBest, setNewBest] = useState(false)
   const rafRef = useRef<number | null>(null)
+  const pausedRef = useRef(false)
+
+  const audio = useAudio()
+  const { best, submit } = useHighScore('galaga')
+  const audioRef = useRef(audio)
+  audioRef.current = audio
+  const submitRef = useRef(submit)
+  submitRef.current = submit
 
   const restart = useCallback(() => {
     stateRef.current = initState()
     keysRef.current.clear()
     fireRef.current = false
     spaceHeldRef.current = false
+    pausedRef.current = false
+    setPaused(false)
+    setNewBest(false)
     setScore(0)
     setWave(1)
     setLives(3)
@@ -118,6 +134,15 @@ export function GalagaGame() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const k = e.key
+      if (k === 'p' || k === 'P' || k === 'Escape') {
+        if (stateRef.current.dead) return
+        e.preventDefault()
+        pausedRef.current = !pausedRef.current
+        setPaused(pausedRef.current)
+        stateRef.current.lastTs = 0
+        return
+      }
+      if (pausedRef.current) return
       if (k === 'ArrowLeft' || k === 'a' || k === 'A' || k === 'ArrowRight' || k === 'd' || k === 'D') {
         e.preventDefault()
         keysRef.current.add(k)
@@ -227,15 +252,19 @@ export function GalagaGame() {
       s.pBullets = []
       s.px = W / 2 - PLAYER_W / 2
       s.invUntil = now + 1600
+      audioRef.current.play('explode')
       if (s.lives <= 0) {
         s.dead = true
         setDead(true)
+        audioRef.current.play('gameover')
+        setNewBest(submitRef.current(s.score))
       }
     }
 
     function tick(ts: number) {
       const s = stateRef.current
       if (s.dead) { draw(ts); return }
+      if (pausedRef.current) { draw(ts); rafRef.current = requestAnimationFrame(tick); return }
       const dt = s.lastTs ? Math.min(50, ts - s.lastTs) : TICK
       s.lastTs = ts
 
@@ -254,11 +283,13 @@ export function GalagaGame() {
         if (s.pBullets.length < MAX_BULLETS) {
           s.pBullets.push({ x: s.px + PLAYER_W / 2, y: PLAYER_Y - 4, vy: PLAYER_BULLET_V, from: 'player' })
           s.lastShot = ts
+          audioRef.current.play('shoot')
         }
       } else if (spaceHeldRef.current && ts - s.lastShot >= HOLD_FIRE_COOLDOWN) {
         if (s.pBullets.length < MAX_BULLETS) {
           s.pBullets.push({ x: s.px + PLAYER_W / 2, y: PLAYER_Y - 4, vy: PLAYER_BULLET_V, from: 'player' })
           s.lastShot = ts
+          audioRef.current.play('shoot')
         }
       }
 
@@ -311,6 +342,7 @@ export function GalagaGame() {
             e.alive = false
             s.score += POINTS[e.type]
             setScore(s.score)
+            audioRef.current.play('hit')
             return false
           }
         }
@@ -328,6 +360,7 @@ export function GalagaGame() {
         s.marchAcc = 0
         s.fireAcc = 0
         s.invUntil = ts + 900
+        audioRef.current.play('clear')
       }
 
       // --- enemy bullets vs player ---
@@ -359,6 +392,34 @@ export function GalagaGame() {
     return () => { if (rafRef.current !== null) cancelAnimationFrame(rafRef.current) }
   }, [dead])
 
+  // ---- touch: drag to move, hold to fire ----
+  const pointerActiveRef = useRef(false)
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (stateRef.current.dead || pausedRef.current) return
+    pointerActiveRef.current = true
+    spaceHeldRef.current = true
+    fireRef.current = true
+    try { (e.currentTarget as Element).setPointerCapture(e.pointerId) } catch { /* ignore */ }
+  }
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!pointerActiveRef.current) return
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const scale = canvas.clientWidth ? canvas.clientWidth / W : 1
+    const s = stateRef.current
+    s.px = Math.max(4, Math.min(W - PLAYER_W - 4, s.px + e.movementX / scale))
+  }
+  const onPointerUp = () => {
+    pointerActiveRef.current = false
+    spaceHeldRef.current = false
+  }
+  const touchPause = () => {
+    if (stateRef.current.dead) return
+    pausedRef.current = !pausedRef.current
+    setPaused(pausedRef.current)
+    stateRef.current.lastTs = 0
+  }
+
   return (
     <div className="flex gap-3 flex-wrap" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(10px, 2.5vw, 11px)' }}>
       <div style={{ position: 'relative' }}>
@@ -366,7 +427,11 @@ export function GalagaGame() {
           ref={canvasRef}
           width={W}
           height={H}
-          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto' }}
+          style={{ display: 'block', border: '1px solid var(--vs-border)', maxWidth: '100%', height: 'auto', touchAction: 'none' }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
         />
         {dead && (
           <div
@@ -379,7 +444,8 @@ export function GalagaGame() {
             }}
           >
             <div style={{ fontSize: '14px', color: '#ef9a9a', letterSpacing: '0.1em' }}>GAME OVER</div>
-            <div style={{ color: 'var(--vs-text-muted)', fontSize: '11px' }}>score: {score}</div>
+            {newBest && <div style={{ fontSize: '11px', color: '#7cc36b', letterSpacing: '0.08em' }}>★ NEW BEST</div>}
+            <div style={{ color: 'var(--vs-text-muted)', fontSize: '11px' }}>score: {score} · best: {best}</div>
             <button
               onClick={restart}
               style={{
@@ -395,12 +461,30 @@ export function GalagaGame() {
             </button>
           </div>
         )}
+        {paused && !dead && (
+          <div
+            style={{
+              position: 'absolute', inset: 0,
+              background: 'rgba(0,0,0,0.6)',
+              display: 'flex', flexDirection: 'column',
+              alignItems: 'center', justifyContent: 'center', gap: 6,
+              fontFamily: 'var(--font-mono)', color: 'var(--vs-text)',
+            }}
+          >
+            <div style={{ fontSize: '15px', color: 'var(--vs-accent)', letterSpacing: '0.2em' }}>PAUSED</div>
+            <div style={{ fontSize: '11px', color: 'var(--vs-text-muted)' }}>press P to resume</div>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col gap-3" style={{ minWidth: 72 }}>
         <div style={{ color: 'var(--vs-text-muted)' }}>
           <div>SCORE</div>
           <div style={{ color: 'var(--vs-accent)', fontSize: '13px' }}>{score}</div>
+        </div>
+        <div style={{ color: 'var(--vs-text-muted)' }}>
+          <div>BEST</div>
+          <div style={{ color: '#7cc36b', fontSize: '13px' }}>{best}</div>
         </div>
         <div style={{ color: 'var(--vs-text-muted)' }}>
           <div>WAVE</div>
@@ -414,7 +498,23 @@ export function GalagaGame() {
           <div>← → move</div>
           <div>SPC fire</div>
           <div>hold = auto</div>
+          <div>P pause</div>
         </div>
+      </div>
+
+      <div style={{ flexBasis: '100%' }}>
+        <ArcadeButtonBar
+          items={[
+            {
+              key: 'fire',
+              label: 'FIRE',
+              ariaLabel: 'Fire',
+              onPress: () => { fireRef.current = true; spaceHeldRef.current = true },
+              onRelease: () => { spaceHeldRef.current = false },
+            },
+            { key: 'pause', label: 'II', ariaLabel: 'Pause', onPress: touchPause },
+          ]}
+        />
       </div>
     </div>
   )
