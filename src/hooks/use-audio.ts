@@ -17,6 +17,9 @@ type SoundType =
   | 'gameover'
 
 const STORAGE_KEY = 'afnan-portfolio-sounds'
+// Dispatched whenever the preference changes so every mounted useAudio()
+// instance (terminal, settings panel, arcade…) stays in sync.
+const CHANGE_EVENT = 'afnan-sound-pref-change'
 
 // Generate short click/bleep sounds using Web Audio API
 function createAudioContext() {
@@ -87,10 +90,28 @@ export function useAudio() {
     }
   }, [])
 
-  // Persist enabled state
+  // Persist enabled state and notify every other hook instance.
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, String(enabled))
+    try {
+      localStorage.setItem(STORAGE_KEY, String(enabled))
+      window.dispatchEvent(new CustomEvent(CHANGE_EVENT))
+    } catch {
+      // Ignore storage failures (private mode / disabled storage).
+    }
   }, [enabled])
+
+  // Stay in sync with changes made elsewhere (other tabs or instances).
+  useEffect(() => {
+    const sync = () => {
+      setEnabled(localStorage.getItem(STORAGE_KEY) === 'true')
+    }
+    window.addEventListener('storage', sync)
+    window.addEventListener(CHANGE_EVENT, sync)
+    return () => {
+      window.removeEventListener('storage', sync)
+      window.removeEventListener(CHANGE_EVENT, sync)
+    }
+  }, [])
 
   const play = useCallback((type: SoundType) => {
     if (!enabled) return
