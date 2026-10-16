@@ -7,7 +7,7 @@ import { useDraggable } from '@/hooks/use-draggable'
 import { ArcadeWindow } from '@/components/terminal/ArcadeWindow'
 
 type Mode = 'terminal' | 'standard'
-export type ArcadeGame = 'snake' | 'tetris' | 'galaga' | 'pacman' | null
+export type ArcadeGame = 'arcade' | 'snake' | 'tetris' | 'galaga' | 'pacman' | null
 
 function getInitialMode(): Mode {
   if (typeof window !== 'undefined') {
@@ -106,7 +106,7 @@ export function App() {
 
       {/* Arcade overlay — rendered outside app-window so it floats above */}
       {arcadeGame && (
-        <ArcadeWindow game={arcadeGame} onClose={() => setArcadeGame(null)} />
+        <ArcadeWindow game={arcadeGame} onClose={() => setArcadeGame(null)} onSelectGame={setArcadeGame} />
       )}
     </div>
   )
