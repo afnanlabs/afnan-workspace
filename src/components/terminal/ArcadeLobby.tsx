@@ -1,5 +1,11 @@
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import type { ArcadeGame } from '@/App'
+import {
+  ARCADE_GAMES,
+  getAllHighScores,
+  resetHighScores,
+  type ArcadeGameId,
+} from '@/lib/arcade'
 
 type GameId = Exclude<NonNullable<ArcadeGame>, 'arcade'>
 
@@ -14,7 +20,28 @@ interface ArcadeLobbyProps {
   onSelect: (game: GameId) => void
 }
 
+function useScores(): Record<ArcadeGameId, number> {
+  const [scores, setScores] = useState(() => getAllHighScores())
+  useEffect(() => {
+    const sync = () => setScores(getAllHighScores())
+    sync()
+    window.addEventListener('afnan-arcade-scores-change', sync)
+    window.addEventListener('storage', sync)
+    return () => {
+      window.removeEventListener('afnan-arcade-scores-change', sync)
+      window.removeEventListener('storage', sync)
+    }
+  }, [])
+  return scores
+}
+
 export function ArcadeLobby({ onSelect }: ArcadeLobbyProps) {
+  const scores = useScores()
+
+  const handleClear = useCallback(() => {
+    resetHighScores()
+  }, [])
+
   // Number keys 1-4 launch the matching game. preventDefault keeps the digits
   // out of the still-focused terminal input.
   useEffect(() => {
@@ -28,6 +55,8 @@ export function ArcadeLobby({ onSelect }: ArcadeLobbyProps) {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [onSelect])
+
+  const hasScores = ARCADE_GAMES.some((g) => scores[g] > 0)
 
   return (
     <div style={{ width: 'min(80vw, 320px)', fontFamily: 'var(--font-mono)' }}>
@@ -72,12 +101,46 @@ export function ArcadeLobby({ onSelect }: ArcadeLobbyProps) {
               <span style={{ marginLeft: 'auto', color: 'var(--vs-text-muted)', fontSize: 10 }}>{i + 1}</span>
             </span>
             <span style={{ color: 'var(--vs-text-muted)', fontSize: 10, lineHeight: 1.35 }}>{g.desc}</span>
+            <span style={{ color: '#7cc36b', fontSize: 10, letterSpacing: '0.04em' }}>
+              BEST {scores[g.id] > 0 ? scores[g.id] : '—'}
+            </span>
           </button>
         ))}
       </div>
 
-      <div style={{ marginTop: 8, color: 'var(--vs-text-muted)', fontSize: 10, opacity: 0.8 }}>
-        launch a game, then ⌂ in the title bar to come back
+      <div
+        style={{
+          marginTop: 8,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 8,
+          color: 'var(--vs-text-muted)',
+          fontSize: 10,
+          opacity: 0.85,
+        }}
+      >
+        <span>launch a game, then ⌂ in the title bar to come back</span>
+        {hasScores && (
+          <button
+            onClick={handleClear}
+            title="Clear all high scores"
+            aria-label="Clear high scores"
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'var(--vs-text-muted)',
+              fontFamily: 'var(--font-mono)',
+              fontSize: 10,
+              cursor: 'pointer',
+              textDecoration: 'underline',
+              padding: 0,
+              flexShrink: 0,
+            }}
+          >
+            clear scores
+          </button>
+        )}
       </div>
     </div>
   )
