@@ -1,25 +1,28 @@
 import { useRef } from 'react'
-import { X } from 'lucide-react'
+import { X, LayoutGrid } from 'lucide-react'
 import { useDraggable } from '@/hooks/use-draggable'
 import { SnakeGame } from './SnakeGame'
 import { TetrisGame } from './TetrisGame'
 import { GalagaGame } from './GalagaGame'
 import { PacmanGame } from './PacmanGame'
+import { ArcadeLobby } from './ArcadeLobby'
 import type { ArcadeGame } from '@/App'
 
 interface ArcadeWindowProps {
   game: ArcadeGame
   onClose: () => void
+  onSelectGame: (game: NonNullable<ArcadeGame>) => void
 }
 
 const TITLES: Record<NonNullable<ArcadeGame>, string> = {
+  arcade: 'retro-arcade://arcade',
   snake: 'retro-arcade://snake',
   tetris: 'retro-arcade://tetris',
   galaga: 'retro-arcade://galaga',
   pacman: 'retro-arcade://pacman',
 }
 
-export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
+export function ArcadeWindow({ game, onClose, onSelectGame }: ArcadeWindowProps) {
   const windowRef = useRef<HTMLDivElement>(null)
   const { pos, isDragging, onMouseDown } = useDraggable(windowRef, { edgePadding: 20, minVisible: 80 })
 
@@ -61,9 +64,43 @@ export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
           borderRadius: '3px 3px 0 0',
         }}
       >
-        <span style={{ fontSize: 'clamp(10px, 2.5vw, 11px)', color: 'var(--vs-text-muted)', letterSpacing: '0.03em' }}>
-          {TITLES[game]}
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, minWidth: 0 }}>
+          {game !== 'arcade' && (
+            <button
+              onMouseDown={(e) => e.stopPropagation()}
+              onClick={() => onSelectGame('arcade')}
+              aria-label="Back to arcade lobby"
+              title="Back to arcade lobby"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 20,
+                height: 20,
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--vs-text-muted)',
+                borderRadius: '2px',
+                padding: 0,
+                transition: 'background 0.1s, color 0.1s',
+              }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLButtonElement).style.background = 'var(--vs-border)'
+                ;(e.currentTarget as HTMLButtonElement).style.color = 'var(--vs-text)'
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLButtonElement).style.background = 'transparent'
+                ;(e.currentTarget as HTMLButtonElement).style.color = 'var(--vs-text-muted)'
+              }}
+            >
+              <LayoutGrid size={12} strokeWidth={1.5} />
+            </button>
+          )}
+          <span style={{ fontSize: 'clamp(10px, 2.5vw, 11px)', color: 'var(--vs-text-muted)', letterSpacing: '0.03em' }}>
+            {TITLES[game]}
+          </span>
+        </div>
         <button
           onMouseDown={(e) => e.stopPropagation()}
           onClick={onClose}
@@ -97,6 +134,7 @@ export function ArcadeWindow({ game, onClose }: ArcadeWindowProps) {
 
       {/* Game content */}
       <div style={{ padding: '6px' }}>
+        {game === 'arcade' && <ArcadeLobby onSelect={onSelectGame} />}
         {game === 'snake' && <SnakeGame />}
         {game === 'tetris' && <TetrisGame />}
         {game === 'galaga' && <GalagaGame />}
