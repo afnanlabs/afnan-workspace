@@ -30,6 +30,7 @@ export const TERMINAL_COMMANDS = [
   "tetris",
   "galaga",
   "pacman",
+  "arcade",
   "whoami",
   "neofetch",
   "ls",
@@ -230,6 +231,7 @@ Available Commands:
 
   Fun:
     sounds              Toggle workspace audio on/off
+    arcade              Game picker: launch any arcade game
     ascii               Display my name in ASCII art
     fortune             Show a random programming quote
     cowsay              ASCII cow delivers wisdom
@@ -312,9 +314,9 @@ PROJECT ACTIONS
  ├── open codeglow   ├── open somnus       └── open fitscore
 
 FUN & EASTER EGGS
- ├── ascii        ├── fortune        ├── cowsay
- ├── coffee       ├── snake          ├── tetris
- ├── galaga       └── pacman
+ ├── arcade       ├── ascii          ├── fortune
+ ├── cowsay       ├── coffee         ├── snake
+ ├── tetris       ├── galaga         └── pacman
 
 SYSTEM
  ├── whoami       ├── neofetch       ├── uptime
@@ -641,6 +643,7 @@ Resume     → resume (downloads PDF)
   tetris: "__LAUNCH_TETRIS__",
   galaga: "__LAUNCH_GALAGA__",
   pacman: "__LAUNCH_PACMAN__",
+  arcade: "__LAUNCH_ARCADE__",
 };
 
 // Standard view file definitions
