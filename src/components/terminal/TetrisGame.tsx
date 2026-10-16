@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { useAudio } from '@/hooks/use-audio.ts'
+import { useHighScore } from '@/lib/arcade'
+import { ArcadeButtonBar } from './ArcadeControls'
 
 const COLS = 10
 const ROWS = 20
@@ -88,12 +91,26 @@ export function TetrisGame() {
   const [score, setScore] = useState(0)
   const [level, setLevel] = useState(1)
   const [dead, setDead] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const [newBest, setNewBest] = useState(false)
   const rafRef = useRef<number | null>(null)
   const lastTickRef = useRef(0)
   const softDropRef = useRef(false)
+  const pausedRef = useRef(false)
+
+  const audio = useAudio()
+  const { best, submit } = useHighScore('tetris')
+  const audioRef = useRef(audio)
+  audioRef.current = audio
+  const submitRef = useRef(submit)
+  submitRef.current = submit
 
   const restart = useCallback(() => {
     stateRef.current = initState()
+    softDropRef.current = false
+    pausedRef.current = false
+    setPaused(false)
+    setNewBest(false)
     setScore(0)
     setLevel(1)
     setDead(false)
@@ -104,6 +121,14 @@ export function TetrisGame() {
     const onKey = (e: KeyboardEvent) => {
       const s = stateRef.current
       if (s.dead) return
+      if (e.key === 'p' || e.key === 'P' || e.key === 'Escape') {
+        e.preventDefault()
+        pausedRef.current = !pausedRef.current
+        setPaused(pausedRef.current)
+        lastTickRef.current = 0
+        return
+      }
+      if (pausedRef.current) return
       if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
         e.preventDefault()
         if (fits(s.board, s.piece, -1, 0)) s.piece.x--
@@ -214,6 +239,7 @@ export function TetrisGame() {
     function tick(ts: number) {
       const s = stateRef.current
       if (s.dead) { draw(); return }
+      if (pausedRef.current) { draw(); rafRef.current = requestAnimationFrame(tick); return }
 
       const interval = softDropRef.current ? 40 : tickInterval(s.level)
       if (ts - lastTickRef.current >= interval) {
@@ -231,12 +257,16 @@ export function TetrisGame() {
           s.piece = s.next
           s.next = rndPiece()
 
+          if (lines > 0) audioRef.current.play('clear')
+
           setScore(s.score)
           setLevel(s.level)
 
           if (!fits(s.board, s.piece, 0, 0)) {
             s.dead = true
             setDead(true)
+            audioRef.current.play('gameover')
+            setNewBest(submitRef.current(s.score))
             draw()
             return
           }
@@ -250,6 +280,36 @@ export function TetrisGame() {
     rafRef.current = requestAnimationFrame(tick)
     return () => { if (rafRef.current !== null) cancelAnimationFrame(rafRef.current) }
   }, [dead])
+
+  // ---- touch controls ----
+  const touchMove = (dx: number) => {
+    const s = stateRef.current
+    if (s.dead || pausedRef.current) return
+    if (fits(s.board, s.piece, dx, 0)) s.piece.x += dx
+  }
+  const touchRotate = () => {
+    const s = stateRef.current
+    if (s.dead || pausedRef.current) return
+    const rotated = rotate(s.piece.shape)
+    if (fits(s.board, s.piece, 0, 0, rotated)) s.piece.shape = rotated
+  }
+  const touchSoftDrop = () => {
+    const s = stateRef.current
+    if (s.dead || pausedRef.current) return
+    if (fits(s.board, s.piece, 0, 1)) { s.piece.y++; lastTickRef.current = 0 }
+  }
+  const touchHardDrop = () => {
+    const s = stateRef.current
+    if (s.dead || pausedRef.current) return
+    while (fits(s.board, s.piece, 0, 1)) s.piece.y++
+    lastTickRef.current = 0
+  }
+  const touchPause = () => {
+    if (stateRef.current.dead) return
+    pausedRef.current = !pausedRef.current
+    setPaused(pausedRef.current)
+    lastTickRef.current = 0
+  }
 
   return (
     <div className="flex gap-3 flex-wrap" style={{ fontFamily: 'var(--font-mono)', fontSize: 'clamp(10px, 2.5vw, 11px)' }}>
@@ -271,7 +331,8 @@ export function TetrisGame() {
             }}
           >
             <div style={{ fontSize: '14px', color: '#ef9a9a', letterSpacing: '0.1em' }}>GAME OVER</div>
-            <div style={{ color: 'var(--vs-text-muted)', fontSize: '11px' }}>score: {score}</div>
+            {newBest && <div style={{ fontSize: '11px', color: '#7cc36b', letterSpacing: '0.08em' }}>★ NEW BEST</div>}
+            <div style={{ color: 'var(--vs-text-muted)', fontSize: '11px' }}>score: {score} · best: {best}</div>
             <button
               onClick={restart}
               style={{
@@ -285,6 +346,20 @@ export function TetrisGame() {
             >
               [restart]
             </button>
+          </div>
+        )}
+        {paused && !dead && (
+          <div
+            style={{
+              position: 'absolute', inset: 0,
+              background: 'rgba(0,0,0,0.6)',
+              display: 'flex', flexDirection: 'column',
+              alignItems: 'center', justifyContent: 'center', gap: 6,
+              fontFamily: 'var(--font-mono)', color: 'var(--vs-text)',
+            }}
+          >
+            <div style={{ fontSize: '15px', color: 'var(--vs-accent)', letterSpacing: '0.2em' }}>PAUSED</div>
+            <div style={{ fontSize: '11px', color: 'var(--vs-text-muted)' }}>press P to resume</div>
           </div>
         )}
       </div>
@@ -304,6 +379,10 @@ export function TetrisGame() {
           <div style={{ color: 'var(--vs-accent)', fontSize: '13px' }}>{score}</div>
         </div>
         <div style={{ color: 'var(--vs-text-muted)' }}>
+          <div>BEST</div>
+          <div style={{ color: '#7cc36b', fontSize: '13px' }}>{best}</div>
+        </div>
+        <div style={{ color: 'var(--vs-text-muted)' }}>
           <div>LEVEL</div>
           <div style={{ color: 'var(--vs-accent)', fontSize: '13px' }}>{level}</div>
         </div>
@@ -312,7 +391,21 @@ export function TetrisGame() {
           <div>↑ rotate</div>
           <div>↓ soft drop</div>
           <div>SPC hard drop</div>
+          <div>P pause</div>
         </div>
+      </div>
+
+      <div style={{ flexBasis: '100%' }}>
+        <ArcadeButtonBar
+          items={[
+            { key: 'left', label: '◀', ariaLabel: 'Move left', onPress: () => touchMove(-1) },
+            { key: 'right', label: '▶', ariaLabel: 'Move right', onPress: () => touchMove(1) },
+            { key: 'rotate', label: '⟳', ariaLabel: 'Rotate', onPress: touchRotate },
+            { key: 'down', label: '▼', ariaLabel: 'Soft drop', onPress: touchSoftDrop },
+            { key: 'drop', label: '⤓', ariaLabel: 'Hard drop', onPress: touchHardDrop },
+            { key: 'pause', label: 'II', ariaLabel: 'Pause', onPress: touchPause },
+          ]}
+        />
       </div>
     </div>
   )
