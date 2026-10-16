@@ -2,15 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/faviconAK.png" />
+    <link rel="icon" type="image/png" href="/faviconAK.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/faviconAK.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Afnan Khan — Developer</title>
+    <meta
+      name="description"
+      content="Interactive developer portfolio inspired by the VS Code experience — explore Afnan Khan's projects, experience and skills through a terminal or editor."
+    />
+    <meta name="author" content="Afnan Khan" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="theme-color"
+      content="#1e1e1e"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="canonical" href="https://afnanlabs.github.io/afnan-workspace/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Afnan Workspace" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Afnan Khan — Developer" />
     <meta
       property="og:description"
@@ -28,6 +51,11 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Afnan Khan's VS Code inspired developer portfolio"
+    />
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Afnan Khan — Developer" />
     <meta
@@ -38,6 +66,36 @@
       name="twitter:image"
       content="https://afnanlabs.github.io/afnan-workspace/terminal-view.png"
     />
+    <meta
+      name="twitter:image:alt"
+      content="Afnan Khan's VS Code inspired developer portfolio"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Afnan Khan",
+        "url": "https://afnanlabs.github.io/afnan-workspace/",
+        "jobTitle": "Software Developer",
+        "email": "mailto:khanafnan1108@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://github.com/afnanlabs",
+          "https://www.linkedin.com/in/afnankhan1108-dev"
+        ],
+        "knowsAbout": [
+          "TypeScript",
+          "React",
+          "Node.js",
+          "Web Development",
+          "Software Engineering"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
