@@ -28,6 +28,7 @@ export const TERMINAL_COMMANDS = [
   "sounds",
   "snake",
   "tetris",
+  "galaga",
   "whoami",
   "neofetch",
   "ls",
@@ -234,6 +235,7 @@ Available Commands:
     coffee              Brew a virtual coffee
     snake               Retro Snake arcade
     tetris              Retro Tetris arcade
+    galaga              Retro Galaga arcade
 
   System:
     whoami              Identity probe
@@ -309,7 +311,8 @@ PROJECT ACTIONS
 
 FUN & EASTER EGGS
  ├── ascii        ├── fortune        ├── cowsay
- ├── coffee       ├── snake          └── tetris
+ ├── coffee       ├── snake          ├── tetris
+ └── galaga
 
 SYSTEM
  ├── whoami       ├── neofetch       ├── uptime
@@ -634,6 +637,7 @@ Resume     → resume (downloads PDF)
 
   snake: "__LAUNCH_SNAKE__",
   tetris: "__LAUNCH_TETRIS__",
+  galaga: "__LAUNCH_GALAGA__",
 };
 
 // Standard view file definitions
