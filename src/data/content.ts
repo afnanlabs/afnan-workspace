@@ -31,6 +31,7 @@ export const TERMINAL_COMMANDS = [
   "galaga",
   "pacman",
   "arcade",
+  "scores",
   "whoami",
   "neofetch",
   "ascii",
@@ -239,6 +240,7 @@ Available Commands:
     tetris              Retro Tetris arcade
     galaga              Retro Galaga arcade
     pacman              Retro Pac-Man arcade
+    scores              Show arcade high scores
 
   System:
     whoami              Identity probe
@@ -316,6 +318,7 @@ FUN & EASTER EGGS
  ├── arcade       ├── ascii          ├── fortune
  ├── cowsay       ├── coffee         ├── snake
  ├── tetris       ├── galaga         └── pacman
+ └── scores
 
 SYSTEM
  ├── whoami       ├── neofetch       ├── uptime
