@@ -786,15 +786,16 @@ interface Experience {
 
 const experience: Experience[] = [
   {
-    role: "Full-Stack Software Engineer (Independent Labs)",
-    company: "Self-Directed Architecture",
-    location: "Mumbai, India",
-    period: "2024 – Present",
+    role: "Full Stack Developer Intern",
+    company: "Marcos Quay Sporting Excellence Pvt Ltd",
+    location: "Andheri, Mumbai",
+    period: "July 2026 - Oct 2026",
     responsibilities: [
-      "Architected modular full-stack web architectures utilizing modern tech stacks including React, Node.js, and procedural PHP with MySQL backends.",
-      "Engineered a secure academic productivity engine featuring custom Role-Based Access Control (RBAC) and third-party Google OAuth integration.",
-      "Designed fully normalized relational database schemas down to Third Normal Form (3NF) to enforce high data integrity and optimize execution runtime.",
-      "Managed local codebases systematically using Git version control, implementing atomic commits and descriptive documentation practices.",
+      "Led the Human Resources Management System (HRMS) project as the sole developer, developing recruitment automation functionality to enable HR to manage hiring workflows and track candidates throughout the recruitment process.",
+      "Contributed to the company’s main website-to-mobile conversion project, implementing and integrating mobile app features with existing authentication APIs and navigation workflows.",
+      "Developed and maintained full-stack features across HRMS, Coach, School Management, and administrative platforms using Vue.js, Node.js, Express.js, MariaDB/MySQL, and REST APIs.",
+      "Resolved 15+ bugs and integration issues through systematic debugging, SQL analysis, and backend troubleshooting.",
+      "Delivered PDF generation, email automation, responsive UI improvements, and role-based administrative workflows across internal applications.",
     ],
   },
 ];
