@@ -84,7 +84,7 @@ export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderPr
 
         {/* Gmail — hidden on tiny screens */}
         <span className="hidden sm:inline">
-          <IconButton as="a" href="mailto:afnan@email.com" title="Email">
+          <IconButton as="a" href="mailto:khanafnan1108@gmail.com" title="Email">
             <MailIcon />
           </IconButton>
         </span>
