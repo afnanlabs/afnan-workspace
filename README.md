@@ -50,7 +50,7 @@ Prefer something simpler? Switch to Standard View for a cleaner browsing experie
 ```text
 .
 ├── public/
-│   ├── profile.webp
+│   ├── terminal-view.png
 │   ├── faviconAK.png
 │   └── Afnan_Khan_Resume.pdf
 │
