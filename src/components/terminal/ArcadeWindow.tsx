@@ -1,12 +1,15 @@
-import { useRef } from 'react'
+import { lazy, Suspense, useRef } from 'react'
 import { X, LayoutGrid } from 'lucide-react'
 import { useDraggable } from '@/hooks/use-draggable'
-import { SnakeGame } from './SnakeGame'
-import { TetrisGame } from './TetrisGame'
-import { GalagaGame } from './GalagaGame'
-import { PacmanGame } from './PacmanGame'
 import { ArcadeLobby } from './ArcadeLobby'
 import type { ArcadeGame } from '@/App'
+
+// The four canvas games are code-split so they stay out of the main bundle and
+// are only fetched when the player actually opens one.
+const SnakeGame = lazy(() => import('./SnakeGame').then((m) => ({ default: m.SnakeGame })))
+const TetrisGame = lazy(() => import('./TetrisGame').then((m) => ({ default: m.TetrisGame })))
+const GalagaGame = lazy(() => import('./GalagaGame').then((m) => ({ default: m.GalagaGame })))
+const PacmanGame = lazy(() => import('./PacmanGame').then((m) => ({ default: m.PacmanGame })))
 
 interface ArcadeWindowProps {
   game: ArcadeGame
@@ -135,10 +138,29 @@ export function ArcadeWindow({ game, onClose, onSelectGame }: ArcadeWindowProps)
       {/* Game content */}
       <div style={{ padding: '6px' }}>
         {game === 'arcade' && <ArcadeLobby onSelect={onSelectGame} />}
-        {game === 'snake' && <SnakeGame />}
-        {game === 'tetris' && <TetrisGame />}
-        {game === 'galaga' && <GalagaGame />}
-        {game === 'pacman' && <PacmanGame />}
+        {game !== 'arcade' && (
+          <Suspense
+            fallback={
+              <div
+                style={{
+                  width: 'min(80vw, 320px)',
+                  padding: '24px 0',
+                  textAlign: 'center',
+                  color: 'var(--vs-text-muted)',
+                  fontSize: 11,
+                  fontFamily: 'var(--font-mono)',
+                }}
+              >
+                loading game…
+              </div>
+            }
+          >
+            {game === 'snake' && <SnakeGame />}
+            {game === 'tetris' && <TetrisGame />}
+            {game === 'galaga' && <GalagaGame />}
+            {game === 'pacman' && <PacmanGame />}
+          </Suspense>
+        )}
       </div>
     </div>
   )
