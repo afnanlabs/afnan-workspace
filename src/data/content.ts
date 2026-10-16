@@ -29,6 +29,7 @@ export const TERMINAL_COMMANDS = [
   "snake",
   "tetris",
   "galaga",
+  "pacman",
   "whoami",
   "neofetch",
   "ls",
@@ -236,6 +237,7 @@ Available Commands:
     snake               Retro Snake arcade
     tetris              Retro Tetris arcade
     galaga              Retro Galaga arcade
+    pacman              Retro Pac-Man arcade
 
   System:
     whoami              Identity probe
@@ -312,7 +314,7 @@ PROJECT ACTIONS
 FUN & EASTER EGGS
  ├── ascii        ├── fortune        ├── cowsay
  ├── coffee       ├── snake          ├── tetris
- └── galaga
+ ├── galaga       └── pacman
 
 SYSTEM
  ├── whoami       ├── neofetch       ├── uptime
@@ -638,6 +640,7 @@ Resume     → resume (downloads PDF)
   snake: "__LAUNCH_SNAKE__",
   tetris: "__LAUNCH_TETRIS__",
   galaga: "__LAUNCH_GALAGA__",
+  pacman: "__LAUNCH_PACMAN__",
 };
 
 // Standard view file definitions
