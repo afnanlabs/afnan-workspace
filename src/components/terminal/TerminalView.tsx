@@ -429,35 +429,11 @@ export function TerminalView({ onLaunchArcade, onOpenInStandard, onSwitchMode }:
               <span style={{ color: "var(--vs-accent)" }}>{entry.prompt}</span>
               <span>{entry.command}</span>
             </div>
-            {entry.output &&
-              (entry.command === "certifications" ? (
-                <div style={{ whiteSpace: "pre-wrap" }}>
-                  <h2 style={{ marginBottom: "24px" }}></h2>
-
-                  {JSON.parse(entry.output).map((cert: any, index: number) => (
-                    <div key={index} style={{ marginBottom: "20px" }}>
-                      <a
-                        href={cert.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          color: "inherit",
-                          textDecoration: "underline",
-                        }}
-                      >
-                        {cert.title}
-                      </a>
-
-                      {" — "}
-                      {cert.issuer}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div style={{ whiteSpace: "pre-wrap" }}>
-                  {renderOutput(entry.output)}
-                </div>
-              ))}
+            {entry.output && (
+              <div style={{ whiteSpace: "pre-wrap" }}>
+                {renderOutput(entry.output)}
+              </div>
+            )}
           </div>
         ))}
 
