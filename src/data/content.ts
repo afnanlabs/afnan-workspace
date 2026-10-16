@@ -9,8 +9,12 @@ export const TERMINAL_COMMANDS = [
   "certs",
   "contact",
   "resume",
+  "open hrms",
   "open thinktrack",
+  "open afnkit",
   "open codeglow",
+  "open somnus",
+  "open fitscore",
   "clear",
   "sounds",
   "snake",
@@ -206,8 +210,12 @@ Available Commands:
     contact             How to reach me
     resume              Download resume PDF
 
+    open hrms           Architecture deep-dive: HRMS
     open thinktrack     Architecture deep-dive: ThinkTrack
+    open afnkit         Architecture deep-dive: Afnkit
     open codeglow       Architecture deep-dive: CodeGlow
+    open somnus         Architecture deep-dive: Somnus
+    open fitscore       Architecture deep-dive: FitScore
 
   Fun:
     sounds              Toggle workspace audio on/off
@@ -255,8 +263,8 @@ Focus:     Full-Stack Development & Developer Tools
       o8888888888888.     Shell:       afnan-sh
       88888888888888P'    Role:        Full Stack Developer
       '988888888888'      Location:    Mumbai, India
-         'Y888P'          Stack:       React · TypeScript · Node.js · MySQL
-            '             Tools:       Git · Docker · Vercel
+         'Y888P'          Stack:       JavaScript · TypeScript · React · Node.js
+            '             Tools:       Git · Docker · Postman · Burp Suite · Jira
                           Focus:       Developer Tools & Practical Software
                           Building:    Since 2025
                           GitHub:      github.com/afnanlabs
@@ -287,7 +295,8 @@ CORE NAVIGATION
  └── resume
 
 PROJECT ACTIONS
- ├── open thinktrack                 └── open codeglow
+ ├── open hrms       ├── open thinktrack   ├── open afnkit
+ ├── open codeglow   ├── open somnus       └── open fitscore
 
 FUN & EASTER EGGS
  ├── ascii        ├── fortune        ├── cowsay
@@ -351,6 +360,12 @@ administrative workflows across internal applications.`,
   projects: `
 Active Project Repositories & Software Implementations
 
+ HRMS — Human Resource Management System
+• Full-stack internal HR platform: employee administration, document management, and automated letter generation (offers, contracts, commitments, appointments)
+• Core Stack: Vue.js, Vite, Node.js, Express.js, MariaDB
+• Execution Parameter: Type 'open hrms' to audit the full structural lifecycle logs.
+ → open hrms
+
  ThinkTrack — Collaborative Learning and Group Productivity Platform
 • Architecture Focus: Normalization, Access Control Matrices, Transactional Lifecycles
 • Core Stack: PHP, MySQL, Native JavaScript, Google OAuth Integration, PHPMailer
@@ -367,6 +382,8 @@ deliberate 404, 405 (with Allow), and 500 responses.
 • Built developer-facing res.status(), res.send(), and res.json() helpers with correct content types and
 per-request request/response prototype extension, plus 31 automated tests authored with Node’s
 built-in node:test against real HTTP servers; published on npm as afnkit@0.1.0 (npm i afnkit).
+• Execution Parameter: Type 'open afnkit' to audit the full structural lifecycle logs.
+ → open afnkit
 
  CodeGlow — Persistent Visual Code Highlighting Workspace Extension
 • Developed a TypeScript VS Code extension providing persistent color-coded code annotations through
@@ -375,6 +392,22 @@ native Command Palette and editor context menu integrations.
 annotation accuracy across code edits and undo/redo operations.
 • Built a lightweight architecture using the VS Code Decoration API with zero backend dependencies and
 packaged the extension as a production-ready VSIX build.
+• Execution Parameter: Type 'open codeglow' to audit the full structural lifecycle logs.
+ → open codeglow
+
+ Somnus — Sleep Quality Analyzer
+• Web application that presents sleep-related information through an accessible, readable interface
+• Core Focus: user experience, application flow, and data presentation
+• Deployment: Vercel
+• Execution Parameter: Type 'open somnus' to audit the full structural lifecycle logs.
+ → open somnus
+
+ FitScore — Resume Match Analyzer
+• Web application that compares a resume against a job opportunity and presents the alignment result
+• Core Focus: translating a practical problem into an application workflow users can act on
+• Deployment: publicly deployed
+• Execution Parameter: Type 'open fitscore' to audit the full structural lifecycle logs.
+ → open fitscore
 `,
 
   "open thinktrack": `
@@ -443,18 +476,99 @@ Key Engineering Metrics & Learnings:
 Achieved zero runtime dependencies (TypeScript and @types/node are dev-only), compiled under strict TypeScript with no any or @ts-ignore, and validated by 31 tests written against Node's native node:test runner — no test framework dependency. The package is MIT-licensed and containerized with a multi-stage, non-root Docker image. Building an API that other developers compose on top of turns every "edge case" into a contract you must honor; a forensic audit that surfaced and fixed nine latent defects (method dispatch, hang-on-missing-route, double-send, error-handler arity, and more) demonstrated just how much real correctness lives in the seams between abstractions.
 `,
 
+  "open hrms": `
+
+────────────────────────────────────────────────────────────────────────────────────────
+HRMS — Human Resource Management System
+────────────────────────────────────────────────────────────────────────────────────────
+
+The Problem Space:
+HR operations run on documents. Offers, contracts, commitment letters and appointment letters each follow their own rules and approvals, and producing them by hand is slow, repetitive and easy to get wrong. Employee records scattered across spreadsheets make the process harder to audit and keep consistent.
+
+The Engineered Solution:
+An internal HR management system covering employee-related administrative processes and document management. It generates offer, contract, commitment and appointment letters from structured employee data, supported by dedicated backend routes, a relational schema and administrative interfaces. Built during my internship at Marcos Quay Sporting Excellence.
+
+Source Registry: [internal platform — Marcos Quay Sporting Excellence]
+
+Core Architectural Decisions:
+• Separation of concerns across the stack: Vue + Vite for the administrative interfaces, Express for the API layer, MariaDB for persistence.
+• Document generation treated as a backend concern — letters are produced from structured data rather than hand-edited files, keeping records and documents consistent.
+• Schema-first design: employee, department and document tables modelled before the administrative workflows were wired on top of them.
+• Workflow-oriented implementation — one complete path from an HR admin action in the UI, through the API route, into the database write and the generated document.
+
+Key Engineering Metrics & Learnings:
+Working on real HR requirements showed that the hard part of business software is modelling the workflow correctly, not the code itself. It also made clear why frontend components, backend routes and database operations have to agree on a single definition of the data — and why an action that touches several tables needs to be thought through as one transaction.
+
+Stack: Vue.js · Vite · Node.js · Express.js · MariaDB
+`,
+
+  "open somnus": `
+
+────────────────────────────────────────────────────────────────────────────────────────
+Somnus — Sleep Quality Analyzer
+────────────────────────────────────────────────────────────────────────────────────────
+
+The Problem Space:
+Sleep data is easy to record but hard to read. Raw numbers and logs don't tell a person whether their sleep was actually good, or what changed between one night and the next.
+
+The Engineered Solution:
+A web application built to present sleep-related information in a genuinely useful way. The focus is on the user experience and application flow — taking sleep data in and returning it in a form a user can understand and act on. Deployed on Vercel, which took the project from local development to a publicly accessible deployment.
+
+Source Registry: [available on request]
+
+Core Architectural Decisions:
+• Application flow designed first: input the sleep data, derive the quality signal, present the result in a readable interface.
+• Information hierarchy kept deliberately simple so the sleep signals are understandable without any interpretation effort from the user.
+• Deployed to Vercel as part of the project, treating "reaching a public URL" as part of the deliverable rather than an afterthought.
+
+Key Engineering Metrics & Learnings:
+Presenting data well is a separate skill from producing it. Building Somnus reinforced that the interface is where a project's value actually becomes visible to the person using it, and that shipping to a public deployment exposes issues local development never does.
+
+Stack: Web Application · Vercel
+`,
+
+  "open fitscore": `
+
+────────────────────────────────────────────────────────────────────────────────────────
+FitScore — Resume Match Analyzer
+────────────────────────────────────────────────────────────────────────────────────────
+
+The Problem Space:
+There's no easy way to tell how well a resume actually lines up with a specific job opportunity. Job seekers end up guessing, re-reading both documents, and applying without a clear sense of where they align and where they don't.
+
+The Engineered Solution:
+A web application that compares a resume against job requirements and presents the alignment as a result a user can understand. It focuses on making resume-to-role comparison accessible through a straightforward web interface instead of a manual, error-prone read-through.
+
+Source Registry: [deployed — link available on request]
+
+Core Architectural Decisions:
+• Problem-first scope: the workflow was defined around the single question "how well does this resume match this role?" before any implementation.
+• Result presentation kept legible — the outcome is shown in a way users can act on rather than as an opaque score.
+• Written as a deployed web application, keeping the full path from local development to a public URL inside the project scope.
+
+Key Engineering Metrics & Learnings:
+FitScore was an exercise in translating a practical problem into an application workflow, and in deciding what a result must look like to be useful. The matching logic is deliberately explicit, and I'm happy to walk through how it works.
+
+Stack: Web Application
+`,
+
   skills: `
+Technical Stack
+
+Languages
+  JavaScript (ES6+) · TypeScript · Python · C++
+
 Frontend
-  HTML5 · CSS3 · JavaScript · TypeScript · React · Tailwind CSS
+  React · React Native · Next.js · Vue.js · Tailwind CSS
 
 Backend
-  REST APIs · 
+  Node.js · Express.js · REST APIs
 
 Database
-  MySQL
+  MySQL · PostgreSQL · Redis
 
 Tools
-  Git · GitHub · Docker · Vercel
+  Git · GitHub · Postman · Burp Suite · Jira · Docker
 
 Core CS
   DBMS · OOP · Operating Systems · Computer Networks
@@ -575,10 +689,22 @@ export const AFNAN_FILES: FileEntry[] = [
 
 export const PROJECTS_FILES: FileEntry[] = [
   {
+    id: "hrms",
+    name: "hrms",
+    extension: "ts",
+    displayName: "hrms.ts",
+  },
+  {
     id: "thinktrack",
     name: "thinktrack",
     extension: "ts",
     displayName: "thinktrack.ts",
+  },
+  {
+    id: "afnkit",
+    name: "afnkit",
+    extension: "ts",
+    displayName: "afnkit.ts",
   },
   {
     id: "codeglow",
@@ -586,10 +712,22 @@ export const PROJECTS_FILES: FileEntry[] = [
     extension: "ts",
     displayName: "codeglow.ts",
   },
+  {
+    id: "somnus",
+    name: "somnus",
+    extension: "ts",
+    displayName: "somnus.ts",
+  },
+  {
+    id: "fitscore",
+    name: "fitscore",
+    extension: "ts",
+    displayName: "fitscore.ts",
+  },
 ];
 
 export const ASSETS_FILES: FileEntry[] = [
-  { id: "resume", name: "resume", extension: "pdf", displayName: "resume.pdf" },
+  { id: "resume", name: "resume", extension: "pdf", displayName: "Afnan_Khan_Resume.pdf" },
   {
     id: "profile",
     name: "profile",
@@ -796,32 +934,42 @@ const contact: Contact = {
   email: "khanafnan1108@gmail.com",
   linkedin: "linkedin.com/in/afnankhan1108-dev",
   github: "github.com/afnanlabs",
-  resume: "/resume.pdf",
+  resume: "/Afnan_Khan_Resume.pdf",
 };
 
 export default contact;`,
 
   skills: `{
-  "frontend": [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
+  "languages": [
+    "JavaScript (ES6+)",
     "TypeScript",
+    "Python",
+    "C++"
+  ],
+  "frontend": [
     "React",
+    "React Native",
+    "Next.js",
+    "Vue.js",
     "Tailwind CSS"
   ],
   "backend": [
-    "REST APIs",
-    "PHP"
+    "Node.js",
+    "Express.js",
+    "REST APIs"
   ],
   "database": [
-    "MySQL"
+    "MySQL",
+    "PostgreSQL",
+    "Redis"
   ],
   "tools": [
     "Git",
     "GitHub",
-    "Docker",
-    "Vercel"
+    "Postman",
+    "Burp Suite",
+    "Jira",
+    "Docker"
   ],
   "core_cs": [
     "DBMS",
@@ -912,4 +1060,175 @@ content hashing rather than line numbers — so highlights survive edits.\`,
 };
 
 export default codeglow;`,
+
+  afnkit: `// afnkit.ts
+// Afnkit — Express-Inspired HTTP Framework
+
+interface AfnkitProject {
+  name: string;
+  tagline: string;
+  problem: string;
+  solution: string;
+  architecture: string[];
+  learnings: string[];
+  stack: string[];
+}
+
+const afnkit: AfnkitProject = {
+  name: "Afnkit",
+  tagline: "Express-inspired HTTP framework in strict TypeScript",
+
+  problem: \`Express is the de-facto standard for Node HTTP servers, yet its
+middleware pipeline, routing and error propagation read like a black box.
+Node's native http module is honest but low-level, so every project
+re-implements routing, method dispatch and response helpers from scratch.
+There is no readable, type-safe middle ground.\`,
+
+  solution: \`An HTTP framework that reproduces Express's programming model —
+the express() factory, app.get / app.post / app.use, a real next() middleware
+chain, and Router / Layer / Route — built directly on Node's native http APIs
+in strict TypeScript with zero runtime dependencies.\`,
+
+  architecture: [
+    "Layered Application / Router / Route / Layer design advanced by a single next() dispatch closure",
+    "Correct HTTP semantics: 404 for unknown paths, 405 + Allow header for unsupported methods",
+    "Prototype enrichment (Object.setPrototypeOf) for status(), send() and json() helpers",
+    "Error propagation for synchronous throws and rejected async handlers",
+  ],
+
+  learnings: [
+    "A framework turns every edge case into a contract you have to honour",
+    "Explicit middleware advancement beats nested callbacks for readability",
+  ],
+
+  stack: ["TypeScript", "Node.js", "node:test"],
+};
+
+export default afnkit;`,
+
+  hrms: `// hrms.ts
+// HRMS — Human Resource Management System
+
+interface HrmsProject {
+  name: string;
+  tagline: string;
+  problem: string;
+  solution: string;
+  architecture: string[];
+  learnings: string[];
+  stack: string[];
+}
+
+const hrms: HrmsProject = {
+  name: "HRMS",
+  tagline: "Internal HR platform with automated letter generation",
+
+  problem: \`HR operations run on documents — offers, contracts,
+commitment letters and appointment letters — each with its own rules and
+approvals. Handled manually they are slow to produce and easy to get wrong,
+and employee records spread across spreadsheets are hard to keep consistent.\`,
+
+  solution: \`An internal HR management system covering employee-related
+administrative processes and document management, generating offer,
+contract, commitment and appointment letters from structured employee data
+instead of hand-edited files.\`,
+
+  architecture: [
+    "Vue + Vite administrative interfaces for HR workflows",
+    "Express API routes dedicated to employee and document operations",
+    "MariaDB relational schema modelled before the workflows built on top",
+    "Letter generation treated as a backend concern driven by structured data",
+  ],
+
+  learnings: [
+    "Modelling the business workflow correctly matters more than the code",
+    "Frontend, API and database must agree on one definition of the data",
+  ],
+
+  stack: ["Vue.js", "Vite", "Node.js", "Express.js", "MariaDB"],
+};
+
+export default hrms;`,
+
+  somnus: `// somnus.ts
+// Somnus — Sleep Quality Analyzer
+
+interface SomnusProject {
+  name: string;
+  tagline: string;
+  problem: string;
+  solution: string;
+  architecture: string[];
+  learnings: string[];
+  stack: string[];
+}
+
+const somnus: SomnusProject = {
+  name: "Somnus",
+  tagline: "Sleep quality analyzer that makes sleep data readable",
+
+  problem: \`Sleep data is easy to record but hard to read. Raw numbers and
+logs do not tell a person whether their sleep was actually good, or what
+changed between one night and the next.\`,
+
+  solution: \`A web application that presents sleep-related information in a
+useful way, focused on the user experience and application flow — sleep data
+goes in, an understandable quality signal comes out. Deployed on Vercel.\`,
+
+  architecture: [
+    "Application flow designed first: input data, derive quality, present result",
+    "Information hierarchy kept simple so sleep signals need no interpretation",
+    "Deployed on Vercel — public deployment treated as part of the deliverable",
+  ],
+
+  learnings: [
+    "Presenting data well is a separate skill from producing it",
+    "Shipping publicly exposes issues local development never surfaces",
+  ],
+
+  stack: ["Web Application", "Vercel"],
+};
+
+export default somnus;`,
+
+  fitscore: `// fitscore.ts
+// FitScore — Resume Match Analyzer
+
+interface FitScoreProject {
+  name: string;
+  tagline: string;
+  problem: string;
+  solution: string;
+  architecture: string[];
+  learnings: string[];
+  stack: string[];
+}
+
+const fitscore: FitScoreProject = {
+  name: "FitScore",
+  tagline: "Resume match analyzer for comparing a resume against a role",
+
+  problem: \`There is no easy way to tell how well a resume lines up with a
+specific job opportunity. Job seekers re-read both documents, guess at the
+overlap, and apply without a clear picture of where they align.\`,
+
+  solution: \`A web application that compares a resume against job
+requirements and presents the alignment as a result the user can understand —
+making resume-to-role comparison accessible instead of a manual read-through.\`,
+
+  architecture: [
+    "Scope defined around one question: how well does this resume match this role",
+    "Result presented legibly so the outcome is actionable, not just a number",
+    "Built and deployed as a web application end to end",
+  ],
+
+  learnings: [
+    "Translating a practical problem into a workflow is a design decision",
+    "A result is only useful if the person reading it knows what to do next",
+  ],
+
+  stack: ["Web Application"],
+};
+
+export default fitscore;`,
 };

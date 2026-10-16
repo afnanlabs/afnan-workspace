@@ -52,7 +52,7 @@ Prefer something simpler? Switch to Standard View for a cleaner browsing experie
 ├── public/
 │   ├── profile.webp
 │   ├── faviconAK.png
-│   └── resume.pdf
+│   └── Afnan_Khan_Resume.pdf
 │
 ├── src/
 │   ├── components/
