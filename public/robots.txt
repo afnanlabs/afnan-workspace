@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://afnanlabs.github.io/afnan-workspace/sitemap.xml
