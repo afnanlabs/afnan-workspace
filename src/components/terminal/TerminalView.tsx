@@ -34,6 +34,7 @@ function processCommand(cmd: string): string | null {
   if (trimmed === "sounds") return "__SOUNDS_TOGGLE__";
   if (trimmed === "snake") return "__LAUNCH_SNAKE__";
   if (trimmed === "tetris") return "__LAUNCH_TETRIS__";
+  if (trimmed === "galaga") return "__LAUNCH_GALAGA__";
   if (trimmed === "pwd") return "\n/workspace/afnan\n";
   if (trimmed === "banner") return WELCOME_MESSAGE + "\n";
 
@@ -210,6 +211,12 @@ export function TerminalView({ onLaunchArcade, onOpenInStandard, onSwitchMode }:
     if (result === "__LAUNCH_TETRIS__") {
       addEntry(cmd, "\nLaunching retro-arcade://tetris...\n");
       onLaunchArcade("tetris");
+      return;
+    }
+
+    if (result === "__LAUNCH_GALAGA__") {
+      addEntry(cmd, "\nLaunching retro-arcade://galaga...\n");
+      onLaunchArcade("galaga");
       return;
     }
 
