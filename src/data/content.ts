@@ -265,8 +265,8 @@ uid=1000(afnan)
 gid=1000(developers)
 groups=4(adm),24(cdrom),27(sudo),46(plugdev),1000(developers)
 
-Role:      Full Stack Developer Intern
-Location:  Andheri, Mumbai
+Role:      Full-Stack Developer Intern
+Location:  Mumbai, India
 Focus:     Full-Stack Development & Developer Tools
 
 → Run 'about' for full profile
@@ -278,7 +278,7 @@ Focus:     Full-Stack Development & Developer Tools
        .o88888888.        Host:        portfolio.local
       o8888888888888.     Shell:       afnan-sh
       88888888888888P'    Role:        Full Stack Developer
-      '988888888888'      Location:    Andheri, Mumbai
+      '988888888888'      Location:    Mumbai, India
          'Y888P'          Stack:       JavaScript · TypeScript · React · Node.js
             '             Tools:       Git · Docker · Postman · Burp Suite · Jira
                           Focus:       Developer Tools & Practical Software
@@ -290,7 +290,7 @@ Focus:     Full-Stack Development & Developer Tools
   about: `
 Afnan Khan
 
-Full Stack Developer Intern · Andheri, Mumbai
+Full-Stack Developer Intern · Mumbai, India
 
 I build software that solves real problems — productivity systems, developer tooling, and full-stack web applications with deliberate architecture.
 
@@ -359,15 +359,16 @@ Error: Coffee machine not connected ☕
 `,
 
   experience: `
-Full Stack Developer Intern | Marcos Quay Sporting Excellence Pvt Ltd
-Period: July 2026 - Oct 2026
-Location: Andheri, Mumbai
+Full-Stack Developer Intern | Marcos Quay Sporting Excellence Pvt Ltd
+Period: Jul 2026 – Oct 2026
+Location: Mumbai, India
 
-• Led the Human Resources Management System (HRMS) project as the sole developer, developing recruitment automation functionality to enable HR to manage hiring workflows and track candidates throughout the recruitment process.
-• Contributed to the company’s main website-to-mobile conversion project, implementing and integrating mobile app features with existing authentication APIs and navigation workflows.
-• Developed and maintained full-stack features across HRMS, Coach, School Management, and administrative platforms using Vue.js, Node.js, Express.js, MariaDB/MySQL, and REST APIs.
-• Resolved 15+ bugs and integration issues through systematic debugging, SQL analysis, and backend troubleshooting.
-• Delivered PDF generation, email automation, responsive UI improvements, and role-based administrative workflows across internal applications.`,
+• Engineered the core HRMS platform as sole developer, owning the frontend interface and document-processing backend engines.
+• Built a responsive web app with Next.js 15, React 19, and TypeScript, Tailwind CSS, and Chakra UI; shipped the Candidate Management Page, Document Compliance Dashboard, and dynamic Salary Breakdown engine.
+• Built a custom PDF and OCR pipeline with pdfkit, pdf-parse, tesseract.js, sharp, and pdf-to-png-converter for resume parsing, scanned-document OCR, compliance checks, and Offer, Commitment, Contract, and Appointment letter generation.
+• Cut letter generation turnaround from 40 minutes to 10–30 seconds (98.75–99.6% reduction); automated HR administration from 46 to 12 hours per month (73.9% reduction, saving 34 hours/month).
+• Engineered full-stack features across Coach, School, and Admin modules using React.js, Node.js, and MySQL, while contributed to the main web-to-mobile conversion project by integrating mobile workflows with existing authentication APIs and navigation workflows
+• Diagnosed and resolved 25+ production bugs across web and mobile platforms to improve system stability and workflow reliability.`,
 
   projects: `
 Active Project Repositories & Software Implementations
@@ -571,19 +572,22 @@ Languages
   JavaScript (ES6+) · TypeScript · Python · C++
 
 Frontend
-  React · React Native · Next.js · Vue.js · Tailwind CSS
+  Vue.js · React · Next.js · React Native · HTML5 · CSS3 · Tailwind CSS
 
 Backend
   Node.js · Express.js · REST APIs
 
 Database
-  MySQL · PostgreSQL · Redis
+  MySQL · SQL · PostgreSQL · Redis
+
+DevOps & Cloud
+  Docker · Kubernetes · Terraform · AWS · Azure DevOps · Jenkins · Ansible · GitHub Actions
+
+Agentic Systems
+  OpenAI Agents SDK · CrewAI · LangGraph · LangChain
 
 Tools
-  Git · GitHub · Postman · Burp Suite · Jira · Docker
-
-Core CS
-  DBMS · OOP · Operating Systems · Computer Networks
+  Git · GitHub · Postman · Burp Suite · Jira · Linux (Bash/Fundamentals) · Windows
 `,
 
   education: `
@@ -790,16 +794,17 @@ interface Experience {
 
 const experience: Experience[] = [
   {
-    role: "Full Stack Developer Intern",
+    role: "Full-Stack Developer Intern",
     company: "Marcos Quay Sporting Excellence Pvt Ltd",
-    location: "Andheri, Mumbai",
-    period: "July 2026 - Oct 2026",
+    location: "Mumbai, India",
+    period: "Jul 2026 – Oct 2026",
     responsibilities: [
-      "Led the Human Resources Management System (HRMS) project as the sole developer, developing recruitment automation functionality to enable HR to manage hiring workflows and track candidates throughout the recruitment process.",
-      "Contributed to the company’s main website-to-mobile conversion project, implementing and integrating mobile app features with existing authentication APIs and navigation workflows.",
-      "Developed and maintained full-stack features across HRMS, Coach, School Management, and administrative platforms using Vue.js, Node.js, Express.js, MariaDB/MySQL, and REST APIs.",
-      "Resolved 15+ bugs and integration issues through systematic debugging, SQL analysis, and backend troubleshooting.",
-      "Delivered PDF generation, email automation, responsive UI improvements, and role-based administrative workflows across internal applications.",
+      "Engineered the core HRMS platform as sole developer, owning the frontend interface and document-processing backend engines.",
+      "Built a responsive web app with Next.js 15, React 19, and TypeScript, Tailwind CSS, and Chakra UI; shipped the Candidate Management Page, Document Compliance Dashboard, and dynamic Salary Breakdown engine.",
+      "Built a custom PDF and OCR pipeline with pdfkit, pdf-parse, tesseract.js, sharp, and pdf-to-png-converter for resume parsing, scanned-document OCR, compliance checks, and Offer, Commitment, Contract, and Appointment letter generation.",
+      "Cut letter generation turnaround from 40 minutes to 10–30 seconds (98.75–99.6% reduction); automated HR administration from 46 to 12 hours per month (73.9% reduction, saving 34 hours/month).",
+      "Engineered full-stack features across Coach, School, and Admin modules using React.js, Node.js, and MySQL, while contributed to the main web-to-mobile conversion project by integrating mobile workflows with existing authentication APIs and navigation workflows",
+      "Diagnosed and resolved 25+ production bugs across web and mobile platforms to improve system stability and workflow reliability.",
     ],
   },
 ];
@@ -946,10 +951,12 @@ export default contact;`,
     "C++"
   ],
   "frontend": [
-    "React",
-    "React Native",
-    "Next.js",
     "Vue.js",
+    "React",
+    "Next.js",
+    "React Native",
+    "HTML5",
+    "CSS3",
     "Tailwind CSS"
   ],
   "backend": [
@@ -959,8 +966,25 @@ export default contact;`,
   ],
   "database": [
     "MySQL",
+    "SQL",
     "PostgreSQL",
     "Redis"
+  ],
+  "devops_cloud": [
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "AWS",
+    "Azure DevOps",
+    "Jenkins",
+    "Ansible",
+    "GitHub Actions"
+  ],
+  "agentic_systems": [
+    "OpenAI Agents SDK",
+    "CrewAI",
+    "LangGraph",
+    "LangChain"
   ],
   "tools": [
     "Git",
@@ -968,13 +992,8 @@ export default contact;`,
     "Postman",
     "Burp Suite",
     "Jira",
-    "Docker"
-  ],
-  "core_cs": [
-    "DBMS",
-    "OOP",
-    "Operating Systems",
-    "Computer Networks"
+    "Linux (Bash/Fundamentals)",
+    "Windows"
   ]
 }`,
 
