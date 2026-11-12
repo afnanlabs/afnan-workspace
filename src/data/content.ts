@@ -344,7 +344,7 @@ Portfolio Statistics
   Technologies      : 15+
   Certificates      : 12
   Languages         : 5
-  Experience        : 1+ Years
+  Experience        : 3 Months
 
   Current Focus
   → Node.js
