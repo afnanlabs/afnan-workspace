@@ -69,6 +69,13 @@ export const PROMPT = "afnan@workspace:~$ ";
 
 const CERTIFICATIONS = [
   {
+    title: "Redis: The Complete Developer's Guide",
+    issuer: "Udemy",
+    year: 2026,
+    url: "https://www.udemy.com/certificate/UC-57c1cc42-3515-4293-b600-0052f0d87e4a/",
+  },
+
+  {
     title: "Docker Essentials: A Developer Introduction",
     issuer: "IBM / Cognitive Class",
     year: 2026,
@@ -335,7 +342,7 @@ Portfolio Statistics
 
   Projects          : 10+
   Technologies      : 15+
-  Certificates      : 11
+  Certificates      : 12
   Languages         : 5
   Experience        : 1+ Years
 
@@ -854,6 +861,12 @@ interface Certification {
 }
 
 const certifications: Certification[] = [
+  {
+    name: "Redis: The Complete Developer's Guide",
+    issuer: "Udemy",
+    year: 2026,
+    certId: "udemy-redis-2026",
+  },
   {
     name: "Docker Essentials: A Developer Introduction",
     issuer: "IBM / Cognitive Class",
