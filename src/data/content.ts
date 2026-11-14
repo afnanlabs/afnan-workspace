@@ -1,4 +1,5 @@
 import { SPANISH_PROGRESS } from "./spanish"
+import { BOOK_LIBRARY, CURRENTLY_READING } from "./library"
 
 export const TERMINAL_COMMANDS = [
   "help",
@@ -9,6 +10,7 @@ export const TERMINAL_COMMANDS = [
   "education",
   "languages",
   "spanish",
+  "reading",
   "certs",
   "contact",
   "resume",
@@ -229,6 +231,7 @@ Available Commands:
     education           Academic background
     languages           Spoken languages
     spanish             Spanish learning progress
+    reading             At the Reading Desk
     certs               Credentials and training
     contact             How to reach me
     resume              Download resume PDF
@@ -323,6 +326,16 @@ Language Learning — ${SPANISH_PROGRESS.language} ${SPANISH_PROGRESS.flag}
 → Open the full card in VS Code: code spanish
 `,
 
+  reading: `
+At the Reading Desk
+
+  Currently reading : ${CURRENTLY_READING.title}
+  Author            : ${CURRENTLY_READING.author}
+  Library           : ${BOOK_LIBRARY.length} books read
+
+→ Browse the full library in VS Code: code reading
+`,
+
   ls: `
 CORE NAVIGATION
  ├── help          ├── about         ├── experience
@@ -331,7 +344,8 @@ CORE NAVIGATION
  └── resume
 
 PERSONAL
- └── spanish
+ ├── spanish
+ └── reading
 
 PROJECT ACTIONS
  ├── open hrms       ├── open thinktrack   ├── open afnkit
@@ -722,6 +736,12 @@ export const AFNAN_FILES: FileEntry[] = [
     extension: "ts",
     displayName: "spanish.ts",
   },
+  {
+    id: "reading",
+    name: "reading",
+    extension: "ts",
+    displayName: "reading.ts",
+  },
 ];
 
 export const PROJECTS_FILES: FileEntry[] = [
@@ -820,6 +840,22 @@ const spanish = {
 };
 
 export default spanish;`,
+
+  reading: `// reading.ts
+// At the Reading Desk
+
+const currentlyReading = {
+  title: "${CURRENTLY_READING.title}",
+  author: "${CURRENTLY_READING.author}",
+};
+
+const library = [
+${BOOK_LIBRARY.map(
+  (book) => `  { title: "${book.title}", author: "${book.author}" }`,
+).join(",\n")}
+];
+
+export { currentlyReading, library };`,
 
   experience: `// experience.ts
 // Afnan Khan — Technical Contributions
