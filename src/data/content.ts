@@ -1,3 +1,5 @@
+import { SPANISH_PROGRESS } from "./spanish"
+
 export const TERMINAL_COMMANDS = [
   "help",
   "about",
@@ -6,6 +8,7 @@ export const TERMINAL_COMMANDS = [
   "skills",
   "education",
   "languages",
+  "spanish",
   "certs",
   "contact",
   "resume",
@@ -225,6 +228,7 @@ Available Commands:
     skills              Technical stack by category
     education           Academic background
     languages           Spoken languages
+    spanish             Spanish learning progress
     certs               Credentials and training
     contact             How to reach me
     resume              Download resume PDF
@@ -310,12 +314,24 @@ Currently deepening: backend architecture, database design, and building tools d
 → experience    → projects    → contact
 `,
 
+  spanish: `
+Language Learning — ${SPANISH_PROGRESS.language} ${SPANISH_PROGRESS.flag}
+
+  Level    : ${SPANISH_PROGRESS.level}
+  Status   : Currently studying at the ${SPANISH_PROGRESS.level} level.
+
+→ Open the full card in VS Code: code spanish
+`,
+
   ls: `
 CORE NAVIGATION
  ├── help          ├── about         ├── experience
  ├── projects      ├── skills        ├── education
  ├── languages     ├── certs         ├── contact
  └── resume
+
+PERSONAL
+ └── spanish
 
 PROJECT ACTIONS
  ├── open hrms       ├── open thinktrack   ├── open afnkit
@@ -700,6 +716,12 @@ export const AFNAN_FILES: FileEntry[] = [
     extension: "json",
     displayName: "skills.json",
   },
+  {
+    id: "spanish",
+    name: "spanish",
+    extension: "ts",
+    displayName: "spanish.ts",
+  },
 ];
 
 export const PROJECTS_FILES: FileEntry[] = [
@@ -787,6 +809,17 @@ const profile: Profile = {
 };
 
 export default profile;`,
+
+  spanish: `// spanish.ts
+// Language learning tracker
+
+const spanish = {
+  language: "${SPANISH_PROGRESS.language}",
+  level: "${SPANISH_PROGRESS.level}",
+  status: "Currently studying at the ${SPANISH_PROGRESS.level} level.",
+};
+
+export default spanish;`,
 
   experience: `// experience.ts
 // Afnan Khan — Technical Contributions
