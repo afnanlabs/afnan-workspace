@@ -11,8 +11,6 @@ export const FILE_ALIASES: Record<string, string> = {
   certifications: "certifications",
   contact: "contact",
   skills: "skills",
-  spanish: "spanish",
-  reading: "reading",
   resume: "resume",
 };
 

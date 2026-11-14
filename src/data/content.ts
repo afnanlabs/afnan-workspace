@@ -1,6 +1,3 @@
-import { SPANISH_PROGRESS } from "./spanish"
-import { BOOK_LIBRARY, CURRENTLY_READING } from "./library"
-
 export const TERMINAL_COMMANDS = [
   "help",
   "about",
@@ -9,7 +6,7 @@ export const TERMINAL_COMMANDS = [
   "skills",
   "education",
   "languages",
-  "spanish",
+  "lang",
   "reading",
   "certs",
   "contact",
@@ -230,7 +227,7 @@ Available Commands:
     skills              Technical stack by category
     education           Academic background
     languages           Spoken languages
-    spanish             Spanish learning progress
+    lang                Spanish learning progress
     reading             At the Reading Desk
     certs               Credentials and training
     contact             How to reach me
@@ -317,25 +314,6 @@ Currently deepening: backend architecture, database design, and building tools d
 → experience    → projects    → contact
 `,
 
-  spanish: `
-Language Learning — ${SPANISH_PROGRESS.language} ${SPANISH_PROGRESS.flag}
-
-  Level    : ${SPANISH_PROGRESS.level}
-  Status   : Currently studying at the ${SPANISH_PROGRESS.level} level.
-
-→ Open the full card in VS Code: code spanish
-`,
-
-  reading: `
-At the Reading Desk
-
-  Currently reading : ${CURRENTLY_READING.title}
-  Author            : ${CURRENTLY_READING.author}
-  Library           : ${BOOK_LIBRARY.length} books read
-
-→ Browse the full library in VS Code: code reading
-`,
-
   ls: `
 CORE NAVIGATION
  ├── help          ├── about         ├── experience
@@ -344,7 +322,7 @@ CORE NAVIGATION
  └── resume
 
 PERSONAL
- ├── spanish
+ ├── lang
  └── reading
 
 PROJECT ACTIONS
@@ -730,18 +708,6 @@ export const AFNAN_FILES: FileEntry[] = [
     extension: "json",
     displayName: "skills.json",
   },
-  {
-    id: "spanish",
-    name: "spanish",
-    extension: "ts",
-    displayName: "spanish.ts",
-  },
-  {
-    id: "reading",
-    name: "reading",
-    extension: "ts",
-    displayName: "reading.ts",
-  },
 ];
 
 export const PROJECTS_FILES: FileEntry[] = [
@@ -829,33 +795,6 @@ const profile: Profile = {
 };
 
 export default profile;`,
-
-  spanish: `// spanish.ts
-// Language learning tracker
-
-const spanish = {
-  language: "${SPANISH_PROGRESS.language}",
-  level: "${SPANISH_PROGRESS.level}",
-  status: "Currently studying at the ${SPANISH_PROGRESS.level} level.",
-};
-
-export default spanish;`,
-
-  reading: `// reading.ts
-// At the Reading Desk
-
-const currentlyReading = {
-  title: "${CURRENTLY_READING.title}",
-  author: "${CURRENTLY_READING.author}",
-};
-
-const library = [
-${BOOK_LIBRARY.map(
-  (book) => `  { title: "${book.title}", author: "${book.author}" }`,
-).join(",\n")}
-];
-
-export { currentlyReading, library };`,
 
   experience: `// experience.ts
 // Afnan Khan — Technical Contributions

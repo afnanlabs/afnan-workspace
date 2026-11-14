@@ -374,7 +374,7 @@
   }
 }
 
-/* --- Reading desk & library ------------------------------------------------ */
+/* --- Personal terminal popups (lang / reading) ----------------------------- */
 :root {
   --reading-gold: #9a7418;
 }
@@ -383,29 +383,36 @@
   --reading-gold: #d8b25f;
 }
 
-@keyframes reading-modal-in {
+/* Opacity-only so the inline translate3d positioning is never overridden. */
+@keyframes personal-popup-in {
   from {
     opacity: 0;
-    transform: translateY(10px) scale(0.985);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
-.reading-modal-in {
-  animation: reading-modal-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+.personal-popup-in {
+  animation: personal-popup-in 160ms ease-out both;
 }
 
-.library-tile:focus-visible {
+.book-cover {
+  border: 1px solid var(--vs-border);
+  transition: border-color 0.15s ease;
+}
+
+.book-tile:hover .book-cover {
+  border-color: var(--reading-gold);
+}
+
+.book-tile:focus-visible {
   outline: 2px solid var(--reading-gold);
   outline-offset: 4px;
-  border-radius: 8px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reading-modal-in {
+  .personal-popup-in {
     animation: none;
   }
 }

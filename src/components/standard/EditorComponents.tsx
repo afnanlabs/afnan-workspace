@@ -10,8 +10,6 @@ import {
   X,
 } from "lucide-react";
 import { downloadResume } from "@/lib/resume";
-import { SpanishProgressCard } from "./SpanishProgressCard";
-import { ReadingDesk } from "./ReadingDesk";
 import {
   EXPLORER_FOLDERS,
   ALL_FILES,
@@ -258,17 +256,6 @@ export function EditorContent({ fileId }: EditorContentProps) {
   const content = fileContents[fileId] ?? "";
 
   if (!file) return null;
-
-  if (fileId === "spanish" || fileId === "reading") {
-    return (
-      <div
-        className="flex-1 overflow-y-auto"
-        style={{ background: "var(--vs-bg)" }}
-      >
-        {fileId === "spanish" ? <SpanishProgressCard /> : <ReadingDesk />}
-      </div>
-    );
-  }
 
   return (
     <div
