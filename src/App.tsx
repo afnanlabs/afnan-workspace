@@ -39,12 +39,18 @@ export function App() {
     const updateFromHash = () => {
       try {
         const hash = window.location.hash
-        if (hash.includes('mode=standard')) setMode('standard')
+        // Any hash-driven mode change (back/forward, manual edit) must also
+        // dismiss the personal popups — they only exist in terminal mode.
+        if (hash.includes('mode=standard')) {
+          setMode('standard')
+          setPersonalWindow(null)
+        }
         if (hash.includes('mode=terminal')) setMode('terminal')
         const fileMatch = hash.match(/file=([a-zA-Z0-9_-]+)/)
         if (fileMatch && fileMatch[1]) {
           setPendingFile(fileMatch[1].toLowerCase())
           setMode('standard')
+          setPersonalWindow(null)
         }
       } catch (e) {
         // ignore

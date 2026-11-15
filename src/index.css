@@ -376,7 +376,8 @@
 
 /* --- Personal terminal popups (lang / reading) ----------------------------- */
 :root {
-  --reading-gold: #9a7418;
+  /* Darkened for AA contrast on the light editor surface. */
+  --reading-gold: #856011;
 }
 
 .dark {
