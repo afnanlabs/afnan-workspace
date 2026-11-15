@@ -6,6 +6,8 @@ export const TERMINAL_COMMANDS = [
   "skills",
   "education",
   "languages",
+  "lang",
+  "reading",
   "certs",
   "contact",
   "resume",
@@ -225,6 +227,8 @@ Available Commands:
     skills              Technical stack by category
     education           Academic background
     languages           Spoken languages
+    lang                Languages and learning progress
+    reading             At the Reading Desk
     certs               Credentials and training
     contact             How to reach me
     resume              Download resume PDF
@@ -316,6 +320,10 @@ CORE NAVIGATION
  ├── projects      ├── skills        ├── education
  ├── languages     ├── certs         ├── contact
  └── resume
+
+PERSONAL
+ ├── lang
+ └── reading
 
 PROJECT ACTIONS
  ├── open hrms       ├── open thinktrack   ├── open afnkit

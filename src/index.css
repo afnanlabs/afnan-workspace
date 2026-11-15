@@ -373,3 +373,48 @@
     animation: terminal-blink 1.1s ease-in-out infinite;
   }
 }
+
+/* --- Personal terminal popups (lang / reading) ----------------------------- */
+:root {
+  /* Darkened for AA contrast on the light editor surface. */
+  --reading-gold: #856011;
+}
+
+.dark {
+  --reading-gold: #d8b25f;
+}
+
+/* Opacity-only so the inline translate3d positioning is never overridden. */
+@keyframes personal-popup-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.personal-popup-in {
+  animation: personal-popup-in 160ms ease-out both;
+}
+
+.book-cover {
+  border: 1px solid var(--vs-border);
+  transition: border-color 0.15s ease;
+}
+
+.book-tile:hover .book-cover {
+  border-color: var(--reading-gold);
+}
+
+.book-tile:focus-visible {
+  outline: 2px solid var(--reading-gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personal-popup-in {
+    animation: none;
+  }
+}
+

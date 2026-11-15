@@ -5,10 +5,13 @@ import { StandardView } from '@/components/standard/StandardView'
 import { CursorManager } from '@/hooks/use-cursor.tsx'
 import { useDraggable } from '@/hooks/use-draggable'
 import { ArcadeWindow } from '@/components/terminal/ArcadeWindow'
+import { LangWindow } from '@/components/terminal/LangWindow'
+import { ReadingWindow } from '@/components/terminal/ReadingWindow'
 import { track } from '@/lib/analytics'
 
 type Mode = 'terminal' | 'standard'
 export type ArcadeGame = 'arcade' | 'snake' | 'tetris' | 'galaga' | 'pacman' | null
+export type PersonalWindow = 'lang' | 'reading' | null
 
 function getInitialMode(): Mode {
   if (typeof window !== 'undefined') {
@@ -26,6 +29,7 @@ function getInitialMode(): Mode {
 export function App() {
   const [mode, setMode] = useState<Mode>(getInitialMode)
   const [arcadeGame, setArcadeGame] = useState<ArcadeGame>(null)
+  const [personalWindow, setPersonalWindow] = useState<PersonalWindow>(null)
   const [pendingFile, setPendingFile] = useState<string | null>(null)
   const windowRef = useRef<HTMLDivElement>(null)
   const { pos, isDragging, onMouseDown } = useDraggable(windowRef)
@@ -35,12 +39,18 @@ export function App() {
     const updateFromHash = () => {
       try {
         const hash = window.location.hash
-        if (hash.includes('mode=standard')) setMode('standard')
+        // Any hash-driven mode change (back/forward, manual edit) must also
+        // dismiss the personal popups — they only exist in terminal mode.
+        if (hash.includes('mode=standard')) {
+          setMode('standard')
+          setPersonalWindow(null)
+        }
         if (hash.includes('mode=terminal')) setMode('terminal')
         const fileMatch = hash.match(/file=([a-zA-Z0-9_-]+)/)
         if (fileMatch && fileMatch[1]) {
           setPendingFile(fileMatch[1].toLowerCase())
           setMode('standard')
+          setPersonalWindow(null)
         }
       } catch (e) {
         // ignore
@@ -70,7 +80,18 @@ export function App() {
 
   function handleModeChange(next: Mode) {
     setMode(next)
+    setPersonalWindow(null)
     updateHash({ mode: next })
+  }
+
+  function handleLaunchArcade(game: ArcadeGame) {
+    setPersonalWindow(null)
+    setArcadeGame(game)
+  }
+
+  function handleOpenPersonal(next: NonNullable<PersonalWindow>) {
+    setArcadeGame(null)
+    setPersonalWindow(next)
   }
 
   function handleOpenFileInStandard(fileId: string) {
@@ -106,7 +127,12 @@ export function App() {
 
         {mode === 'terminal' ? (
           <div data-terminal-view className="flex-1 flex flex-col min-h-0">
-            <TerminalView onLaunchArcade={setArcadeGame} onOpenInStandard={handleOpenFileInStandard} onSwitchMode={handleModeChange} />
+            <TerminalView
+              onLaunchArcade={handleLaunchArcade}
+              onOpenPersonal={handleOpenPersonal}
+              onOpenInStandard={handleOpenFileInStandard}
+              onSwitchMode={handleModeChange}
+            />
           </div>
         ) : (
           <StandardView pendingFile={pendingFile} onConsumePending={() => setPendingFile(null)} onOpenInTerminal={() => { setMode('terminal'); updateHash({ mode: 'terminal' }); }} />
@@ -116,6 +142,14 @@ export function App() {
       {/* Arcade overlay — rendered outside app-window so it floats above */}
       {arcadeGame && (
         <ArcadeWindow game={arcadeGame} onClose={() => setArcadeGame(null)} onSelectGame={setArcadeGame} />
+      )}
+
+      {/* Personal terminal popups (lang / reading) */}
+      {personalWindow === 'lang' && (
+        <LangWindow onClose={() => setPersonalWindow(null)} />
+      )}
+      {personalWindow === 'reading' && (
+        <ReadingWindow onClose={() => setPersonalWindow(null)} />
       )}
     </div>
   )

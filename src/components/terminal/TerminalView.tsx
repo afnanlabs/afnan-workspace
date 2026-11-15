@@ -13,7 +13,7 @@ import { useAudio } from "@/hooks/use-audio.ts";
 import { RESUME_URL, downloadResume } from "@/lib/resume";
 import { resolveFileId } from "@/lib/commands";
 import { ARCADE_GAMES, ARCADE_GAME_LABELS, getAllHighScores } from "@/lib/arcade";
-import type { ArcadeGame } from "@/App";
+import type { ArcadeGame, PersonalWindow } from "@/App";
 
 interface HistoryEntry {
   id: number;
@@ -38,6 +38,8 @@ function processCommand(cmd: string): string | null {
   if (trimmed === "galaga") return "__LAUNCH_GALAGA__";
   if (trimmed === "pacman") return "__LAUNCH_PACMAN__";
   if (trimmed === "arcade") return "__LAUNCH_ARCADE__";
+  if (trimmed === "lang") return "__OPEN_LANG__";
+  if (trimmed === "reading") return "__OPEN_READING__";
   if (trimmed === "scores") return "__SHOW_SCORES__";
   if (trimmed === "pwd") return "\n/workspace/afnan\n";
   if (trimmed === "banner") return WELCOME_MESSAGE + "\n";
@@ -98,11 +100,12 @@ function autocomplete(input: string): string {
 
 interface TerminalViewProps {
   onLaunchArcade: (game: ArcadeGame) => void;
+  onOpenPersonal?: (window: NonNullable<PersonalWindow>) => void;
   onOpenInStandard?: (fileId: string) => void;
   onSwitchMode?: (mode: 'terminal' | 'standard') => void;
 }
 
-export function TerminalView({ onLaunchArcade, onOpenInStandard, onSwitchMode }: TerminalViewProps) {
+export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard, onSwitchMode }: TerminalViewProps) {
   const [entries, setEntries] = useState<HistoryEntry[]>([]);
   const [input, setInput] = useState("");
   const [inputHistory, setInputHistory] = useState<string[]>([]);
@@ -233,6 +236,18 @@ export function TerminalView({ onLaunchArcade, onOpenInStandard, onSwitchMode }:
     if (result === "__LAUNCH_ARCADE__") {
       addEntry(cmd, "\nOpening retro-arcade://arcade...\n");
       onLaunchArcade("arcade");
+      return;
+    }
+
+    if (result === "__OPEN_LANG__") {
+      addEntry(cmd, "\nOpening learning://languages...\n");
+      onOpenPersonal?.("lang");
+      return;
+    }
+
+    if (result === "__OPEN_READING__") {
+      addEntry(cmd, "\nOpening library://reading-desk...\n");
+      onOpenPersonal?.("reading");
       return;
     }
 
