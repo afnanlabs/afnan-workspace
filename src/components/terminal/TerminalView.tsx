@@ -240,7 +240,7 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
     }
 
     if (result === "__OPEN_LANG__") {
-      addEntry(cmd, "\nOpening learning://spanish...\n");
+      addEntry(cmd, "\nOpening learning://languages...\n");
       onOpenPersonal?.("lang");
       return;
     }

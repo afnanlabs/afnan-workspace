@@ -3,7 +3,7 @@ import { X } from 'lucide-react'
 import { useDraggable } from '@/hooks/use-draggable'
 
 interface PersonalWindowProps {
-  /** Shown in the title bar, e.g. "learning://spanish". */
+  /** Shown in the title bar, e.g. "learning://languages". */
   title: string
   onClose: () => void
   children: ReactNode

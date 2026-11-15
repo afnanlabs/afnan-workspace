@@ -227,7 +227,7 @@ Available Commands:
     skills              Technical stack by category
     education           Academic background
     languages           Spoken languages
-    lang                Spanish learning progress
+    lang                Languages and learning progress
     reading             At the Reading Desk
     certs               Credentials and training
     contact             How to reach me
