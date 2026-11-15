@@ -26,4 +26,16 @@ export const BOOK_LIBRARY: Book[] = [
     cover: "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
     url: "https://openlibrary.org/isbn/9780374533557",
   },
+  {
+    title: "Influence",
+    author: "Robert B. Cialdini",
+    cover: "https://covers.openlibrary.org/b/isbn/9780061241895-L.jpg",
+    url: "https://openlibrary.org/isbn/9780061241895",
+  },
+  {
+    title: "Thinking in Systems",
+    author: "Donella H. Meadows",
+    cover: "https://covers.openlibrary.org/b/isbn/9781603580557-L.jpg",
+    url: "https://openlibrary.org/isbn/9781603580557",
+  },
 ]
