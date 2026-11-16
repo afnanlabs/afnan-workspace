@@ -7,6 +7,7 @@ import {
   GraduationCap,
   Mail,
   MapPin,
+  Phone,
 } from 'lucide-react'
 import { PersonalWindow } from './terminal/PersonalWindow'
 import { copyText } from '@/lib/clipboard'
@@ -101,6 +102,14 @@ export function RecruiterWindow({ onClose, onOpenProject }: RecruiterWindowProps
             >
               <Mail size={13} aria-hidden="true" />
               Email
+            </a>
+
+            <a
+              className="recruiter-action"
+              href={RECRUITER_PROFILE.phoneHref}
+            >
+              <Phone size={13} aria-hidden="true" />
+              {RECRUITER_PROFILE.phone}
             </a>
 
             <a
