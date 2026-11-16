@@ -11,6 +11,7 @@ export interface MenubarProps {
   onOpenSettings: () => void;
   onSwitchToTerminal: () => void;
   onDownloadResume: () => void;
+  onOpenRecruiter?: () => void;
 }
 
 type MenuItem =
@@ -108,6 +109,7 @@ export function Menubar(props: MenubarProps) {
     {
       label: "Help",
       items: [
+        { kind: "item", label: "Recruiter Quick View", hint: "hire", action: props.onOpenRecruiter ?? (() => {}) },
         { kind: "item", label: "Command Palette…", action: props.onCommandPalette },
         { kind: "item", label: "About Afnan Workspace", action: props.onOpenSettings },
         { kind: "separator" },
