@@ -787,7 +787,7 @@
       "label": "RecruiterWindowProps",
       "file_type": "code",
       "source_file": "src/components/RecruiterWindow.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "components_recruiterwindow_recruiterwindowprops",
       "community": 39,
@@ -797,7 +797,7 @@
       "label": "CopyState",
       "file_type": "code",
       "source_file": "src/components/RecruiterWindow.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "components_recruiterwindow_copystate",
       "community": 39,
@@ -807,7 +807,7 @@
       "label": "RecruiterWindow()",
       "file_type": "code",
       "source_file": "src/components/RecruiterWindow.tsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "components_recruiterwindow_recruiterwindow",
       "community": 39,
@@ -817,7 +817,7 @@
       "label": "ProjectCard()",
       "file_type": "code",
       "source_file": "src/components/RecruiterWindow.tsx",
-      "source_location": "L199",
+      "source_location": "L208",
       "_origin": "ast",
       "id": "components_recruiterwindow_projectcard",
       "community": 39,
@@ -827,7 +827,7 @@
       "label": "GitHubIcon()",
       "file_type": "code",
       "source_file": "src/components/RecruiterWindow.tsx",
-      "source_location": "L244",
+      "source_location": "L253",
       "_origin": "ast",
       "id": "components_recruiterwindow_githubicon",
       "community": 39,
@@ -837,7 +837,7 @@
       "label": "LinkedInIcon()",
       "file_type": "code",
       "source_file": "src/components/RecruiterWindow.tsx",
-      "source_location": "L259",
+      "source_location": "L268",
       "_origin": "ast",
       "id": "components_recruiterwindow_linkedinicon",
       "community": 39,
@@ -1110,7 +1110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "standard_menubar",
-      "community": 15,
+      "community": 28,
       "norm_label": "menubar.tsx"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "standard_menubar_menubarprops",
-      "community": 15,
+      "community": 28,
       "norm_label": "menubarprops"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "standard_menubar_menuitem",
-      "community": 15,
+      "community": 28,
       "norm_label": "menuitem"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "standard_menubar_menu",
-      "community": 15,
+      "community": 28,
       "norm_label": "menu"
     },
     {
@@ -1150,7 +1150,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "standard_menubar_openexternal",
-      "community": 15,
+      "community": 28,
       "norm_label": "openexternal()"
     },
     {
@@ -1160,7 +1160,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "standard_menubar_menubar",
-      "community": 15,
+      "community": 28,
       "norm_label": "menubar()"
     },
     {
@@ -1200,7 +1200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "standard_settingspanel",
-      "community": 31,
+      "community": 3,
       "norm_label": "settingspanel.tsx"
     },
     {
@@ -1210,7 +1210,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "standard_settingspanel_themeoption",
-      "community": 31,
+      "community": 3,
       "norm_label": "themeoption"
     },
     {
@@ -1220,7 +1220,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "standard_settingspanel_theme_options",
-      "community": 31,
+      "community": 3,
       "norm_label": "theme_options"
     },
     {
@@ -1230,7 +1230,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "standard_settingspanel_settingspanel",
-      "community": 31,
+      "community": 3,
       "norm_label": "settingspanel()"
     },
     {
@@ -1240,7 +1240,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "standard_settingspanel_kbd",
-      "community": 31,
+      "community": 3,
       "norm_label": "kbd"
     },
     {
@@ -2300,7 +2300,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "terminal_terminalview_terminalview",
-      "community": 31,
+      "community": 3,
       "norm_label": "terminalview()"
     },
     {
@@ -2580,7 +2580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_accordion",
-      "community": 2,
+      "community": 31,
       "norm_label": "accordion.tsx"
     },
     {
@@ -2590,7 +2590,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_accordion_accordion",
-      "community": 2,
+      "community": 31,
       "norm_label": "accordion()"
     },
     {
@@ -2600,7 +2600,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_accordion_accordionitem",
-      "community": 2,
+      "community": 31,
       "norm_label": "accordionitem()"
     },
     {
@@ -2610,7 +2610,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_accordion_accordiontrigger",
-      "community": 2,
+      "community": 31,
       "norm_label": "accordiontrigger()"
     },
     {
@@ -2620,7 +2620,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "ui_accordion_accordioncontent",
-      "community": 2,
+      "community": 31,
       "norm_label": "accordioncontent()"
     },
     {
@@ -2630,7 +2630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_alert_dialog",
-      "community": 45,
+      "community": 18,
       "norm_label": "alert-dialog.tsx"
     },
     {
@@ -2640,7 +2640,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialog",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialog()"
     },
     {
@@ -2650,7 +2650,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogtrigger",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogtrigger()"
     },
     {
@@ -2660,7 +2660,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogportal",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogportal()"
     },
     {
@@ -2670,7 +2670,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogoverlay",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogoverlay()"
     },
     {
@@ -2680,7 +2680,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogcontent",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogcontent()"
     },
     {
@@ -2690,7 +2690,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogheader",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogheader()"
     },
     {
@@ -2700,7 +2700,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogfooter",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogfooter()"
     },
     {
@@ -2710,7 +2710,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogtitle",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogtitle()"
     },
     {
@@ -2720,7 +2720,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogdescription",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogdescription()"
     },
     {
@@ -2730,7 +2730,7 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogmedia",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogmedia()"
     },
     {
@@ -2740,7 +2740,7 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogaction",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogaction()"
     },
     {
@@ -2750,7 +2750,7 @@
       "source_location": "L163",
       "_origin": "ast",
       "id": "ui_alert_dialog_alertdialogcancel",
-      "community": 45,
+      "community": 18,
       "norm_label": "alertdialogcancel()"
     },
     {
@@ -2930,7 +2930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_breadcrumb",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumb.tsx"
     },
     {
@@ -2940,7 +2940,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumb",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumb()"
     },
     {
@@ -2950,7 +2950,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumblist",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumblist()"
     },
     {
@@ -2960,7 +2960,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbitem",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumbitem()"
     },
     {
@@ -2970,7 +2970,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumblink",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumblink()"
     },
     {
@@ -2980,7 +2980,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbpage",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumbpage()"
     },
     {
@@ -2990,7 +2990,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbseparator",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumbseparator()"
     },
     {
@@ -3000,7 +3000,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "ui_breadcrumb_breadcrumbellipsis",
-      "community": 47,
+      "community": 2,
       "norm_label": "breadcrumbellipsis()"
     },
     {
@@ -3200,7 +3200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_carousel",
-      "community": 28,
+      "community": 18,
       "norm_label": "carousel.tsx"
     },
     {
@@ -3210,7 +3210,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_carousel_carouselapi",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselapi"
     },
     {
@@ -3220,7 +3220,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_carousel_usecarouselparameters",
-      "community": 28,
+      "community": 18,
       "norm_label": "usecarouselparameters"
     },
     {
@@ -3230,7 +3230,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "ui_carousel_carouseloptions",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouseloptions"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_carousel_carouselplugin",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselplugin"
     },
     {
@@ -3250,7 +3250,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_carousel_carouselprops",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselprops"
     },
     {
@@ -3260,7 +3260,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "ui_carousel_carouselcontextprops",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselcontextprops"
     },
     {
@@ -3270,7 +3270,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "ui_carousel_carouselcontext",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselcontext"
     },
     {
@@ -3280,7 +3280,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "ui_carousel_usecarousel",
-      "community": 28,
+      "community": 18,
       "norm_label": "usecarousel()"
     },
     {
@@ -3290,7 +3290,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "ui_carousel_carousel",
-      "community": 28,
+      "community": 18,
       "norm_label": "carousel()"
     },
     {
@@ -3300,7 +3300,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "ui_carousel_carouselcontent",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselcontent()"
     },
     {
@@ -3310,7 +3310,7 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "ui_carousel_carouselitem",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselitem()"
     },
     {
@@ -3320,7 +3320,7 @@
       "source_location": "L172",
       "_origin": "ast",
       "id": "ui_carousel_carouselprevious",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselprevious()"
     },
     {
@@ -3330,7 +3330,7 @@
       "source_location": "L202",
       "_origin": "ast",
       "id": "ui_carousel_carouselnext",
-      "community": 28,
+      "community": 18,
       "norm_label": "carouselnext()"
     },
     {
@@ -4510,7 +4510,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_hover_card",
-      "community": 17,
+      "community": 40,
       "norm_label": "hover-card.tsx"
     },
     {
@@ -4520,7 +4520,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_hover_card_hovercard",
-      "community": 17,
+      "community": 40,
       "norm_label": "hovercard()"
     },
     {
@@ -4530,7 +4530,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "ui_hover_card_hovercardtrigger",
-      "community": 17,
+      "community": 40,
       "norm_label": "hovercardtrigger()"
     },
     {
@@ -4540,7 +4540,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "ui_hover_card_hovercardcontent",
-      "community": 17,
+      "community": 40,
       "norm_label": "hovercardcontent()"
     },
     {
@@ -4640,7 +4640,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input_otp",
-      "community": 2,
+      "community": 17,
       "norm_label": "input-otp.tsx"
     },
     {
@@ -4650,7 +4650,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ui_input_otp_inputotp",
-      "community": 2,
+      "community": 17,
       "norm_label": "inputotp()"
     },
     {
@@ -4660,7 +4660,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpgroup",
-      "community": 2,
+      "community": 17,
       "norm_label": "inputotpgroup()"
     },
     {
@@ -4670,7 +4670,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpslot",
-      "community": 2,
+      "community": 17,
       "norm_label": "inputotpslot()"
     },
     {
@@ -4680,7 +4680,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpseparator",
-      "community": 2,
+      "community": 17,
       "norm_label": "inputotpseparator()"
     },
     {
@@ -4870,7 +4870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_label",
-      "community": 25,
+      "community": 21,
       "norm_label": "label.tsx"
     },
     {
@@ -4880,7 +4880,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_label_label",
-      "community": 25,
+      "community": 21,
       "norm_label": "label()"
     },
     {
@@ -5060,7 +5060,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_native_select",
-      "community": 40,
+      "community": 17,
       "norm_label": "native-select.tsx"
     },
     {
@@ -5070,7 +5070,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_native_select_nativeselect",
-      "community": 40,
+      "community": 17,
       "norm_label": "nativeselect()"
     },
     {
@@ -5080,7 +5080,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "ui_native_select_nativeselectoption",
-      "community": 40,
+      "community": 17,
       "norm_label": "nativeselectoption()"
     },
     {
@@ -5090,7 +5090,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "ui_native_select_nativeselectoptgroup",
-      "community": 40,
+      "community": 17,
       "norm_label": "nativeselectoptgroup()"
     },
     {
@@ -5420,7 +5420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_resizable",
-      "community": 53,
+      "community": 17,
       "norm_label": "resizable.tsx"
     },
     {
@@ -5430,7 +5430,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_resizable_resizablepanelgroup",
-      "community": 53,
+      "community": 17,
       "norm_label": "resizablepanelgroup()"
     },
     {
@@ -5440,7 +5440,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "ui_resizable_resizablepanel",
-      "community": 53,
+      "community": 17,
       "norm_label": "resizablepanel()"
     },
     {
@@ -5450,7 +5450,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_resizable_resizablehandle",
-      "community": 53,
+      "community": 17,
       "norm_label": "resizablehandle()"
     },
     {
@@ -6030,7 +6030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_slider",
-      "community": 2,
+      "community": 17,
       "norm_label": "slider.tsx"
     },
     {
@@ -6040,7 +6040,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_slider_slider",
-      "community": 2,
+      "community": 17,
       "norm_label": "slider()"
     },
     {
@@ -6070,7 +6070,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_spinner",
-      "community": 2,
+      "community": 17,
       "norm_label": "spinner.tsx"
     },
     {
@@ -6080,7 +6080,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_spinner_spinner",
-      "community": 2,
+      "community": 17,
       "norm_label": "spinner()"
     },
     {
@@ -6460,7 +6460,7 @@
       "source_location": "L667",
       "_origin": "ast",
       "id": "data_content_fileentry",
-      "community": 10,
+      "community": 13,
       "norm_label": "fileentry"
     },
     {
@@ -6490,7 +6490,7 @@
       "source_location": "L718",
       "_origin": "ast",
       "id": "data_content_projects_files",
-      "community": 39,
+      "community": 10,
       "norm_label": "projects_files"
     },
     {
@@ -6510,7 +6510,7 @@
       "source_location": "L761",
       "_origin": "ast",
       "id": "data_content_explorer_folders",
-      "community": 10,
+      "community": 13,
       "norm_label": "explorer_folders"
     },
     {
@@ -6524,10 +6524,20 @@
       "norm_label": "all_files"
     },
     {
+      "label": "SKILL_GROUPS",
+      "file_type": "code",
+      "source_file": "src/data/content.ts",
+      "source_location": "L779",
+      "_origin": "ast",
+      "id": "data_content_skill_groups",
+      "community": 39,
+      "norm_label": "skill_groups"
+    },
+    {
       "label": "fileContents",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L773",
+      "source_location": "L819",
       "_origin": "ast",
       "id": "data_content_filecontents",
       "community": 26,
@@ -6617,7 +6627,7 @@
       "label": "RecruiterMetric",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L9",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "data_recruiter_recruitermetric",
       "community": 39,
@@ -6627,7 +6637,7 @@
       "label": "RecruiterProject",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L16",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "data_recruiter_recruiterproject",
       "community": 39,
@@ -6637,7 +6647,7 @@
       "label": "RecruiterSkillGroup",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L28",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "data_recruiter_recruiterskillgroup",
       "community": 39,
@@ -6647,7 +6657,7 @@
       "label": "RECRUITER_PROFILE",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L33",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "data_recruiter_recruiter_profile",
       "community": 39,
@@ -6657,7 +6667,7 @@
       "label": "RECRUITER_METRICS",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L47",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "data_recruiter_recruiter_metrics",
       "community": 39,
@@ -6667,17 +6677,27 @@
       "label": "RECRUITER_PROJECTS",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L70",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "data_recruiter_recruiter_projects",
       "community": 39,
       "norm_label": "recruiter_projects"
     },
     {
+      "label": "SKILL_LABELS",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "data_recruiter_skill_labels",
+      "community": 39,
+      "norm_label": "skill_labels"
+    },
+    {
       "label": "RECRUITER_SKILLS",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L104",
+      "source_location": "L136",
       "_origin": "ast",
       "id": "data_recruiter_recruiter_skills",
       "community": 39,
@@ -6740,7 +6760,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_audio",
-      "community": 31,
+      "community": 3,
       "norm_label": "use-audio.ts"
     },
     {
@@ -6750,7 +6770,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "hooks_use_audio_soundtype",
-      "community": 31,
+      "community": 3,
       "norm_label": "soundtype"
     },
     {
@@ -6760,7 +6780,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "hooks_use_audio_createaudiocontext",
-      "community": 31,
+      "community": 3,
       "norm_label": "createaudiocontext()"
     },
     {
@@ -6770,7 +6790,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "hooks_use_audio_playsound",
-      "community": 31,
+      "community": 3,
       "norm_label": "playsound()"
     },
     {
@@ -6780,7 +6800,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "hooks_use_audio_useaudio",
-      "community": 31,
+      "community": 3,
       "norm_label": "useaudio()"
     },
     {
@@ -7030,7 +7050,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "lib_arcade_arcade_game_labels",
-      "community": 10,
+      "community": 22,
       "norm_label": "arcade_game_labels"
     },
     {
@@ -7190,7 +7210,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_resume",
-      "community": 13,
+      "community": 15,
       "norm_label": "resume.ts"
     },
     {
@@ -7200,7 +7220,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "lib_resume_downloadresume",
-      "community": 13,
+      "community": 15,
       "norm_label": "downloadresume()"
     },
     {
@@ -9024,9 +9044,9 @@
       "source_file": "src/App.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "components_recruiterwindow",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow"
     },
     {
       "relation": "imports",
@@ -9035,9 +9055,9 @@
       "source_file": "src/App.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "components_recruiterwindow_recruiterwindow",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow_recruiterwindow"
     },
     {
       "relation": "imports_from",
@@ -9582,9 +9602,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "components_recruiterwindow_copystate",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow_copystate"
     },
     {
       "relation": "contains",
@@ -9592,9 +9612,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L244",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "components_recruiterwindow_githubicon",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow_githubicon"
     },
     {
       "relation": "contains",
@@ -9602,9 +9622,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L259",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "components_recruiterwindow_linkedinicon",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow_linkedinicon"
     },
     {
       "relation": "contains",
@@ -9612,9 +9632,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L199",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "components_recruiterwindow_projectcard",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow_projectcard"
     },
     {
       "relation": "contains",
@@ -9622,9 +9642,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "components_recruiterwindow_recruiterwindow",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow_recruiterwindow"
     },
     {
       "relation": "contains",
@@ -9632,9 +9652,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "components_recruiterwindow_recruiterwindowprops",
-      "confidence_score": 1.0
+      "target": "components_recruiterwindow_recruiterwindowprops"
     },
     {
       "relation": "imports_from",
@@ -9643,9 +9663,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "data_recruiter",
-      "confidence_score": 1.0
+      "target": "data_recruiter"
     },
     {
       "relation": "imports",
@@ -9654,9 +9674,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "data_recruiter_recruiter_metrics",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_metrics"
     },
     {
       "relation": "imports",
@@ -9665,9 +9685,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "data_recruiter_recruiter_profile",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_profile"
     },
     {
       "relation": "imports",
@@ -9676,9 +9696,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "data_recruiter_recruiter_projects",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_projects"
     },
     {
       "relation": "imports",
@@ -9687,9 +9707,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "data_recruiter_recruiter_skills",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_skills"
     },
     {
       "relation": "imports",
@@ -9698,9 +9718,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "data_recruiter_recruiterproject",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiterproject"
     },
     {
       "relation": "imports_from",
@@ -9709,9 +9729,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "lib_clipboard",
-      "confidence_score": 1.0
+      "target": "lib_clipboard"
     },
     {
       "relation": "imports",
@@ -9720,9 +9740,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "lib_clipboard_copytext",
-      "confidence_score": 1.0
+      "target": "lib_clipboard_copytext"
     },
     {
       "relation": "imports_from",
@@ -9731,9 +9751,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "lib_resume",
-      "confidence_score": 1.0
+      "target": "lib_resume"
     },
     {
       "relation": "imports",
@@ -9742,9 +9762,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "lib_resume_downloadresume",
-      "confidence_score": 1.0
+      "target": "lib_resume_downloadresume"
     },
     {
       "relation": "imports_from",
@@ -9753,9 +9773,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "terminal_personalwindow",
-      "confidence_score": 1.0
+      "target": "terminal_personalwindow"
     },
     {
       "relation": "imports",
@@ -9764,9 +9784,9 @@
       "source_file": "src/components/RecruiterWindow.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiterwindow",
-      "target": "terminal_personalwindow_personalwindow",
-      "confidence_score": 1.0
+      "target": "terminal_personalwindow_personalwindow"
     },
     {
       "relation": "contains",
@@ -10866,9 +10886,9 @@
       "source_file": "src/components/standard/StandardView.tsx",
       "source_location": "L865",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "standard_standardview",
-      "target": "standard_standardview_mobiletab",
-      "confidence_score": 1.0
+      "target": "standard_standardview_mobiletab"
     },
     {
       "relation": "contains",
@@ -10886,9 +10906,9 @@
       "source_file": "src/components/standard/StandardView.tsx",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "standard_standardview",
-      "target": "standard_standardview_project_taglines",
-      "confidence_score": 1.0
+      "target": "standard_standardview_project_taglines"
     },
     {
       "relation": "contains",
@@ -12262,9 +12282,9 @@
       "source_file": "src/components/terminal/QuickCommands.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "terminal_quickcommands",
-      "target": "terminal_quickcommands_quick_commands",
-      "confidence_score": 1.0
+      "target": "terminal_quickcommands_quick_commands"
     },
     {
       "relation": "contains",
@@ -12272,9 +12292,9 @@
       "source_file": "src/components/terminal/QuickCommands.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "terminal_quickcommands",
-      "target": "terminal_quickcommands_quickcommand",
-      "confidence_score": 1.0
+      "target": "terminal_quickcommands_quickcommand"
     },
     {
       "relation": "contains",
@@ -12282,9 +12302,9 @@
       "source_file": "src/components/terminal/QuickCommands.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "terminal_quickcommands",
-      "target": "terminal_quickcommands_quickcommands",
-      "confidence_score": 1.0
+      "target": "terminal_quickcommands_quickcommands"
     },
     {
       "relation": "imports_from",
@@ -12293,9 +12313,9 @@
       "source_file": "src/components/terminal/TerminalView.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "terminal_terminalview",
-      "target": "terminal_quickcommands",
-      "confidence_score": 1.0
+      "target": "terminal_quickcommands"
     },
     {
       "relation": "imports",
@@ -12304,9 +12324,9 @@
       "source_file": "src/components/terminal/TerminalView.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "terminal_terminalview",
-      "target": "terminal_quickcommands_quickcommands",
-      "confidence_score": 1.0
+      "target": "terminal_quickcommands_quickcommands"
     },
     {
       "relation": "imports_from",
@@ -21183,6 +21203,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.ts",
+      "source_location": "L779",
+      "weight": 1.0,
+      "source": "data_content",
+      "target": "data_content_skill_groups",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.ts",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -21237,23 +21267,23 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/data/recruiter.test.ts",
-      "source_location": "L2",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L9",
       "weight": 1.0,
-      "source": "data_recruiter_test",
+      "source": "data_recruiter",
       "target": "data_content",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
+      "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/data/recruiter.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_content_projects_files",
-      "confidence_score": 1.0
+      "target": "data_content"
     },
     {
       "relation": "imports",
@@ -21263,7 +21293,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_content_all_files",
+      "target": "data_content_commandoutputs",
       "confidence_score": 1.0
     },
     {
@@ -21273,9 +21303,42 @@
       "source_file": "src/data/recruiter.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_content_filecontents",
+      "target": "data_content_projects_files"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_content_all_files"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_content_skill_groups",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_content_filecontents"
     },
     {
       "relation": "contains",
@@ -21368,9 +21431,9 @@
       "source_file": "src/data/recruiter.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_recruiter",
-      "confidence_score": 1.0
+      "target": "data_recruiter"
     },
     {
       "relation": "imports",
@@ -21379,9 +21442,9 @@
       "source_file": "src/data/recruiter.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_recruiter_recruiter_metrics",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_metrics"
     },
     {
       "relation": "imports",
@@ -21390,9 +21453,9 @@
       "source_file": "src/data/recruiter.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_recruiter_recruiter_profile",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_profile"
     },
     {
       "relation": "imports",
@@ -21401,9 +21464,9 @@
       "source_file": "src/data/recruiter.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_recruiter_recruiter_projects",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_projects"
     },
     {
       "relation": "imports",
@@ -21412,9 +21475,9 @@
       "source_file": "src/data/recruiter.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter_test",
-      "target": "data_recruiter_recruiter_skills",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_skills"
     },
     {
       "relation": "contains",
@@ -21422,9 +21485,9 @@
       "source_file": "src/data/recruiter.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter",
-      "target": "data_recruiter_recruiter_metrics",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_metrics"
     },
     {
       "relation": "contains",
@@ -21432,9 +21495,9 @@
       "source_file": "src/data/recruiter.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter",
-      "target": "data_recruiter_recruiter_profile",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_profile"
     },
     {
       "relation": "contains",
@@ -21442,9 +21505,9 @@
       "source_file": "src/data/recruiter.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter",
-      "target": "data_recruiter_recruiter_projects",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_projects"
     },
     {
       "relation": "contains",
@@ -21452,9 +21515,9 @@
       "source_file": "src/data/recruiter.ts",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter",
-      "target": "data_recruiter_recruiter_skills",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiter_skills"
     },
     {
       "relation": "contains",
@@ -21462,9 +21525,9 @@
       "source_file": "src/data/recruiter.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter",
-      "target": "data_recruiter_recruitermetric",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruitermetric"
     },
     {
       "relation": "contains",
@@ -21472,9 +21535,9 @@
       "source_file": "src/data/recruiter.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter",
-      "target": "data_recruiter_recruiterproject",
-      "confidence_score": 1.0
+      "target": "data_recruiter_recruiterproject"
     },
     {
       "relation": "contains",
@@ -21482,8 +21545,18 @@
       "source_file": "src/data/recruiter.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_recruiter",
-      "target": "data_recruiter_recruiterskillgroup",
+      "target": "data_recruiter_recruiterskillgroup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_skill_labels",
       "confidence_score": 1.0
     },
     {
@@ -22030,9 +22103,9 @@
       "source_file": "src/lib/clipboard.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_clipboard",
-      "target": "lib_clipboard_copytext",
-      "confidence_score": 1.0
+      "target": "lib_clipboard_copytext"
     },
     {
       "relation": "contains",
@@ -22760,9 +22833,9 @@
       "source_file": "README.md",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_highlights",
-      "target": "readme_recruiter_quick_view",
-      "confidence_score": 1.0
+      "target": "readme_recruiter_quick_view"
     },
     {
       "relation": "contains",
@@ -22840,9 +22913,9 @@
       "source_file": "suggestion.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion",
-      "target": "suggestion_afnan_workspace_product_ux_suggestions",
-      "confidence_score": 1.0
+      "target": "suggestion_afnan_workspace_product_ux_suggestions"
     },
     {
       "relation": "contains",
@@ -22850,9 +22923,9 @@
       "source_file": "suggestion.md",
       "source_location": "L193",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_10_success_measures",
-      "confidence_score": 1.0
+      "target": "suggestion_10_success_measures"
     },
     {
       "relation": "contains",
@@ -22860,9 +22933,9 @@
       "source_file": "suggestion.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_1_what_already_works",
-      "confidence_score": 1.0
+      "target": "suggestion_1_what_already_works"
     },
     {
       "relation": "contains",
@@ -22870,9 +22943,9 @@
       "source_file": "suggestion.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_2_who_visits_and_what_they_need_in_the_first_10_seconds",
-      "confidence_score": 1.0
+      "target": "suggestion_2_who_visits_and_what_they_need_in_the_first_10_seconds"
     },
     {
       "relation": "contains",
@@ -22880,9 +22953,9 @@
       "source_file": "suggestion.md",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_3_recruiter_issues",
-      "confidence_score": 1.0
+      "target": "suggestion_3_recruiter_issues"
     },
     {
       "relation": "contains",
@@ -22890,9 +22963,9 @@
       "source_file": "suggestion.md",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_4_layman_issues",
-      "confidence_score": 1.0
+      "target": "suggestion_4_layman_issues"
     },
     {
       "relation": "contains",
@@ -22900,9 +22973,9 @@
       "source_file": "suggestion.md",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_5_ui_ux_and_accessibility_issues",
-      "confidence_score": 1.0
+      "target": "suggestion_5_ui_ux_and_accessibility_issues"
     },
     {
       "relation": "contains",
@@ -22910,9 +22983,9 @@
       "source_file": "suggestion.md",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_6_recommended_feature_recruiter_quick_view",
-      "confidence_score": 1.0
+      "target": "suggestion_6_recommended_feature_recruiter_quick_view"
     },
     {
       "relation": "contains",
@@ -22920,9 +22993,9 @@
       "source_file": "suggestion.md",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_7_supporting_fixes_to_ship_with_it",
-      "confidence_score": 1.0
+      "target": "suggestion_7_supporting_fixes_to_ship_with_it"
     },
     {
       "relation": "contains",
@@ -22930,9 +23003,9 @@
       "source_file": "suggestion.md",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_8_implementation_plan_one_file_per_commit",
-      "confidence_score": 1.0
+      "target": "suggestion_8_implementation_plan_one_file_per_commit"
     },
     {
       "relation": "contains",
@@ -22940,9 +23013,9 @@
       "source_file": "suggestion.md",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_afnan_workspace_product_ux_suggestions",
-      "target": "suggestion_9_backlog_worth_doing_later_not_in_this_branch",
-      "confidence_score": 1.0
+      "target": "suggestion_9_backlog_worth_doing_later_not_in_this_branch"
     },
     {
       "relation": "contains",
@@ -22950,9 +23023,9 @@
       "source_file": "suggestion.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_3_recruiter_issues",
-      "target": "suggestion_r1_resume_and_contact_disappear_on_mobile",
-      "confidence_score": 1.0
+      "target": "suggestion_r1_resume_and_contact_disappear_on_mobile"
     },
     {
       "relation": "contains",
@@ -22960,9 +23033,9 @@
       "source_file": "suggestion.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_3_recruiter_issues",
-      "target": "suggestion_r2_projects_are_buried_on_mobile",
-      "confidence_score": 1.0
+      "target": "suggestion_r2_projects_are_buried_on_mobile"
     },
     {
       "relation": "contains",
@@ -22970,9 +23043,9 @@
       "source_file": "suggestion.md",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_3_recruiter_issues",
-      "target": "suggestion_r3_no_scannable_summary",
-      "confidence_score": 1.0
+      "target": "suggestion_r3_no_scannable_summary"
     },
     {
       "relation": "contains",
@@ -22980,9 +23053,9 @@
       "source_file": "suggestion.md",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_3_recruiter_issues",
-      "target": "suggestion_r4_the_resume_cta_is_almost_invisible",
-      "confidence_score": 1.0
+      "target": "suggestion_r4_the_resume_cta_is_almost_invisible"
     },
     {
       "relation": "contains",
@@ -22990,9 +23063,9 @@
       "source_file": "suggestion.md",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_3_recruiter_issues",
-      "target": "suggestion_r5_contact_requires_a_command_or_an_icon",
-      "confidence_score": 1.0
+      "target": "suggestion_r5_contact_requires_a_command_or_an_icon"
     },
     {
       "relation": "contains",
@@ -23000,9 +23073,9 @@
       "source_file": "suggestion.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_3_recruiter_issues",
-      "target": "suggestion_r6_project_links_are_unstructured",
-      "confidence_score": 1.0
+      "target": "suggestion_r6_project_links_are_unstructured"
     },
     {
       "relation": "contains",
@@ -23010,9 +23083,9 @@
       "source_file": "suggestion.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_4_layman_issues",
-      "target": "suggestion_l1_the_terminal_assumes_command_knowledge",
-      "confidence_score": 1.0
+      "target": "suggestion_l1_the_terminal_assumes_command_knowledge"
     },
     {
       "relation": "contains",
@@ -23020,9 +23093,9 @@
       "source_file": "suggestion.md",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_4_layman_issues",
-      "target": "suggestion_l2_the_ascii_banner_is_unreadable_on_a_phone",
-      "confidence_score": 1.0
+      "target": "suggestion_l2_the_ascii_banner_is_unreadable_on_a_phone"
     },
     {
       "relation": "contains",
@@ -23030,9 +23103,9 @@
       "source_file": "suggestion.md",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_4_layman_issues",
-      "target": "suggestion_l3_code_is_clipped_on_mobile",
-      "confidence_score": 1.0
+      "target": "suggestion_l3_code_is_clipped_on_mobile"
     },
     {
       "relation": "contains",
@@ -23040,9 +23113,9 @@
       "source_file": "suggestion.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_4_layman_issues",
-      "target": "suggestion_l4_dead_ends_feel_unfinished",
-      "confidence_score": 1.0
+      "target": "suggestion_l4_dead_ends_feel_unfinished"
     },
     {
       "relation": "contains",
@@ -23050,9 +23123,9 @@
       "source_file": "suggestion.md",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_4_layman_issues",
-      "target": "suggestion_l5_the_mobile_more_sheet_is_a_catch_all",
-      "confidence_score": 1.0
+      "target": "suggestion_l5_the_mobile_more_sheet_is_a_catch_all"
     },
     {
       "relation": "contains",
@@ -23060,9 +23133,9 @@
       "source_file": "suggestion.md",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u1_no_visible_primary_cta_in_terminal_mode",
-      "confidence_score": 1.0
+      "target": "suggestion_u1_no_visible_primary_cta_in_terminal_mode"
     },
     {
       "relation": "contains",
@@ -23070,9 +23143,9 @@
       "source_file": "suggestion.md",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u2_low_contrast_footer",
-      "confidence_score": 1.0
+      "target": "suggestion_u2_low_contrast_footer"
     },
     {
       "relation": "contains",
@@ -23080,9 +23153,9 @@
       "source_file": "suggestion.md",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u3_popup_focus_management",
-      "confidence_score": 1.0
+      "target": "suggestion_u3_popup_focus_management"
     },
     {
       "relation": "contains",
@@ -23090,9 +23163,9 @@
       "source_file": "suggestion.md",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u4_icon_only_controls_rely_on_title",
-      "confidence_score": 1.0
+      "target": "suggestion_u4_icon_only_controls_rely_on_title"
     },
     {
       "relation": "contains",
@@ -23100,9 +23173,9 @@
       "source_file": "suggestion.md",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u5_no_live_region_for_terminal_output",
-      "confidence_score": 1.0
+      "target": "suggestion_u5_no_live_region_for_terminal_output"
     },
     {
       "relation": "contains",
@@ -23110,9 +23183,9 @@
       "source_file": "suggestion.md",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u6_mobile_navigation_prioritizes_the_wrong_files",
-      "confidence_score": 1.0
+      "target": "suggestion_u6_mobile_navigation_prioritizes_the_wrong_files"
     },
     {
       "relation": "contains",
@@ -23120,9 +23193,9 @@
       "source_file": "suggestion.md",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u7_placeholder_panels",
-      "confidence_score": 1.0
+      "target": "suggestion_u7_placeholder_panels"
     },
     {
       "relation": "contains",
@@ -23130,9 +23203,9 @@
       "source_file": "suggestion.md",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_5_ui_ux_and_accessibility_issues",
-      "target": "suggestion_u8_no_per_project_visual_identity",
-      "confidence_score": 1.0
+      "target": "suggestion_u8_no_per_project_visual_identity"
     },
     {
       "relation": "contains",
@@ -23140,9 +23213,9 @@
       "source_file": "suggestion.md",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_6_recommended_feature_recruiter_quick_view",
-      "target": "suggestion_entry_points",
-      "confidence_score": 1.0
+      "target": "suggestion_entry_points"
     },
     {
       "relation": "contains",
@@ -23150,9 +23223,9 @@
       "source_file": "suggestion.md",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_6_recommended_feature_recruiter_quick_view",
-      "target": "suggestion_what_it_is",
-      "confidence_score": 1.0
+      "target": "suggestion_what_it_is"
     },
     {
       "relation": "contains",
@@ -23160,9 +23233,9 @@
       "source_file": "suggestion.md",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_6_recommended_feature_recruiter_quick_view",
-      "target": "suggestion_why_it_fits_the_existing_architecture",
-      "confidence_score": 1.0
+      "target": "suggestion_why_it_fits_the_existing_architecture"
     },
     {
       "relation": "contains",
@@ -23170,11 +23243,11 @@
       "source_file": "suggestion.md",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "suggestion_6_recommended_feature_recruiter_quick_view",
-      "target": "suggestion_why_this_feature",
-      "confidence_score": 1.0
+      "target": "suggestion_why_this_feature"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "47fd47e1180913d1797811601749bbdb8308b2c4"
+  "built_at_commit": "0ed154a7f9acf4d5702bf3e072af28bfa571b720"
 }
