@@ -8,6 +8,8 @@ export const TERMINAL_COMMANDS = [
   "languages",
   "lang",
   "reading",
+  "hire",
+  "recruiter",
   "certs",
   "contact",
   "resume",
@@ -230,6 +232,7 @@ Available Commands:
     languages           Spoken languages
     lang                Languages and learning progress
     reading             At the Reading Desk
+    hire, recruiter     Recruiter quick view
     certs               Credentials and training
     contact             How to reach me
     resume              Download resume PDF
@@ -324,7 +327,8 @@ CORE NAVIGATION
 
 PERSONAL
  ├── lang
- └── reading
+ ├── reading
+ └── hire
 
 PROJECT ACTIONS
  ├── open hrms       ├── open thinktrack   ├── open afnkit
