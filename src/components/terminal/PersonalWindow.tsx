@@ -22,21 +22,69 @@ export function PersonalWindow({
   maxWidth = 440,
 }: PersonalWindowProps) {
   const windowRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const previousFocusRef = useRef<HTMLElement | null>(null)
+  const onCloseRef = useRef(onClose)
   const { pos, isDragging, onMouseDown } = useDraggable(windowRef, {
     edgePadding: 20,
     minVisible: 80,
   })
 
+  // Keep the latest close handler without re-running the focus effect.
   useEffect(() => {
+    onCloseRef.current = onClose
+  }, [onClose])
+
+  useEffect(() => {
+    previousFocusRef.current =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null
+    closeButtonRef.current?.focus()
+
+    function getFocusable(): HTMLElement[] {
+      const root = windowRef.current
+      if (!root) return []
+      return Array.from(
+        root.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((el) => el.getClientRects().length > 0)
+    }
+
     function onKey(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         event.stopPropagation()
-        onClose()
+        onCloseRef.current()
+        return
+      }
+
+      if (event.key !== 'Tab') return
+
+      const focusable = getFocusable()
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const active = document.activeElement
+      const inside = active instanceof Node && windowRef.current?.contains(active)
+
+      if (event.shiftKey && (active === first || !inside)) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && (active === last || !inside)) {
+        event.preventDefault()
+        first.focus()
       }
     }
+
     document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [onClose])
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      const previous = previousFocusRef.current
+      if (previous && document.contains(previous)) previous.focus()
+    }
+  }, [])
 
   return (
     <div
@@ -95,9 +143,11 @@ export function PersonalWindow({
           {title}
         </span>
         <button
+          ref={closeButtonRef}
           onMouseDown={(e) => e.stopPropagation()}
           onClick={onClose}
           aria-label="Close"
+          type="button"
           style={{
             display: 'flex',
             alignItems: 'center',
