@@ -465,8 +465,6 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
           {renderOutput(WELCOME_MESSAGE)}
         </div>
 
-        {entries.length === 0 && <QuickCommands onRun={runCommand} />}
-
         {entries.map((entry) => (
           <div key={entry.id}>
             <div>
@@ -494,7 +492,12 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
         <div ref={bottomRef} />
       </div>
 
-      {/* Zone 2 — active prompt row, pinned above footer */}
+      {/* Zone 2 — persistent quick actions, always available */}
+      <div className="shrink-0 px-2 sm:px-4 pt-2">
+        <QuickCommands onRun={runCommand} />
+      </div>
+
+      {/* Zone 3 — active prompt row, pinned above footer */}
       <div className="shrink-0 flex items-start px-2 sm:px-4 py-2">
         <span
           style={{
@@ -537,7 +540,7 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
         </div>
       </div>
 
-      {/* Zone 3 — ground floor copyright, pinned at bottom */}
+      {/* Zone 4 — ground floor copyright, pinned at bottom */}
       <div
         className="shrink-0 flex items-center justify-center pb-2 mt-auto select-none px-2"
         style={{
