@@ -6,6 +6,8 @@
  * hard-coded copy and the portfolio content stays editable in one file.
  */
 
+import { SKILL_GROUPS } from './content'
+
 export interface RecruiterMetric {
   /** The number or outcome, shown large. */
   value: string
@@ -38,6 +40,8 @@ export const RECRUITER_PROFILE = {
     'I build software that solves real problems — productivity systems, developer tooling, and full-stack applications with deliberate architecture.',
   focus: ['Full-stack', 'Developer tools', 'Systems thinking'],
   email: 'khanafnan1108@gmail.com',
+  phone: '+91 73041 42536',
+  phoneHref: 'tel:+917304142536',
   linkedin: 'https://www.linkedin.com/in/afnankhan1108-dev',
   github: 'https://github.com/afnanlabs',
   education: 'BSc IT · D.G. Ruparel College, Mumbai · 2026',
@@ -99,23 +103,39 @@ export const RECRUITER_PROJECTS: RecruiterProject[] = [
     proof: 'RBAC and 3NF schema designed before feature work',
     source: 'https://github.com/afnanlabs/thinktrack',
   },
+  {
+    id: 'somnus',
+    name: 'Somnus',
+    tagline: 'Sleep quality analyzer that makes sleep data readable',
+    stack: ['Web Application', 'Vercel'],
+    proof: 'Publicly deployed · turns sleep data into a readable signal',
+  },
+  {
+    id: 'fitscore',
+    name: 'FitScore',
+    tagline: 'Resume-to-role match analyzer',
+    stack: ['Web Application'],
+    proof: 'Turns resume comparison into an actionable result',
+  },
 ]
 
-export const RECRUITER_SKILLS: RecruiterSkillGroup[] = [
-  {
-    label: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'Python', 'C++'],
-  },
-  {
-    label: 'Frontend',
-    items: ['React', 'Next.js', 'Vue', 'Tailwind CSS'],
-  },
-  {
-    label: 'Backend & data',
-    items: ['Node.js', 'Express', 'REST APIs', 'PostgreSQL', 'MySQL', 'Redis'],
-  },
-  {
-    label: 'DevOps',
-    items: ['Docker', 'Kubernetes', 'Terraform', 'AWS', 'GitHub Actions'],
-  },
-]
+const SKILL_LABELS: Record<keyof typeof SKILL_GROUPS, string> = {
+  languages: 'Languages',
+  frontend: 'Frontend',
+  backend: 'Backend',
+  database: 'Database',
+  devops_cloud: 'DevOps & Cloud',
+  agentic_systems: 'Agentic systems',
+  tools: 'Tools',
+}
+
+/**
+ * Derived from the same canonical `SKILL_GROUPS` that powers the `skills`
+ * command, so the quick view can never show a different stack.
+ */
+export const RECRUITER_SKILLS: RecruiterSkillGroup[] = (
+  Object.keys(SKILL_GROUPS) as Array<keyof typeof SKILL_GROUPS>
+).map((key) => ({
+  label: SKILL_LABELS[key],
+  items: [...SKILL_GROUPS[key]],
+}))
