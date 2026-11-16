@@ -14,6 +14,7 @@ export interface CommandPaletteProps {
   onSwitchToTerminal: () => void;
   onToggleSidebar: () => void;
   onDownloadResume: () => void;
+  onOpenRecruiter?: () => void;
 }
 
 const PALETTE_CSS = `
@@ -60,6 +61,7 @@ export function CommandPalette({
   onSwitchToTerminal,
   onToggleSidebar,
   onDownloadResume,
+  onOpenRecruiter,
 }: CommandPaletteProps) {
   useEffect(() => {
     if (!open) return;
@@ -120,6 +122,12 @@ export function CommandPalette({
             <Command.Empty>No matching commands</Command.Empty>
 
             <Command.Group heading="Commands">
+              <Command.Item
+                value="Profile: Open Recruiter Quick View hire"
+                onSelect={run(onOpenRecruiter ?? (() => {}))}
+              >
+                <span>Profile: Open Recruiter Quick View</span>
+              </Command.Item>
               <Command.Item value="View: Switch to Terminal" onSelect={run(onSwitchToTerminal)}>
                 <span>View: Switch to Terminal</span>
               </Command.Item>
