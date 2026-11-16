@@ -770,6 +770,52 @@ export const ALL_FILES: FileEntry[] = [
   ...ASSETS_FILES,
 ];
 
+/**
+ * Canonical skill groups.
+ *
+ * The `skills` command renders this object as JSON, and the Recruiter Quick
+ * View reads the same object, so both surfaces always stay in sync.
+ */
+export const SKILL_GROUPS = {
+  languages: ["JavaScript (ES6+)", "TypeScript", "Python", "C++"],
+  frontend: [
+    "Vue.js",
+    "React",
+    "Next.js",
+    "React Native",
+    "HTML5",
+    "CSS3",
+    "Tailwind CSS",
+  ],
+  backend: ["Node.js", "Express.js", "REST APIs"],
+  database: ["MySQL", "SQL", "PostgreSQL", "Redis"],
+  devops_cloud: [
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "AWS",
+    "Azure DevOps",
+    "Jenkins",
+    "Ansible",
+    "GitHub Actions",
+  ],
+  agentic_systems: [
+    "OpenAI Agents SDK",
+    "CrewAI",
+    "LangGraph",
+    "LangChain",
+  ],
+  tools: [
+    "Git",
+    "GitHub",
+    "Postman",
+    "Burp Suite",
+    "Jira",
+    "Linux (Bash/Fundamentals)",
+    "Windows",
+  ],
+} as const;
+
 export const fileContents: Record<string, string> = {
   profile: `// profile.ts
 // Afnan Khan — Personal Profile
@@ -969,59 +1015,7 @@ const contact: Contact = {
 
 export default contact;`,
 
-  skills: `{
-  "languages": [
-    "JavaScript (ES6+)",
-    "TypeScript",
-    "Python",
-    "C++"
-  ],
-  "frontend": [
-    "Vue.js",
-    "React",
-    "Next.js",
-    "React Native",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS"
-  ],
-  "backend": [
-    "Node.js",
-    "Express.js",
-    "REST APIs"
-  ],
-  "database": [
-    "MySQL",
-    "SQL",
-    "PostgreSQL",
-    "Redis"
-  ],
-  "devops_cloud": [
-    "Docker",
-    "Kubernetes",
-    "Terraform",
-    "AWS",
-    "Azure DevOps",
-    "Jenkins",
-    "Ansible",
-    "GitHub Actions"
-  ],
-  "agentic_systems": [
-    "OpenAI Agents SDK",
-    "CrewAI",
-    "LangGraph",
-    "LangChain"
-  ],
-  "tools": [
-    "Git",
-    "GitHub",
-    "Postman",
-    "Burp Suite",
-    "Jira",
-    "Linux (Bash/Fundamentals)",
-    "Windows"
-  ]
-}`,
+  skills: JSON.stringify(SKILL_GROUPS, null, 2),
 
   thinktrack: `// thinktrack.ts
 // ThinkTrack — Collaborative Learning Platform
