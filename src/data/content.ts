@@ -18,6 +18,7 @@ export const TERMINAL_COMMANDS = [
   "open somnus",
   "open fitscore",
   "clear",
+  "cls",
   "reset",
   "terminal",
   "standard",
@@ -264,7 +265,7 @@ Available Commands:
   Utility:
     ls                  List available commands
     help                Show available commands
-    clear               Clear the terminal
+    clear, cls          Clear the terminal
 
 Type any command to run it.
 `,
@@ -342,7 +343,7 @@ SYSTEM
 
 UTILITY
  ├── help         ├── ls
- └── clear
+ ├── clear        └── cls
 `,
 
   stats: `
