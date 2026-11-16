@@ -30,7 +30,7 @@ function nextId() {
 function processCommand(cmd: string): string | null {
   const trimmed = cmd.trim().toLowerCase();
   if (trimmed === "") return null;
-  if (trimmed === "clear" || trimmed === "reset") return "__CLEAR__";
+  if (trimmed === "clear" || trimmed === "cls" || trimmed === "reset") return "__CLEAR__";
   if (trimmed === "resume") return "__DOWNLOAD_RESUME__";
   if (trimmed === "sounds") return "__SOUNDS_TOGGLE__";
   if (trimmed === "snake") return "__LAUNCH_SNAKE__";

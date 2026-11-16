@@ -1,3 +1,8 @@
+import atomicHabitsCover from "@/assets/books/atomic-habits.jpg"
+import influenceCover from "@/assets/books/influence.jpg"
+import thinkingFastAndSlowCover from "@/assets/books/thinking-fast-and-slow.jpg"
+import thinkingInSystemsCover from "@/assets/books/thinking-in-systems.jpg"
+
 export interface Book {
   title: string
   author: string
@@ -17,25 +22,25 @@ export const BOOK_LIBRARY: Book[] = [
   {
     title: "Atomic Habits",
     author: "James Clear",
-    cover: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+    cover: atomicHabitsCover,
     url: "https://openlibrary.org/isbn/9780735211292",
   },
   {
     title: "Thinking, Fast and Slow",
     author: "Daniel Kahneman",
-    cover: "https://covers.openlibrary.org/b/isbn/9780374533557-L.jpg",
+    cover: thinkingFastAndSlowCover,
     url: "https://openlibrary.org/isbn/9780374533557",
   },
   {
     title: "Influence",
     author: "Robert B. Cialdini",
-    cover: "https://covers.openlibrary.org/b/isbn/9780061241895-L.jpg",
+    cover: influenceCover,
     url: "https://openlibrary.org/isbn/9780061241895",
   },
   {
     title: "Thinking in Systems",
     author: "Donella H. Meadows",
-    cover: "https://covers.openlibrary.org/b/isbn/9781603580557-L.jpg",
+    cover: thinkingInSystemsCover,
     url: "https://openlibrary.org/isbn/9781603580557",
   },
 ]

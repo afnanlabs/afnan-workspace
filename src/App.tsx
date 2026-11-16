@@ -8,6 +8,7 @@ import { ArcadeWindow } from '@/components/terminal/ArcadeWindow'
 import { LangWindow } from '@/components/terminal/LangWindow'
 import { ReadingWindow } from '@/components/terminal/ReadingWindow'
 import { track } from '@/lib/analytics'
+import { preloadBookCovers } from '@/lib/preload-covers'
 
 type Mode = 'terminal' | 'standard'
 export type ArcadeGame = 'arcade' | 'snake' | 'tetris' | 'galaga' | 'pacman' | null
@@ -103,6 +104,10 @@ export function App() {
 
   useEffect(() => {
     track('mode_change', { mode })
+  }, [mode])
+
+  useEffect(() => {
+    if (mode === 'terminal') preloadBookCovers()
   }, [mode])
 
   useEffect(() => {

@@ -110,7 +110,7 @@ function BookTile({ book }: { book: Book }) {
           <img
             src={book.cover}
             alt={`Cover of ${book.title}`}
-            loading="lazy"
+            loading="eager"
             onError={() => setFailed(true)}
             style={{
               height: '100%',

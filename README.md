@@ -37,7 +37,7 @@ A command-line portfolio powered by a small shell engine. Type `help` to see eve
 | `standard` · `terminal` · `code` | Switch views from the keyboard |
 | `neofetch` · `whoami` · `stats` · `uptime` · `date` | System-style info |
 | `banner` · `ascii` · `fortune` · `cowsay` · `coffee` | The fun ones |
-| `sounds` · `clear` · `reset` · `history` · `pwd` · `ls` | Session utilities |
+| `sounds` · `clear` · `cls` · `reset` · `history` · `pwd` · `ls` | Session utilities |
 | `arcade` · `snake` · `tetris` · `galaga` · `pacman` · `scores` | Play & view leaderboards |
 
 ### Built-in Arcade
