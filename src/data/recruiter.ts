@@ -125,7 +125,7 @@ const SKILL_LABELS: Record<keyof typeof SKILL_GROUPS, string> = {
   backend: 'Backend',
   database: 'Database',
   devops_cloud: 'DevOps & Cloud',
-  agentic_systems: 'Agentic systems',
+  agentic_systems: 'Agentic Systems',
   tools: 'Tools',
 }
 
