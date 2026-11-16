@@ -12,6 +12,8 @@ describe("recruiter quick view content", () => {
     expect(RECRUITER_PROFILE.name).toBe("Afnan Khan");
     expect(RECRUITER_PROFILE.role).toMatch(/developer/i);
     expect(RECRUITER_PROFILE.email).toMatch(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    expect(RECRUITER_PROFILE.phone).toBe("+91 73041 42536");
+    expect(RECRUITER_PROFILE.phoneHref).toBe("tel:+917304142536");
     expect(RECRUITER_PROFILE.linkedin).toMatch(/^https:\/\//);
     expect(RECRUITER_PROFILE.github).toMatch(/^https:\/\//);
     expect(RECRUITER_PROFILE.pitch.length).toBeGreaterThan(40);
@@ -35,11 +37,13 @@ describe("recruiter quick view content", () => {
     }
   });
 
-  it("references only existing project case studies", () => {
+  it("references every existing project case study", () => {
     const projectIds = new Set(PROJECTS_FILES.map((project) => project.id));
     const allIds = new Set(ALL_FILES.map((file) => file.id));
 
-    expect(RECRUITER_PROJECTS.length).toBeGreaterThanOrEqual(4);
+    expect(RECRUITER_PROJECTS.map((project) => project.id).sort()).toEqual(
+      PROJECTS_FILES.map((project) => project.id).sort(),
+    );
 
     for (const project of RECRUITER_PROJECTS) {
       expect(allIds.has(project.id)).toBe(true);
@@ -74,6 +78,18 @@ describe("recruiter quick view content", () => {
         seen.add(item);
       }
     }
+  });
+
+  it("matches the skills command exactly", () => {
+    const commandSkills = JSON.parse(fileContents.skills) as Record<
+      string,
+      string[]
+    >;
+
+    expect(RECRUITER_SKILLS.map((group) => group.items)).toEqual(
+      Object.values(commandSkills),
+    );
+    expect(RECRUITER_SKILLS).toHaveLength(Object.keys(commandSkills).length);
   });
 
   it("has education and certification context", () => {
