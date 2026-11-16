@@ -7,6 +7,7 @@ import { useDraggable } from '@/hooks/use-draggable'
 import { ArcadeWindow } from '@/components/terminal/ArcadeWindow'
 import { LangWindow } from '@/components/terminal/LangWindow'
 import { ReadingWindow } from '@/components/terminal/ReadingWindow'
+import { RecruiterWindow } from '@/components/RecruiterWindow'
 import { track } from '@/lib/analytics'
 import { preloadBookCovers } from '@/lib/preload-covers'
 
@@ -31,6 +32,7 @@ export function App() {
   const [mode, setMode] = useState<Mode>(getInitialMode)
   const [arcadeGame, setArcadeGame] = useState<ArcadeGame>(null)
   const [personalWindow, setPersonalWindow] = useState<PersonalWindow>(null)
+  const [recruiterOpen, setRecruiterOpen] = useState(false)
   const [pendingFile, setPendingFile] = useState<string | null>(null)
   const windowRef = useRef<HTMLDivElement>(null)
   const { pos, isDragging, onMouseDown } = useDraggable(windowRef)
@@ -82,21 +84,32 @@ export function App() {
   function handleModeChange(next: Mode) {
     setMode(next)
     setPersonalWindow(null)
+    setRecruiterOpen(false)
     updateHash({ mode: next })
   }
 
   function handleLaunchArcade(game: ArcadeGame) {
     setPersonalWindow(null)
+    setRecruiterOpen(false)
     setArcadeGame(game)
   }
 
   function handleOpenPersonal(next: NonNullable<PersonalWindow>) {
     setArcadeGame(null)
+    setRecruiterOpen(false)
     setPersonalWindow(next)
+  }
+
+  function handleOpenRecruiter() {
+    setArcadeGame(null)
+    setPersonalWindow(null)
+    setRecruiterOpen(true)
+    track('recruiter_open')
   }
 
   function handleOpenFileInStandard(fileId: string) {
     const fid = fileId.toLowerCase()
+    setRecruiterOpen(false)
     setPendingFile(fid)
     setMode('standard')
     updateHash({ mode: 'standard', file: fid })
@@ -128,7 +141,13 @@ export function App() {
         }}
       >
         {/* Pass onMouseDown to Header so only the header strip acts as drag handle */}
-        <Header mode={mode} onModeChange={handleModeChange} onDragStart={onMouseDown} isDragging={isDragging} />
+        <Header
+          mode={mode}
+          onModeChange={handleModeChange}
+          onOpenRecruiter={handleOpenRecruiter}
+          onDragStart={onMouseDown}
+          isDragging={isDragging}
+        />
 
         {mode === 'terminal' ? (
           <div data-terminal-view className="flex-1 flex flex-col min-h-0">
@@ -137,10 +156,16 @@ export function App() {
               onOpenPersonal={handleOpenPersonal}
               onOpenInStandard={handleOpenFileInStandard}
               onSwitchMode={handleModeChange}
+              onOpenRecruiter={handleOpenRecruiter}
             />
           </div>
         ) : (
-          <StandardView pendingFile={pendingFile} onConsumePending={() => setPendingFile(null)} onOpenInTerminal={() => { setMode('terminal'); updateHash({ mode: 'terminal' }); }} />
+          <StandardView
+            pendingFile={pendingFile}
+            onConsumePending={() => setPendingFile(null)}
+            onOpenInTerminal={() => { setMode('terminal'); updateHash({ mode: 'terminal' }); }}
+            onOpenRecruiter={handleOpenRecruiter}
+          />
         )}
       </div>
 
@@ -155,6 +180,14 @@ export function App() {
       )}
       {personalWindow === 'reading' && (
         <ReadingWindow onClose={() => setPersonalWindow(null)} />
+      )}
+
+      {/* Recruiter quick view — shared by both modes and the `hire` command */}
+      {recruiterOpen && (
+        <RecruiterWindow
+          onClose={() => setRecruiterOpen(false)}
+          onOpenProject={handleOpenFileInStandard}
+        />
       )}
     </div>
   )
