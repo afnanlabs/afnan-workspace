@@ -52,7 +52,7 @@ A one-screen answer to “who is this, what has he built, and how do I reach him
 | Menubar | **Help → Recruiter Quick View** |
 | Command palette | **Profile: Open Recruiter Quick View** |
 
-The overlay includes the résumé download, copy-email, email / LinkedIn / GitHub links, four measurable proof points, featured project cards that open the full case study, core skills, and education. It reuses the draggable popup frame, so `Esc` closes it and keyboard focus is trapped inside while it is open.
+The overlay includes the résumé download, copy-email, email / phone / LinkedIn / GitHub links, four measurable proof points, all six project case studies, core skills that mirror the `skills` command, and education. It reuses the draggable popup frame, so `Esc` closes it and keyboard focus is trapped inside while it is open.
 
 ### Built-in Arcade
 
