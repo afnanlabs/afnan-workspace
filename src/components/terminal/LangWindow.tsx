@@ -1,4 +1,4 @@
-import flagSpain from '@/assets/flag-es.svg'
+import flagSpain from '@/assets/flag/flag-es.svg'
 import { LANGUAGES, type Language } from '@/data/languages'
 import {
   CEFR_LEVELS,
