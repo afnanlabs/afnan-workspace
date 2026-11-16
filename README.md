@@ -18,7 +18,7 @@ Afnan Workspace is my personal portfolio, built around the experience of VS Code
 - **Terminal View** (default on desktop) — a fully typed command interface. Run `help`, browse `projects`, `open` a repository, or launch a game.
 - **Standard View** — a VS Code–styled editor with an Explorer, tabs, a working menubar, a command palette, search, settings and a live status bar.
 
-There is also a small **retro arcade** hidden inside (`arcade`, `snake`, `tetris`, `galaga`, `pacman`) complete with persistent high scores.
+There is also a small **retro arcade** hidden inside (`arcade`, `snake`, `tetris`, `galaga`, `pacman`) complete with persistent high scores, plus a **Recruiter Quick View** (`hire`) that puts the résumé, contact links, proof points and featured projects in one scannable overlay.
 
 ---
 
@@ -32,6 +32,7 @@ A command-line portfolio powered by a small shell engine. Type `help` to see eve
 | --- | --- |
 | `about` · `experience` · `projects` · `skills` · `education` | Browse my profile data |
 | `languages` · `certs` · `contact` · `resume` | Languages, certifications, contact, résumé download |
+| `hire` · `recruiter` | Open the Recruiter Quick View |
 | `open hrms` · `open thinktrack` · `open afnkit` | Jump straight into a project |
 | `open codeglow` · `open somnus` · `open fitscore` | …and the rest of the project list |
 | `standard` · `terminal` · `code` | Switch views from the keyboard |
@@ -39,6 +40,19 @@ A command-line portfolio powered by a small shell engine. Type `help` to see eve
 | `banner` · `ascii` · `fortune` · `cowsay` · `coffee` | The fun ones |
 | `sounds` · `clear` · `cls` · `reset` · `history` · `pwd` · `ls` | Session utilities |
 | `arcade` · `snake` · `tetris` · `galaga` · `pacman` · `scores` | Play & view leaderboards |
+
+### Recruiter Quick View
+
+A one-screen answer to “who is this, what has he built, and how do I reach him?” — built for recruiters and visitors who do not want to type commands.
+
+| Entry point | How to open it |
+| --- | --- |
+| Header | The **Hire** button, visible on desktop and mobile |
+| Terminal | `hire` or `recruiter` |
+| Menubar | **Help → Recruiter Quick View** |
+| Command palette | **Profile: Open Recruiter Quick View** |
+
+The overlay includes the résumé download, copy-email, email / LinkedIn / GitHub links, four measurable proof points, featured project cards that open the full case study, core skills, and education. It reuses the draggable popup frame, so `Esc` closes it and keyboard focus is trapped inside while it is open.
 
 ### Built-in Arcade
 
@@ -71,6 +85,7 @@ A command-line portfolio powered by a small shell engine. Type `help` to see eve
 - **Installable PWA** — web app manifest plus an offline-first service worker.
 - **Privacy-first analytics** — Do-Not-Track / Global Privacy Control aware; completely silent unless `VITE_ANALYTICS_ENDPOINT` is configured at build time.
 - **Fast** — component-level code splitting keeps the arcade and command palette out of the initial bundle.
+- **Recruiter-ready** — résumé, contact, proof points and case studies are one tap away on any screen size.
 - **Typed & tested** — strict TypeScript and a Vitest unit-test suite.
 
 ---
@@ -110,10 +125,11 @@ A command-line portfolio powered by a small shell engine. Type `help` to see eve
 │   ├── components/
 │   │   ├── standard/            # VS Code-style editor view
 │   │   ├── terminal/            # terminal view + arcade games
+│   │   ├── RecruiterWindow.tsx  # recruiter quick view
 │   │   └── ui/                  # shadcn/ui scaffolding
-│   ├── data/                    # content + command definitions
+│   ├── data/                    # content, commands + recruiter data
 │   ├── hooks/                   # audio, cursor, draggable, mobile
-│   ├── lib/                     # arcade store, analytics, résumé helpers
+│   ├── lib/                     # arcade, analytics, clipboard, résumé helpers
 │   ├── test/                    # test setup
 │   ├── App.tsx
 │   ├── main.tsx
