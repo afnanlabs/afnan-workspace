@@ -28,7 +28,26 @@ type ActivitySection = "files" | "search" | "git" | "extensions" | "settings";
 
 const DEFAULT_FILE = "profile";
 
-export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }: { pendingFile?: string | null; onConsumePending?: () => void; onOpenInTerminal?: (name?: string) => void } = {}) {
+const PROJECT_TAGLINES: Record<string, string> = {
+  hrms: "Internal HR platform — letter generation & recruitment automation",
+  thinktrack: "Collaborative learning & group productivity platform",
+  afnkit: "Express-inspired HTTP framework in strict TypeScript",
+  codeglow: "VS Code persistent code-highlighting extension",
+  somnus: "Sleep quality analyzer — readable sleep insights",
+  fitscore: "Resume-to-role match analyzer web app",
+};
+
+export function StandardView({
+  pendingFile,
+  onConsumePending,
+  onOpenInTerminal,
+  onOpenRecruiter,
+}: {
+  pendingFile?: string | null;
+  onConsumePending?: () => void;
+  onOpenInTerminal?: (name?: string) => void;
+  onOpenRecruiter?: () => void;
+} = {}) {
   const isMobile = useIsMobile();
   const [activeFile, setActiveFile] = useState(DEFAULT_FILE);
   const [openTabs, setOpenTabs] = useState<string[]>([DEFAULT_FILE]);
@@ -161,6 +180,7 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
         }}
         onSwitchToTerminal={switchToTerminal}
         onDownloadResume={() => downloadResume()}
+        onOpenRecruiter={onOpenRecruiter}
       />
 
       {/* Main row: Activity Bar + Sidebar + Editor */}
@@ -245,6 +265,7 @@ export function StandardView({ pendingFile, onConsumePending, onOpenInTerminal }
             onSwitchToTerminal={switchToTerminal}
             onToggleSidebar={() => setSidebarOpen((v) => !v)}
             onDownloadResume={() => downloadResume()}
+            onOpenRecruiter={onOpenRecruiter}
           />
         </Suspense>
       )}
@@ -503,14 +524,6 @@ function PlaceholderPanel({ section }: { section: ActivitySection }) {
 
 function EmptyEditor({ onOpen, onOpenInTerminal }: { onOpen: (id: string) => void; onOpenInTerminal?: (name?: string) => void }) {
   const projectIds = PROJECTS_FILES.map((f) => f.id);
-  const taglines: Record<string, string> = {
-    hrms: "Internal HR platform — letter generation & recruitment automation",
-    thinktrack: "Collaborative learning & group productivity platform",
-    afnkit: "Express-inspired HTTP framework in strict TypeScript",
-    codeglow: "VS Code persistent code-highlighting extension",
-    somnus: "Sleep quality analyzer — readable sleep insights",
-    fitscore: "Resume-to-role match analyzer web app",
-  };
 
   return (
     <div
@@ -564,7 +577,7 @@ function EmptyEditor({ onOpen, onOpenInTerminal }: { onOpen: (id: string) => voi
                   lineHeight: 1.5,
                 }}
               >
-                {taglines[p.id] ?? p.id}
+                {PROJECT_TAGLINES[p.id] ?? p.id}
               </span>
             </button>
           ))}
@@ -641,12 +654,28 @@ function MobileStandardView({
   onFileSelect: (id: string) => void;
 }) {
   const [showMore, setShowMore] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
   const activeTab = ALL_FILES.find((f) => f.id === activeFile);
-  const tabItems = AFNAN_FILES.slice(0, 4);
-  const moreFiles = [
-    ...AFNAN_FILES.slice(4),
-    ...ALL_FILES.filter((f) => !AFNAN_FILES.includes(f)),
-  ];
+  const activeIsProject = PROJECTS_FILES.some((f) => f.id === activeFile);
+  const moreFiles = AFNAN_FILES.filter(
+    (f) => !["profile", "experience", "contact"].includes(f.id),
+  );
+
+  function toggleMore() {
+    setShowMore((v) => !v);
+    setShowProjects(false);
+  }
+
+  function toggleProjects() {
+    setShowProjects((v) => !v);
+    setShowMore(false);
+  }
+
+  function pickFile(id: string) {
+    onFileSelect(id);
+    setShowMore(false);
+    setShowProjects(false);
+  }
 
   return (
     <div
@@ -673,42 +702,40 @@ function MobileStandardView({
         {activeFile && <EditorContent fileId={activeFile} />}
       </div>
 
-      {/* Bottom nav */}
+      {/* Bottom nav — projects and contact are one tap away */}
       <div
-        className="flex items-center shrink-0 border-t overflow-x-auto"
+        className="flex items-stretch shrink-0 border-t overflow-x-auto"
         style={{
           background: "var(--vs-surface)",
           borderColor: "var(--vs-border)",
           height: 44,
         }}
       >
-        {tabItems.map((file) => (
-          <button
-            key={file.id}
-            onClick={() => onFileSelect(file.id)}
-            className="flex items-center justify-center px-3 h-full text-xs shrink-0 hover:opacity-80 transition-opacity"
-            style={{
-              color:
-                activeFile === file.id
-                  ? "var(--vs-accent)"
-                  : "var(--vs-text-muted)",
-              fontFamily: "var(--font-sans)",
-              fontWeight: activeFile === file.id ? 500 : 400,
-              background: "transparent",
-              border: "none",
-              borderBottom:
-                activeFile === file.id
-                  ? "2px solid var(--vs-accent)"
-                  : "2px solid transparent",
-              borderRight: "1px solid var(--vs-border)",
-              cursor: "pointer",
-            }}
-          >
-            {file.name}
-          </button>
-        ))}
+        <MobileTab
+          label="Profile"
+          active={activeFile === "profile"}
+          onClick={() => pickFile("profile")}
+        />
+        <MobileTab
+          label="Projects"
+          active={activeIsProject}
+          expanded={showProjects}
+          onClick={toggleProjects}
+        />
+        <MobileTab
+          label="Experience"
+          active={activeFile === "experience"}
+          onClick={() => pickFile("experience")}
+        />
+        <MobileTab
+          label="Contact"
+          active={activeFile === "contact"}
+          onClick={() => pickFile("contact")}
+          bordered={false}
+        />
         <button
-          className="flex items-center justify-center px-3 h-full text-xs shrink-0 hover:opacity-80 transition-opacity"
+          type="button"
+          className="flex items-center justify-center px-3 h-full text-xs shrink-0 ml-auto hover:opacity-80 transition-opacity"
           style={{
             color: showMore ? "var(--vs-accent)" : "var(--vs-text-muted)",
             fontFamily: "var(--font-sans)",
@@ -717,21 +744,97 @@ function MobileStandardView({
             borderLeft: "1px solid var(--vs-border)",
             cursor: "pointer",
           }}
-          onClick={() => setShowMore((v) => !v)}
+          onClick={toggleMore}
+          aria-expanded={showMore}
+          aria-label="More files"
         >
-          More ↑
+          More {showMore ? "↓" : "↑"}
         </button>
       </div>
+
+      {/* Projects sheet */}
+      {showProjects && (
+        <div
+          className="absolute bottom-11 left-0 right-0 z-10 mobile-sheet"
+          style={{
+            background: "var(--vs-surface)",
+            borderTop: "1px solid var(--vs-border)",
+            maxHeight: "60vh",
+            overflowY: "auto",
+          }}
+        >
+          <div
+            className="px-4 py-2 uppercase select-none"
+            style={{
+              color: "var(--vs-text-muted)",
+              fontSize: "10px",
+              letterSpacing: "0.1em",
+              borderBottom: "1px solid var(--vs-border)",
+            }}
+          >
+            Project case studies
+          </div>
+          {PROJECTS_FILES.map((file) => (
+            <button
+              key={file.id}
+              className="flex flex-col gap-0.5 w-full px-4 py-2.5 text-left hover:opacity-80 transition-opacity"
+              style={{
+                background: "transparent",
+                border: "none",
+                borderBottom: "1px solid var(--vs-border)",
+                cursor: "pointer",
+              }}
+              onClick={() => pickFile(file.id)}
+            >
+              <span
+                style={{
+                  color:
+                    activeFile === file.id
+                      ? "var(--vs-accent)"
+                      : "var(--vs-text)",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "13px",
+                }}
+              >
+                {file.displayName}
+              </span>
+              <span
+                style={{
+                  color: "var(--vs-text-muted)",
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "11px",
+                  lineHeight: 1.4,
+                }}
+              >
+                {PROJECT_TAGLINES[file.id] ?? "Project case study"}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* More bottom sheet */}
       {showMore && (
         <div
-          className="absolute bottom-11 left-0 right-0 z-10"
+          className="absolute bottom-11 left-0 right-0 z-10 mobile-sheet"
           style={{
             background: "var(--vs-surface)",
             borderTop: "1px solid var(--vs-border)",
+            maxHeight: "60vh",
+            overflowY: "auto",
           }}
         >
+          <div
+            className="px-4 py-2 uppercase select-none"
+            style={{
+              color: "var(--vs-text-muted)",
+              fontSize: "10px",
+              letterSpacing: "0.1em",
+              borderBottom: "1px solid var(--vs-border)",
+            }}
+          >
+            More files
+          </div>
           {moreFiles.map((file) => (
             <button
               key={file.id}
@@ -748,10 +851,7 @@ function MobileStandardView({
                 borderBottom: "1px solid var(--vs-border)",
                 cursor: "pointer",
               }}
-              onClick={() => {
-                onFileSelect(file.id);
-                setShowMore(false);
-              }}
+              onClick={() => pickFile(file.id)}
             >
               {file.displayName}
             </button>
@@ -759,5 +859,43 @@ function MobileStandardView({
         </div>
       )}
     </div>
+  );
+}
+
+function MobileTab({
+  label,
+  active,
+  onClick,
+  expanded,
+  bordered = true,
+}: {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+  expanded?: boolean;
+  bordered?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="flex items-center justify-center px-3 h-full text-xs shrink-0 hover:opacity-80 transition-opacity"
+      style={{
+        color: active ? "var(--vs-accent)" : "var(--vs-text-muted)",
+        fontFamily: "var(--font-sans)",
+        fontWeight: active ? 500 : 400,
+        background: "transparent",
+        border: "none",
+        borderBottom: active
+          ? "2px solid var(--vs-accent)"
+          : "2px solid transparent",
+        borderRight: bordered ? "1px solid var(--vs-border)" : "none",
+        cursor: "pointer",
+      }}
+      aria-current={active ? "page" : undefined}
+      aria-expanded={expanded}
+    >
+      {label}
+    </button>
   );
 }
