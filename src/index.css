@@ -427,7 +427,7 @@
 
 /* ─── Terminal quick actions ───────────────────────────────────────────────── */
 .quick-commands {
-  margin: 2px 0 14px;
+  margin: 0 0 6px;
   font-family: var(--font-mono);
 }
 
