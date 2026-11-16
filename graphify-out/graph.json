@@ -637,7 +637,7 @@
       "label": "Mode",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "src_app_mode",
       "community": 0,
@@ -647,7 +647,7 @@
       "label": "ArcadeGame",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "src_app_arcadegame",
       "community": 0,
@@ -657,7 +657,7 @@
       "label": "PersonalWindow",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "src_app_personalwindow",
       "community": 0,
@@ -667,7 +667,7 @@
       "label": "getInitialMode()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "src_app_getinitialmode",
       "community": 0,
@@ -677,7 +677,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_app_app",
       "community": 0,
@@ -707,7 +707,7 @@
       "label": "useClock()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "components_header_useclock",
       "community": 3,
@@ -717,7 +717,7 @@
       "label": "useTemperature()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "components_header_usetemperature",
       "community": 3,
@@ -727,7 +727,7 @@
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "components_header_header",
       "community": 3,
@@ -737,7 +737,7 @@
       "label": "IconButton()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L149",
+      "source_location": "L172",
       "_origin": "ast",
       "id": "components_header_iconbutton",
       "community": 3,
@@ -747,7 +747,7 @@
       "label": "MailIcon()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L172",
+      "source_location": "L196",
       "_origin": "ast",
       "id": "components_header_mailicon",
       "community": 3,
@@ -757,7 +757,7 @@
       "label": "LinkedInIcon()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L181",
+      "source_location": "L205",
       "_origin": "ast",
       "id": "components_header_linkedinicon",
       "community": 3,
@@ -767,11 +767,81 @@
       "label": "GitHubIcon()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L191",
+      "source_location": "L215",
       "_origin": "ast",
       "id": "components_header_githubicon",
       "community": 3,
       "norm_label": "githubicon()"
+    },
+    {
+      "label": "RecruiterWindow.tsx",
+      "file_type": "code",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_recruiterwindow",
+      "community": 39,
+      "norm_label": "recruiterwindow.tsx"
+    },
+    {
+      "label": "RecruiterWindowProps",
+      "file_type": "code",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "components_recruiterwindow_recruiterwindowprops",
+      "community": 39,
+      "norm_label": "recruiterwindowprops"
+    },
+    {
+      "label": "CopyState",
+      "file_type": "code",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "components_recruiterwindow_copystate",
+      "community": 39,
+      "norm_label": "copystate"
+    },
+    {
+      "label": "RecruiterWindow()",
+      "file_type": "code",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "components_recruiterwindow_recruiterwindow",
+      "community": 39,
+      "norm_label": "recruiterwindow()"
+    },
+    {
+      "label": "ProjectCard()",
+      "file_type": "code",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L199",
+      "_origin": "ast",
+      "id": "components_recruiterwindow_projectcard",
+      "community": 39,
+      "norm_label": "projectcard()"
+    },
+    {
+      "label": "GitHubIcon()",
+      "file_type": "code",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L244",
+      "_origin": "ast",
+      "id": "components_recruiterwindow_githubicon",
+      "community": 39,
+      "norm_label": "githubicon()"
+    },
+    {
+      "label": "LinkedInIcon()",
+      "file_type": "code",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L259",
+      "_origin": "ast",
+      "id": "components_recruiterwindow_linkedinicon",
+      "community": 39,
+      "norm_label": "linkedinicon()"
     },
     {
       "label": "mode-toggle.tsx",
@@ -817,7 +887,7 @@
       "label": "CommandPalette()",
       "file_type": "code",
       "source_file": "src/components/standard/CommandPalette.tsx",
-      "source_location": "L52",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "standard_commandpalette_commandpalette",
       "community": 26,
@@ -860,7 +930,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "standard_editorcomponents_explorer",
-      "community": 15,
+      "community": 13,
       "norm_label": "explorer()"
     },
     {
@@ -890,7 +960,7 @@
       "source_location": "L183",
       "_origin": "ast",
       "id": "standard_editorcomponents_tabbar",
-      "community": 15,
+      "community": 13,
       "norm_label": "tabbar()"
     },
     {
@@ -1040,7 +1110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "standard_menubar",
-      "community": 30,
+      "community": 15,
       "norm_label": "menubar.tsx"
     },
     {
@@ -1050,47 +1120,47 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "standard_menubar_menubarprops",
-      "community": 30,
+      "community": 15,
       "norm_label": "menubarprops"
     },
     {
       "label": "MenuItem",
       "file_type": "code",
       "source_file": "src/components/standard/Menubar.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "standard_menubar_menuitem",
-      "community": 30,
+      "community": 15,
       "norm_label": "menuitem"
     },
     {
       "label": "Menu",
       "file_type": "code",
       "source_file": "src/components/standard/Menubar.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "standard_menubar_menu",
-      "community": 30,
+      "community": 15,
       "norm_label": "menu"
     },
     {
       "label": "openExternal()",
       "file_type": "code",
       "source_file": "src/components/standard/Menubar.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "standard_menubar_openexternal",
-      "community": 30,
+      "community": 15,
       "norm_label": "openexternal()"
     },
     {
       "label": "Menubar()",
       "file_type": "code",
       "source_file": "src/components/standard/Menubar.tsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "standard_menubar_menubar",
-      "community": 30,
+      "community": 15,
       "norm_label": "menubar()"
     },
     {
@@ -1204,10 +1274,20 @@
       "norm_label": "activitysection"
     },
     {
-      "label": "StandardView()",
+      "label": "PROJECT_TAGLINES",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
       "source_location": "L31",
+      "_origin": "ast",
+      "id": "standard_standardview_project_taglines",
+      "community": 15,
+      "norm_label": "project_taglines"
+    },
+    {
+      "label": "StandardView()",
+      "file_type": "code",
+      "source_file": "src/components/standard/StandardView.tsx",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "standard_standardview_standardview",
       "community": 15,
@@ -1217,7 +1297,7 @@
       "label": "ActivityBarProps",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
-      "source_location": "L260",
+      "source_location": "L281",
       "_origin": "ast",
       "id": "standard_standardview_activitybarprops",
       "community": 15,
@@ -1227,7 +1307,7 @@
       "label": "ActivityBar()",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
-      "source_location": "L265",
+      "source_location": "L286",
       "_origin": "ast",
       "id": "standard_standardview_activitybar",
       "community": 15,
@@ -1237,7 +1317,7 @@
       "label": "QuickOpenOverlay()",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
-      "source_location": "L318",
+      "source_location": "L339",
       "_origin": "ast",
       "id": "standard_standardview_quickopenoverlay",
       "community": 15,
@@ -1247,7 +1327,7 @@
       "label": "ActivityButton()",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
-      "source_location": "L421",
+      "source_location": "L442",
       "_origin": "ast",
       "id": "standard_standardview_activitybutton",
       "community": 15,
@@ -1257,7 +1337,7 @@
       "label": "PlaceholderPanel()",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
-      "source_location": "L460",
+      "source_location": "L481",
       "_origin": "ast",
       "id": "standard_standardview_placeholderpanel",
       "community": 15,
@@ -1267,7 +1347,7 @@
       "label": "EmptyEditor()",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
-      "source_location": "L504",
+      "source_location": "L525",
       "_origin": "ast",
       "id": "standard_standardview_emptyeditor",
       "community": 15,
@@ -1277,11 +1357,21 @@
       "label": "MobileStandardView()",
       "file_type": "code",
       "source_file": "src/components/standard/StandardView.tsx",
-      "source_location": "L636",
+      "source_location": "L649",
       "_origin": "ast",
       "id": "standard_standardview_mobilestandardview",
       "community": 15,
       "norm_label": "mobilestandardview()"
+    },
+    {
+      "label": "MobileTab()",
+      "file_type": "code",
+      "source_file": "src/components/standard/StandardView.tsx",
+      "source_location": "L865",
+      "_origin": "ast",
+      "id": "standard_standardview_mobiletab",
+      "community": 15,
+      "norm_label": "mobiletab()"
     },
     {
       "label": "StatusBar.tsx",
@@ -1360,7 +1450,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "terminal_arcadecontrols",
-      "community": 27,
+      "community": 42,
       "norm_label": "arcadecontrols.tsx"
     },
     {
@@ -1370,7 +1460,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "terminal_arcadecontrols_arcadedir",
-      "community": 27,
+      "community": 42,
       "norm_label": "arcadedir"
     },
     {
@@ -1380,7 +1470,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "terminal_arcadecontrols_usecoarsepointer",
-      "community": 27,
+      "community": 42,
       "norm_label": "usecoarsepointer()"
     },
     {
@@ -1400,7 +1490,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "terminal_arcadecontrols_padbtn",
-      "community": 27,
+      "community": 42,
       "norm_label": "padbtn"
     },
     {
@@ -1410,7 +1500,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "terminal_arcadecontrols_arcadedpad",
-      "community": 27,
+      "community": 42,
       "norm_label": "arcadedpad()"
     },
     {
@@ -1420,7 +1510,7 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "terminal_arcadecontrols_arcadebuttonspec",
-      "community": 27,
+      "community": 42,
       "norm_label": "arcadebuttonspec"
     },
     {
@@ -1430,7 +1520,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "terminal_arcadecontrols_arcadebuttonbar",
-      "community": 27,
+      "community": 42,
       "norm_label": "arcadebuttonbar()"
     },
     {
@@ -1984,6 +2074,46 @@
       "norm_label": "personalwindow()"
     },
     {
+      "label": "QuickCommands.tsx",
+      "file_type": "code",
+      "source_file": "src/components/terminal/QuickCommands.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "terminal_quickcommands",
+      "community": 10,
+      "norm_label": "quickcommands.tsx"
+    },
+    {
+      "label": "QuickCommand",
+      "file_type": "code",
+      "source_file": "src/components/terminal/QuickCommands.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "terminal_quickcommands_quickcommand",
+      "community": 10,
+      "norm_label": "quickcommand"
+    },
+    {
+      "label": "QUICK_COMMANDS",
+      "file_type": "code",
+      "source_file": "src/components/terminal/QuickCommands.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "terminal_quickcommands_quick_commands",
+      "community": 10,
+      "norm_label": "quick_commands"
+    },
+    {
+      "label": "QuickCommands()",
+      "file_type": "code",
+      "source_file": "src/components/terminal/QuickCommands.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "terminal_quickcommands_quickcommands",
+      "community": 10,
+      "norm_label": "quickcommands()"
+    },
+    {
       "label": "ReadingWindow.tsx",
       "file_type": "code",
       "source_file": "src/components/terminal/ReadingWindow.tsx",
@@ -2117,7 +2247,7 @@
       "label": "HistoryEntry",
       "file_type": "code",
       "source_file": "src/components/terminal/TerminalView.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "terminal_terminalview_historyentry",
       "community": 10,
@@ -2127,7 +2257,7 @@
       "label": "nextId()",
       "file_type": "code",
       "source_file": "src/components/terminal/TerminalView.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "terminal_terminalview_nextid",
       "community": 10,
@@ -2137,7 +2267,7 @@
       "label": "processCommand()",
       "file_type": "code",
       "source_file": "src/components/terminal/TerminalView.tsx",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "terminal_terminalview_processcommand",
       "community": 10,
@@ -2147,7 +2277,7 @@
       "label": "autocomplete()",
       "file_type": "code",
       "source_file": "src/components/terminal/TerminalView.tsx",
-      "source_location": "L94",
+      "source_location": "L96",
       "_origin": "ast",
       "id": "terminal_terminalview_autocomplete",
       "community": 10,
@@ -2157,7 +2287,7 @@
       "label": "TerminalViewProps",
       "file_type": "code",
       "source_file": "src/components/terminal/TerminalView.tsx",
-      "source_location": "L101",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "terminal_terminalview_terminalviewprops",
       "community": 0,
@@ -2167,7 +2297,7 @@
       "label": "TerminalView()",
       "file_type": "code",
       "source_file": "src/components/terminal/TerminalView.tsx",
-      "source_location": "L108",
+      "source_location": "L111",
       "_origin": "ast",
       "id": "terminal_terminalview_terminalview",
       "community": 31,
@@ -2450,7 +2580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_accordion",
-      "community": 42,
+      "community": 2,
       "norm_label": "accordion.tsx"
     },
     {
@@ -2460,7 +2590,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_accordion_accordion",
-      "community": 42,
+      "community": 2,
       "norm_label": "accordion()"
     },
     {
@@ -2470,7 +2600,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_accordion_accordionitem",
-      "community": 42,
+      "community": 2,
       "norm_label": "accordionitem()"
     },
     {
@@ -2480,7 +2610,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_accordion_accordiontrigger",
-      "community": 42,
+      "community": 2,
       "norm_label": "accordiontrigger()"
     },
     {
@@ -2490,7 +2620,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "ui_accordion_accordioncontent",
-      "community": 42,
+      "community": 2,
       "norm_label": "accordioncontent()"
     },
     {
@@ -4380,7 +4510,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_hover_card",
-      "community": 39,
+      "community": 17,
       "norm_label": "hover-card.tsx"
     },
     {
@@ -4390,7 +4520,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_hover_card_hovercard",
-      "community": 39,
+      "community": 17,
       "norm_label": "hovercard()"
     },
     {
@@ -4400,7 +4530,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "ui_hover_card_hovercardtrigger",
-      "community": 39,
+      "community": 17,
       "norm_label": "hovercardtrigger()"
     },
     {
@@ -4410,7 +4540,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "ui_hover_card_hovercardcontent",
-      "community": 39,
+      "community": 17,
       "norm_label": "hovercardcontent()"
     },
     {
@@ -4560,7 +4690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input",
-      "community": 1,
+      "community": 20,
       "norm_label": "input.tsx"
     },
     {
@@ -4570,7 +4700,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_input_input",
-      "community": 1,
+      "community": 20,
       "norm_label": "input()"
     },
     {
@@ -5900,7 +6030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_slider",
-      "community": 17,
+      "community": 2,
       "norm_label": "slider.tsx"
     },
     {
@@ -5910,7 +6040,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_slider_slider",
-      "community": 17,
+      "community": 2,
       "norm_label": "slider()"
     },
     {
@@ -5940,7 +6070,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_spinner",
-      "community": 17,
+      "community": 2,
       "norm_label": "spinner.tsx"
     },
     {
@@ -5950,7 +6080,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_spinner_spinner",
-      "community": 17,
+      "community": 2,
       "norm_label": "spinner()"
     },
     {
@@ -6287,7 +6417,7 @@
       "label": "CERTIFICATIONS",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L73",
+      "source_location": "L75",
       "_origin": "ast",
       "id": "data_content_certifications",
       "community": 10,
@@ -6297,7 +6427,7 @@
       "label": "FORTUNES",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L160",
+      "source_location": "L162",
       "_origin": "ast",
       "id": "data_content_fortunes",
       "community": 10,
@@ -6307,7 +6437,7 @@
       "label": "commandOutputs",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L199",
+      "source_location": "L201",
       "_origin": "ast",
       "id": "data_content_commandoutputs",
       "community": 10,
@@ -6317,7 +6447,7 @@
       "label": "FileType",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L661",
+      "source_location": "L665",
       "_origin": "ast",
       "id": "data_content_filetype",
       "community": 26,
@@ -6327,7 +6457,7 @@
       "label": "FileEntry",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L663",
+      "source_location": "L667",
       "_origin": "ast",
       "id": "data_content_fileentry",
       "community": 10,
@@ -6337,7 +6467,7 @@
       "label": "FolderEntry",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L670",
+      "source_location": "L674",
       "_origin": "ast",
       "id": "data_content_folderentry",
       "community": 10,
@@ -6347,7 +6477,7 @@
       "label": "AFNAN_FILES",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L675",
+      "source_location": "L679",
       "_origin": "ast",
       "id": "data_content_afnan_files",
       "community": 10,
@@ -6357,17 +6487,17 @@
       "label": "PROJECTS_FILES",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L714",
+      "source_location": "L718",
       "_origin": "ast",
       "id": "data_content_projects_files",
-      "community": 10,
+      "community": 39,
       "norm_label": "projects_files"
     },
     {
       "label": "ASSETS_FILES",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L753",
+      "source_location": "L757",
       "_origin": "ast",
       "id": "data_content_assets_files",
       "community": 10,
@@ -6377,7 +6507,7 @@
       "label": "EXPLORER_FOLDERS",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L757",
+      "source_location": "L761",
       "_origin": "ast",
       "id": "data_content_explorer_folders",
       "community": 10,
@@ -6387,7 +6517,7 @@
       "label": "ALL_FILES",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L763",
+      "source_location": "L767",
       "_origin": "ast",
       "id": "data_content_all_files",
       "community": 26,
@@ -6397,7 +6527,7 @@
       "label": "fileContents",
       "file_type": "code",
       "source_file": "src/data/content.ts",
-      "source_location": "L769",
+      "source_location": "L773",
       "_origin": "ast",
       "id": "data_content_filecontents",
       "community": 26,
@@ -6462,6 +6592,96 @@
       "id": "data_library_book_library",
       "community": 0,
       "norm_label": "book_library"
+    },
+    {
+      "label": "recruiter.test.ts",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "data_recruiter_test",
+      "community": 39,
+      "norm_label": "recruiter.test.ts"
+    },
+    {
+      "label": "recruiter.ts",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "data_recruiter",
+      "community": 39,
+      "norm_label": "recruiter.ts"
+    },
+    {
+      "label": "RecruiterMetric",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "data_recruiter_recruitermetric",
+      "community": 39,
+      "norm_label": "recruitermetric"
+    },
+    {
+      "label": "RecruiterProject",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "data_recruiter_recruiterproject",
+      "community": 39,
+      "norm_label": "recruiterproject"
+    },
+    {
+      "label": "RecruiterSkillGroup",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "data_recruiter_recruiterskillgroup",
+      "community": 39,
+      "norm_label": "recruiterskillgroup"
+    },
+    {
+      "label": "RECRUITER_PROFILE",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "data_recruiter_recruiter_profile",
+      "community": 39,
+      "norm_label": "recruiter_profile"
+    },
+    {
+      "label": "RECRUITER_METRICS",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "data_recruiter_recruiter_metrics",
+      "community": 39,
+      "norm_label": "recruiter_metrics"
+    },
+    {
+      "label": "RECRUITER_PROJECTS",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "data_recruiter_recruiter_projects",
+      "community": 39,
+      "norm_label": "recruiter_projects"
+    },
+    {
+      "label": "RECRUITER_SKILLS",
+      "file_type": "code",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L104",
+      "_origin": "ast",
+      "id": "data_recruiter_recruiter_skills",
+      "community": 39,
+      "norm_label": "recruiter_skills"
     },
     {
       "label": "spanish.ts",
@@ -6894,6 +7114,26 @@
       "norm_label": "usehighscore()"
     },
     {
+      "label": "clipboard.ts",
+      "file_type": "code",
+      "source_file": "src/lib/clipboard.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_clipboard",
+      "community": 39,
+      "norm_label": "clipboard.ts"
+    },
+    {
+      "label": "copyText()",
+      "file_type": "code",
+      "source_file": "src/lib/clipboard.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "lib_clipboard_copytext",
+      "community": 39,
+      "norm_label": "copytext()"
+    },
+    {
       "label": "commands.ts",
       "file_type": "code",
       "source_file": "src/lib/commands.ts",
@@ -6950,7 +7190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_resume",
-      "community": 15,
+      "community": 13,
       "norm_label": "resume.ts"
     },
     {
@@ -6960,7 +7200,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "lib_resume_downloadresume",
-      "community": 15,
+      "community": 13,
       "norm_label": "downloadresume()"
     },
     {
@@ -7674,10 +7914,20 @@
       "norm_label": "terminal view"
     },
     {
+      "label": "Recruiter Quick View",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "readme_recruiter_quick_view",
+      "community": 12,
+      "norm_label": "recruiter quick view"
+    },
+    {
       "label": "Built-in Arcade",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L43",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "readme_built_in_arcade",
       "community": 12,
@@ -7687,7 +7937,7 @@
       "label": "VS Code Realism (Standard View)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L55",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "readme_vs_code_realism_standard_view",
       "community": 12,
@@ -7697,7 +7947,7 @@
       "label": "Quality & Reach",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L67",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "readme_quality_reach",
       "community": 12,
@@ -7707,7 +7957,7 @@
       "label": "Tech Stack",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L78",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "readme_tech_stack",
       "community": 12,
@@ -7717,7 +7967,7 @@
       "label": "Project Structure",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L95",
+      "source_location": "L110",
       "_origin": "ast",
       "id": "readme_project_structure",
       "community": 12,
@@ -7727,7 +7977,7 @@
       "label": "Getting Started",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L132",
+      "source_location": "L148",
       "_origin": "ast",
       "id": "readme_getting_started",
       "community": 12,
@@ -7737,7 +7987,7 @@
       "label": "Prerequisites",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L134",
+      "source_location": "L150",
       "_origin": "ast",
       "id": "readme_prerequisites",
       "community": 12,
@@ -7747,7 +7997,7 @@
       "label": "Install",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L138",
+      "source_location": "L154",
       "_origin": "ast",
       "id": "readme_install",
       "community": 12,
@@ -7757,7 +8007,7 @@
       "label": "Develop",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L146",
+      "source_location": "L162",
       "_origin": "ast",
       "id": "readme_develop",
       "community": 12,
@@ -7767,7 +8017,7 @@
       "label": "Keyboard Shortcuts (Standard View)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L157",
+      "source_location": "L173",
       "_origin": "ast",
       "id": "readme_keyboard_shortcuts_standard_view",
       "community": 12,
@@ -7777,7 +8027,7 @@
       "label": "Deployment",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L174",
+      "source_location": "L190",
       "_origin": "ast",
       "id": "readme_deployment",
       "community": 12,
@@ -7787,7 +8037,7 @@
       "label": "Connect With Me",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L184",
+      "source_location": "L200",
       "_origin": "ast",
       "id": "readme_connect_with_me",
       "community": 12,
@@ -7797,11 +8047,361 @@
       "label": "\"Building practical applications, interactive experiences, and continuously improving through hands-on development.\"",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L194",
+      "source_location": "L210",
       "_origin": "ast",
       "id": "readme_building_practical_applications_interactive_experiences_and_continuously_improving_through_hands_on_development",
       "community": 12,
       "norm_label": "\"building practical applications, interactive experiences, and continuously improving through hands-on development.\""
+    },
+    {
+      "label": "suggestion.md",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "suggestion",
+      "community": 30,
+      "norm_label": "suggestion.md"
+    },
+    {
+      "label": "Afnan Workspace \u2014 Product & UX Suggestions",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "suggestion_afnan_workspace_product_ux_suggestions",
+      "community": 30,
+      "norm_label": "afnan workspace \u2014 product & ux suggestions"
+    },
+    {
+      "label": "1. What already works",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "suggestion_1_what_already_works",
+      "community": 30,
+      "norm_label": "1. what already works"
+    },
+    {
+      "label": "2. Who visits, and what they need in the first 10 seconds",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "suggestion_2_who_visits_and_what_they_need_in_the_first_10_seconds",
+      "community": 30,
+      "norm_label": "2. who visits, and what they need in the first 10 seconds"
+    },
+    {
+      "label": "3. Recruiter issues",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "suggestion_3_recruiter_issues",
+      "community": 30,
+      "norm_label": "3. recruiter issues"
+    },
+    {
+      "label": "R1 \u2014 Resume and contact disappear on mobile",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "suggestion_r1_resume_and_contact_disappear_on_mobile",
+      "community": 30,
+      "norm_label": "r1 \u2014 resume and contact disappear on mobile"
+    },
+    {
+      "label": "R2 \u2014 Projects are buried on mobile",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "suggestion_r2_projects_are_buried_on_mobile",
+      "community": 30,
+      "norm_label": "r2 \u2014 projects are buried on mobile"
+    },
+    {
+      "label": "R3 \u2014 No scannable summary",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "suggestion_r3_no_scannable_summary",
+      "community": 30,
+      "norm_label": "r3 \u2014 no scannable summary"
+    },
+    {
+      "label": "R4 \u2014 The resume CTA is almost invisible",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "suggestion_r4_the_resume_cta_is_almost_invisible",
+      "community": 30,
+      "norm_label": "r4 \u2014 the resume cta is almost invisible"
+    },
+    {
+      "label": "R5 \u2014 Contact requires a command or an icon",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "suggestion_r5_contact_requires_a_command_or_an_icon",
+      "community": 30,
+      "norm_label": "r5 \u2014 contact requires a command or an icon"
+    },
+    {
+      "label": "R6 \u2014 Project links are unstructured",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "suggestion_r6_project_links_are_unstructured",
+      "community": 30,
+      "norm_label": "r6 \u2014 project links are unstructured"
+    },
+    {
+      "label": "4. Layman issues",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "suggestion_4_layman_issues",
+      "community": 30,
+      "norm_label": "4. layman issues"
+    },
+    {
+      "label": "L1 \u2014 The terminal assumes command knowledge",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "suggestion_l1_the_terminal_assumes_command_knowledge",
+      "community": 30,
+      "norm_label": "l1 \u2014 the terminal assumes command knowledge"
+    },
+    {
+      "label": "L2 \u2014 The ASCII banner is unreadable on a phone",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "suggestion_l2_the_ascii_banner_is_unreadable_on_a_phone",
+      "community": 30,
+      "norm_label": "l2 \u2014 the ascii banner is unreadable on a phone"
+    },
+    {
+      "label": "L3 \u2014 Code is clipped on mobile",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "suggestion_l3_code_is_clipped_on_mobile",
+      "community": 30,
+      "norm_label": "l3 \u2014 code is clipped on mobile"
+    },
+    {
+      "label": "L4 \u2014 Dead ends feel unfinished",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "suggestion_l4_dead_ends_feel_unfinished",
+      "community": 30,
+      "norm_label": "l4 \u2014 dead ends feel unfinished"
+    },
+    {
+      "label": "L5 \u2014 The mobile \u201cMore\u201d sheet is a catch-all",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "suggestion_l5_the_mobile_more_sheet_is_a_catch_all",
+      "community": 30,
+      "norm_label": "l5 \u2014 the mobile \u201cmore\u201d sheet is a catch-all"
+    },
+    {
+      "label": "5. UI/UX and accessibility issues",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "suggestion_5_ui_ux_and_accessibility_issues",
+      "community": 30,
+      "norm_label": "5. ui/ux and accessibility issues"
+    },
+    {
+      "label": "U1 \u2014 No visible primary CTA in terminal mode",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "suggestion_u1_no_visible_primary_cta_in_terminal_mode",
+      "community": 30,
+      "norm_label": "u1 \u2014 no visible primary cta in terminal mode"
+    },
+    {
+      "label": "U2 \u2014 Low-contrast footer",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "suggestion_u2_low_contrast_footer",
+      "community": 30,
+      "norm_label": "u2 \u2014 low-contrast footer"
+    },
+    {
+      "label": "U3 \u2014 Popup focus management",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "suggestion_u3_popup_focus_management",
+      "community": 30,
+      "norm_label": "u3 \u2014 popup focus management"
+    },
+    {
+      "label": "U4 \u2014 Icon-only controls rely on `title`",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "suggestion_u4_icon_only_controls_rely_on_title",
+      "community": 30,
+      "norm_label": "u4 \u2014 icon-only controls rely on `title`"
+    },
+    {
+      "label": "U5 \u2014 No live region for terminal output",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "suggestion_u5_no_live_region_for_terminal_output",
+      "community": 30,
+      "norm_label": "u5 \u2014 no live region for terminal output"
+    },
+    {
+      "label": "U6 \u2014 Mobile navigation prioritizes the wrong files",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "suggestion_u6_mobile_navigation_prioritizes_the_wrong_files",
+      "community": 30,
+      "norm_label": "u6 \u2014 mobile navigation prioritizes the wrong files"
+    },
+    {
+      "label": "U7 \u2014 Placeholder panels",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "suggestion_u7_placeholder_panels",
+      "community": 30,
+      "norm_label": "u7 \u2014 placeholder panels"
+    },
+    {
+      "label": "U8 \u2014 No per-project visual identity",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "suggestion_u8_no_per_project_visual_identity",
+      "community": 30,
+      "norm_label": "u8 \u2014 no per-project visual identity"
+    },
+    {
+      "label": "6. Recommended feature: **Recruiter Quick View**",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "suggestion_6_recommended_feature_recruiter_quick_view",
+      "community": 30,
+      "norm_label": "6. recommended feature: **recruiter quick view**"
+    },
+    {
+      "label": "Why this feature",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L104",
+      "_origin": "ast",
+      "id": "suggestion_why_this_feature",
+      "community": 30,
+      "norm_label": "why this feature"
+    },
+    {
+      "label": "What it is",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "suggestion_what_it_is",
+      "community": 30,
+      "norm_label": "what it is"
+    },
+    {
+      "label": "Entry points",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "suggestion_entry_points",
+      "community": 30,
+      "norm_label": "entry points"
+    },
+    {
+      "label": "Why it fits the existing architecture",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "suggestion_why_it_fits_the_existing_architecture",
+      "community": 30,
+      "norm_label": "why it fits the existing architecture"
+    },
+    {
+      "label": "7. Supporting fixes to ship with it",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L142",
+      "_origin": "ast",
+      "id": "suggestion_7_supporting_fixes_to_ship_with_it",
+      "community": 30,
+      "norm_label": "7. supporting fixes to ship with it"
+    },
+    {
+      "label": "8. Implementation plan (one file per commit)",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L156",
+      "_origin": "ast",
+      "id": "suggestion_8_implementation_plan_one_file_per_commit",
+      "community": 30,
+      "norm_label": "8. implementation plan (one file per commit)"
+    },
+    {
+      "label": "9. Backlog \u2014 worth doing later, not in this branch",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L180",
+      "_origin": "ast",
+      "id": "suggestion_9_backlog_worth_doing_later_not_in_this_branch",
+      "community": 30,
+      "norm_label": "9. backlog \u2014 worth doing later, not in this branch"
+    },
+    {
+      "label": "10. Success measures",
+      "file_type": "document",
+      "source_file": "suggestion.md",
+      "source_location": "L193",
+      "_origin": "ast",
+      "id": "suggestion_10_success_measures",
+      "community": 30,
+      "norm_label": "10. success measures"
     }
   ],
   "links": [
@@ -8422,6 +9022,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_recruiterwindow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_recruiterwindow_recruiterwindow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8490,9 +9112,9 @@
       "source_file": "src/App.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "lib_preload_covers",
-      "confidence_score": 1.0
+      "target": "lib_preload_covers"
     },
     {
       "relation": "imports",
@@ -8501,9 +9123,9 @@
       "source_file": "src/App.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "lib_preload_covers_preloadbookcovers",
-      "confidence_score": 1.0
+      "target": "lib_preload_covers_preloadbookcovers"
     },
     {
       "relation": "contains",
@@ -8953,6 +9575,198 @@
       "weight": 1.0,
       "source": "components_header_header",
       "target": "hooks_use_audio_useaudio"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "components_recruiterwindow_copystate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L244",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "components_recruiterwindow_githubicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L259",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "components_recruiterwindow_linkedinicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "components_recruiterwindow_projectcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "components_recruiterwindow_recruiterwindow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "components_recruiterwindow_recruiterwindowprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "data_recruiter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "data_recruiter_recruiter_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "data_recruiter_recruiter_profile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "data_recruiter_recruiter_projects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "data_recruiter_recruiter_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "data_recruiter_recruiterproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "lib_clipboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "lib_clipboard_copytext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "lib_resume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "lib_resume_downloadresume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "terminal_personalwindow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/RecruiterWindow.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_recruiterwindow",
+      "target": "terminal_personalwindow_personalwindow",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10050,11 +10864,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/standard/StandardView.tsx",
+      "source_location": "L865",
+      "weight": 1.0,
+      "source": "standard_standardview",
+      "target": "standard_standardview_mobiletab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/standard/StandardView.tsx",
       "source_location": "L460",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "standard_standardview",
       "target": "standard_standardview_placeholderpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/standard/StandardView.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "standard_standardview",
+      "target": "standard_standardview_project_taglines",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11421,6 +12255,58 @@
       "confidence_score": 1.0,
       "source": "terminal_readingwindow",
       "target": "terminal_personalwindow_personalwindow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/terminal/QuickCommands.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "terminal_quickcommands",
+      "target": "terminal_quickcommands_quick_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/terminal/QuickCommands.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "terminal_quickcommands",
+      "target": "terminal_quickcommands_quickcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/terminal/QuickCommands.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "terminal_quickcommands",
+      "target": "terminal_quickcommands_quickcommands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/terminal/TerminalView.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "terminal_terminalview",
+      "target": "terminal_quickcommands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/terminal/TerminalView.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "terminal_terminalview",
+      "target": "terminal_quickcommands_quickcommands",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -20348,6 +21234,50 @@
       "target": "data_spanish_spanish_progress"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_content_projects_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_content_all_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_content_filecontents",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/languages.ts",
@@ -20416,9 +21346,9 @@
       "source_file": "src/lib/preload-covers.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_preload_covers",
-      "target": "data_library",
-      "confidence_score": 1.0
+      "target": "data_library"
     },
     {
       "relation": "imports",
@@ -20427,8 +21357,133 @@
       "source_file": "src/lib/preload-covers.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_preload_covers",
-      "target": "data_library_book_library",
+      "target": "data_library_book_library"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_recruiter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_recruiter_recruiter_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_recruiter_recruiter_profile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_recruiter_recruiter_projects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "data_recruiter_test",
+      "target": "data_recruiter_recruiter_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_recruiter_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_recruiter_profile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_recruiter_projects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_recruiter_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_recruitermetric",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_recruiterproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/recruiter.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "data_recruiter",
+      "target": "data_recruiter_recruiterskillgroup",
       "confidence_score": 1.0
     },
     {
@@ -20972,6 +22027,16 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/lib/clipboard.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_clipboard",
+      "target": "lib_clipboard_copytext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/lib/commands.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -20995,9 +22060,9 @@
       "source_file": "src/lib/preload-covers.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_preload_covers",
-      "target": "lib_preload_covers_preloadbookcovers",
-      "confidence_score": 1.0
+      "target": "lib_preload_covers_preloadbookcovers"
     },
     {
       "relation": "contains",
@@ -21693,6 +22758,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "readme_highlights",
+      "target": "readme_recruiter_quick_view",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
       "source_location": "L27",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -21758,8 +22833,348 @@
       "confidence_score": 1.0,
       "source": "readme_connect_with_me",
       "target": "readme_building_practical_applications_interactive_experiences_and_continuously_improving_through_hands_on_development"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "suggestion",
+      "target": "suggestion_afnan_workspace_product_ux_suggestions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L193",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_10_success_measures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_1_what_already_works",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_2_who_visits_and_what_they_need_in_the_first_10_seconds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_3_recruiter_issues",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_4_layman_issues",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_5_ui_ux_and_accessibility_issues",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_6_recommended_feature_recruiter_quick_view",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_7_supporting_fixes_to_ship_with_it",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_8_implementation_plan_one_file_per_commit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "suggestion_afnan_workspace_product_ux_suggestions",
+      "target": "suggestion_9_backlog_worth_doing_later_not_in_this_branch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "suggestion_3_recruiter_issues",
+      "target": "suggestion_r1_resume_and_contact_disappear_on_mobile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "suggestion_3_recruiter_issues",
+      "target": "suggestion_r2_projects_are_buried_on_mobile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "suggestion_3_recruiter_issues",
+      "target": "suggestion_r3_no_scannable_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "suggestion_3_recruiter_issues",
+      "target": "suggestion_r4_the_resume_cta_is_almost_invisible",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "suggestion_3_recruiter_issues",
+      "target": "suggestion_r5_contact_requires_a_command_or_an_icon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "suggestion_3_recruiter_issues",
+      "target": "suggestion_r6_project_links_are_unstructured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "suggestion_4_layman_issues",
+      "target": "suggestion_l1_the_terminal_assumes_command_knowledge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "suggestion_4_layman_issues",
+      "target": "suggestion_l2_the_ascii_banner_is_unreadable_on_a_phone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "suggestion_4_layman_issues",
+      "target": "suggestion_l3_code_is_clipped_on_mobile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "suggestion_4_layman_issues",
+      "target": "suggestion_l4_dead_ends_feel_unfinished",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "suggestion_4_layman_issues",
+      "target": "suggestion_l5_the_mobile_more_sheet_is_a_catch_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u1_no_visible_primary_cta_in_terminal_mode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u2_low_contrast_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u3_popup_focus_management",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u4_icon_only_controls_rely_on_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u5_no_live_region_for_terminal_output",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u6_mobile_navigation_prioritizes_the_wrong_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u7_placeholder_panels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "suggestion_5_ui_ux_and_accessibility_issues",
+      "target": "suggestion_u8_no_per_project_visual_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "suggestion_6_recommended_feature_recruiter_quick_view",
+      "target": "suggestion_entry_points",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "suggestion_6_recommended_feature_recruiter_quick_view",
+      "target": "suggestion_what_it_is",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "suggestion_6_recommended_feature_recruiter_quick_view",
+      "target": "suggestion_why_it_fits_the_existing_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "suggestion.md",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "suggestion_6_recommended_feature_recruiter_quick_view",
+      "target": "suggestion_why_this_feature",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "db8ef9b943e9dde1a0a2330fd5e2e30b1d41208c"
+  "built_at_commit": "47fd47e1180913d1797811601749bbdb8308b2c4"
 }

@@ -1,16 +1,16 @@
 # Graph Report - Portfolio v5  (2026-11-16)
 
 ## Corpus Check
-- 104 files · ~80,110 words
+- 110 files · ~84,392 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 780 nodes · 1330 edges · 54 communities (49 shown, 5 thin omitted)
+- 840 nodes · 1409 edges · 54 communities (50 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `db8ef9b9`
+- Built from commit: `47fd47e1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -71,28 +71,28 @@
 3. `compilerOptions` - 18 edges
 4. `useAudio()` - 17 edges
 5. `Button()` - 11 edges
-6. `useHighScore()` - 9 edges
-7. `useTheme()` - 8 edges
-8. `Afnan Workspace — Developer Portfolio` - 8 edges
-9. `scripts` - 7 edges
-10. `useDraggable()` - 7 edges
+6. `Afnan Workspace — Product & UX Suggestions` - 11 edges
+7. `useHighScore()` - 9 edges
+8. `5. UI/UX and accessibility issues` - 9 edges
+9. `useTheme()` - 8 edges
+10. `Afnan Workspace — Developer Portfolio` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Toaster()` --calls--> `useTheme()`  [INFERRED]
   src/components/ui/sonner.tsx → src/components/theme-provider.tsx
-- `AccordionItem()` --calls--> `cn()`  [EXTRACTED]
-  src/components/ui/accordion.tsx → src/lib/utils.ts
-- `AccordionTrigger()` --calls--> `cn()`  [EXTRACTED]
-  src/components/ui/accordion.tsx → src/lib/utils.ts
-- `AccordionContent()` --calls--> `cn()`  [EXTRACTED]
-  src/components/ui/accordion.tsx → src/lib/utils.ts
 - `AlertDialogOverlay()` --calls--> `cn()`  [EXTRACTED]
+  src/components/ui/alert-dialog.tsx → src/lib/utils.ts
+- `AlertDialogContent()` --calls--> `cn()`  [EXTRACTED]
+  src/components/ui/alert-dialog.tsx → src/lib/utils.ts
+- `AlertDialogHeader()` --calls--> `cn()`  [EXTRACTED]
+  src/components/ui/alert-dialog.tsx → src/lib/utils.ts
+- `AlertDialogFooter()` --calls--> `cn()`  [EXTRACTED]
   src/components/ui/alert-dialog.tsx → src/lib/utils.ts
 
 ## Import Cycles
 - 3-file cycle: `src/App.tsx -> src/components/terminal/ArcadeWindow.tsx -> src/components/terminal/ArcadeLobby.tsx -> src/App.tsx`
 
-## Communities (54 total, 5 thin omitted)
+## Communities (54 total, 4 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -100,11 +100,11 @@ Nodes (38): Language, LANGUAGES, Book, BOOK_LIBRARY, CEFR_LEVELS, CefrLevel, SPA
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
-Nodes (40): Input(), Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle() (+32 more)
+Nodes (39): Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle(), Sidebar() (+31 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.09
-Nodes (31): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Card() (+23 more)
+Cohesion: 0.07
+Nodes (36): cn(), AccordionContent(), AccordionItem(), AccordionTrigger(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup() (+28 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.06
@@ -135,8 +135,8 @@ Cohesion: 0.18
 Nodes (12): Item(), ItemActions(), ItemContent(), ItemDescription(), ItemFooter(), ItemGroup(), ItemHeader(), ItemMedia() (+4 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.14
-Nodes (14): AFNAN_FILES, ASSETS_FILES, CERTIFICATIONS, commandOutputs, EXPLORER_FOLDERS, FileEntry, FolderEntry, FORTUNES (+6 more)
+Cohesion: 0.11
+Nodes (16): AFNAN_FILES, ASSETS_FILES, CERTIFICATIONS, commandOutputs, EXPLORER_FOLDERS, FileEntry, FolderEntry, FORTUNES (+8 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.11
@@ -144,19 +144,19 @@ Nodes (17): aliases, components, hooks, lib, ui, utils, registries, rsc (+9 more
 
 ### Community 12 - "Community 12"
 Cohesion: 0.11
-Nodes (17): Afnan Workspace — Developer Portfolio, "Building practical applications, interactive experiences, and continuously improving through hands-on development.", Built-in Arcade, Connect With Me, Deployment, Develop, Getting Started, Highlights (+9 more)
+Nodes (18): Afnan Workspace — Developer Portfolio, "Building practical applications, interactive experiences, and continuously improving through hands-on development.", Built-in Arcade, Connect With Me, Deployment, Develop, Getting Started, Highlights (+10 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.15
-Nodes (12): EditorContent(), EditorContentProps, ExplorerProps, MarkdownRenderer(), renderInlineMarkdown(), renderJsonLine(), renderJsonValue(), renderMarkdownLines() (+4 more)
+Cohesion: 0.12
+Nodes (15): downloadResume(), EditorContent(), EditorContentProps, Explorer(), ExplorerProps, MarkdownRenderer(), renderInlineMarkdown(), renderJsonLine() (+7 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.12
 Nodes (11): Menubar(), MenubarCheckboxItem(), MenubarContent(), MenubarItem(), MenubarLabel(), MenubarRadioItem(), MenubarSeparator(), MenubarShortcut() (+3 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.14
-Nodes (8): useIsMobile(), downloadResume(), Explorer(), TabBar(), ActivityBarProps, ActivitySection, CommandPalette, StandardView()
+Cohesion: 0.11
+Nodes (10): useIsMobile(), Menu, Menubar(), MenubarProps, MenuItem, ActivityBarProps, ActivitySection, CommandPalette (+2 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.12
@@ -164,7 +164,7 @@ Nodes (9): ContextMenuCheckboxItem(), ContextMenuContent(), ContextMenuItem(), C
 
 ### Community 17 - "Community 17"
 Cohesion: 0.15
-Nodes (7): Badge(), badgeVariants, Checkbox(), Progress(), Slider(), Spinner(), Switch()
+Nodes (6): Badge(), badgeVariants, Checkbox(), HoverCardContent(), Progress(), Switch()
 
 ### Community 18 - "Community 18"
 Cohesion: 0.20
@@ -175,8 +175,8 @@ Cohesion: 0.18
 Nodes (8): Board, emptyBoard(), initState(), Piece, PIECES, rndPiece(), SCORE_TABLE, TetrisGame()
 
 ### Community 20 - "Community 20"
-Cohesion: 0.24
-Nodes (9): InputGroup(), InputGroupAddon(), inputGroupAddonVariants, InputGroupButton(), inputGroupButtonVariants, InputGroupInput(), InputGroupText(), InputGroupTextarea() (+1 more)
+Cohesion: 0.21
+Nodes (10): InputGroup(), InputGroupAddon(), inputGroupAddonVariants, InputGroupButton(), inputGroupButtonVariants, InputGroupInput(), InputGroupText(), InputGroupTextarea() (+2 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.13
@@ -203,8 +203,8 @@ Cohesion: 0.22
 Nodes (8): ALL_FILES, fileContents, FileType, CommandPaletteProps, ExplorerItem(), fileIcon(), Match, SearchPanel()
 
 ### Community 27 - "Community 27"
-Cohesion: 0.20
-Nodes (14): ArcadeButtonBar(), ArcadeButtonSpec, ArcadeDir, ArcadeDPad(), padBtn, useArcadeSwipe(), useCoarsePointer(), Dir (+6 more)
+Cohesion: 0.33
+Nodes (8): useArcadeSwipe(), Dir, DIR_FROM_TOUCH, initState(), newApple(), Point, rng(), SnakeGame()
 
 ### Community 28 - "Community 28"
 Cohesion: 0.19
@@ -215,8 +215,8 @@ Cohesion: 0.18
 Nodes (6): DrawerContent(), DrawerDescription(), DrawerFooter(), DrawerHeader(), DrawerOverlay(), DrawerTitle()
 
 ### Community 30 - "Community 30"
-Cohesion: 0.33
-Nodes (4): Menu, Menubar(), MenubarProps, MenuItem
+Cohesion: 0.06
+Nodes (34): 10. Success measures, 1. What already works, 2. Who visits, and what they need in the first 10 seconds, 3. Recruiter issues, 4. Layman issues, 5. UI/UX and accessibility issues, 6. Recommended feature: **Recruiter Quick View**, 7. Supporting fixes to ship with it (+26 more)
 
 ### Community 31 - "Community 31"
 Cohesion: 0.22
@@ -246,13 +246,17 @@ Nodes (5): ToggleGroup(), ToggleGroupContext, ToggleGroupItem(), Toggle(), toggl
 Cohesion: 0.29
 Nodes (6): compilerOptions, baseUrl, paths, files, @/*, references
 
+### Community 39 - "Community 39"
+Cohesion: 0.16
+Nodes (12): CopyState, RecruiterWindow(), RecruiterWindowProps, PROJECTS_FILES, RECRUITER_METRICS, RECRUITER_PROFILE, RECRUITER_PROJECTS, RECRUITER_SKILLS (+4 more)
+
 ### Community 41 - "Community 41"
 Cohesion: 0.40
 Nodes (5): Tabs(), TabsContent(), TabsList(), tabsListVariants, TabsTrigger()
 
 ### Community 42 - "Community 42"
-Cohesion: 0.40
-Nodes (3): AccordionContent(), AccordionItem(), AccordionTrigger()
+Cohesion: 0.38
+Nodes (6): ArcadeButtonBar(), ArcadeButtonSpec, ArcadeDir, ArcadeDPad(), padBtn, useCoarsePointer()
 
 ### Community 43 - "Community 43"
 Cohesion: 0.50
@@ -271,24 +275,24 @@ Cohesion: 0.25
 Nodes (6): BreadcrumbEllipsis(), BreadcrumbItem(), BreadcrumbLink(), BreadcrumbList(), BreadcrumbPage(), BreadcrumbSeparator()
 
 ## Knowledge Gaps
-- **205 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+200 more)
+- **242 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+237 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 2` to `Community 1`, `Community 3`, `Community 6`, `Community 9`, `Community 14`, `Community 16`, `Community 17`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 25`, `Community 28`, `Community 29`, `Community 32`, `Community 34`, `Community 35`, `Community 37`, `Community 39`, `Community 40`, `Community 41`, `Community 42`, `Community 43`, `Community 45`, `Community 46`, `Community 47`, `Community 53`?**
-  _High betweenness centrality (0.421) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 2` to `Community 1`, `Community 3`, `Community 6`, `Community 9`, `Community 14`, `Community 16`, `Community 17`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 25`, `Community 28`, `Community 29`, `Community 32`, `Community 34`, `Community 35`, `Community 37`, `Community 40`, `Community 41`, `Community 43`, `Community 45`, `Community 46`, `Community 47`, `Community 53`?**
+  _High betweenness centrality (0.380) - this node is a cross-community bridge._
 - **Why does `useIsMobile()` connect `Community 15` to `Community 1`?**
-  _High betweenness centrality (0.179) - this node is a cross-community bridge._
+  _High betweenness centrality (0.170) - this node is a cross-community bridge._
 - **Why does `useAudio()` connect `Community 31` to `Community 3`, `Community 7`, `Community 10`, `Community 15`, `Community 19`, `Community 24`, `Community 27`?**
-  _High betweenness centrality (0.080) - this node is a cross-community bridge._
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _205 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _242 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.055523085914669784 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.05585106382978723 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.057971014492753624 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.09176788124156546 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0726950354609929 - nodes in this community are weakly interconnected._
