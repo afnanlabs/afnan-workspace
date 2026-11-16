@@ -13,6 +13,7 @@ import { useAudio } from "@/hooks/use-audio.ts";
 import { RESUME_URL, downloadResume } from "@/lib/resume";
 import { resolveFileId } from "@/lib/commands";
 import { ARCADE_GAMES, ARCADE_GAME_LABELS, getAllHighScores } from "@/lib/arcade";
+import { QuickCommands } from "./QuickCommands";
 import type { ArcadeGame, PersonalWindow } from "@/App";
 
 interface HistoryEntry {
@@ -40,6 +41,7 @@ function processCommand(cmd: string): string | null {
   if (trimmed === "arcade") return "__LAUNCH_ARCADE__";
   if (trimmed === "lang") return "__OPEN_LANG__";
   if (trimmed === "reading") return "__OPEN_READING__";
+  if (trimmed === "hire" || trimmed === "recruiter") return "__OPEN_RECRUITER__";
   if (trimmed === "scores") return "__SHOW_SCORES__";
   if (trimmed === "pwd") return "\n/workspace/afnan\n";
   if (trimmed === "banner") return WELCOME_MESSAGE + "\n";
@@ -103,9 +105,10 @@ interface TerminalViewProps {
   onOpenPersonal?: (window: NonNullable<PersonalWindow>) => void;
   onOpenInStandard?: (fileId: string) => void;
   onSwitchMode?: (mode: 'terminal' | 'standard') => void;
+  onOpenRecruiter?: () => void;
 }
 
-export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard, onSwitchMode }: TerminalViewProps) {
+export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard, onSwitchMode, onOpenRecruiter }: TerminalViewProps) {
   const [entries, setEntries] = useState<HistoryEntry[]>([]);
   const [input, setInput] = useState("");
   const [inputHistory, setInputHistory] = useState<string[]>([]);
@@ -181,7 +184,11 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
   }
 
   function submitCommand() {
-    const cmd = input.trim();
+    runCommand(input);
+  }
+
+  function runCommand(raw: string) {
+    const cmd = raw.trim();
     if (!cmd) return;
 
     const result = processCommand(cmd);
@@ -248,6 +255,12 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
     if (result === "__OPEN_READING__") {
       addEntry(cmd, "\nOpening library://reading-desk...\n");
       onOpenPersonal?.("reading");
+      return;
+    }
+
+    if (result === "__OPEN_RECRUITER__") {
+      addEntry(cmd, "\nOpening recruiter://quick-view...\n");
+      onOpenRecruiter?.();
       return;
     }
 
@@ -452,6 +465,8 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
           {renderOutput(WELCOME_MESSAGE)}
         </div>
 
+        {entries.length === 0 && <QuickCommands onRun={runCommand} />}
+
         {entries.map((entry) => (
           <div key={entry.id}>
             <div>
@@ -529,10 +544,9 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
           fontFamily: "var(--font-mono)",
           fontSize: "clamp(9px, 1.8vw, 11px)",
           color: "var(--vs-text-muted)",
-          opacity: 0.35,
         }}
       >
-        <span className="truncate">
+        <span className="truncate" style={{ opacity: 0.45 }}>
           © Afnan Khan | All rights reserved
         </span>
         <a
@@ -540,7 +554,7 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:opacity-80 transition-opacity ml-1 shrink-0"
-          style={{ color: "var(--vs-accent)" }}
+          style={{ color: "var(--vs-accent)", opacity: 0.9 }}
           onClick={(e) => e.stopPropagation()}
         >
           View Resume
