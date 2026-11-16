@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ALL_FILES, PROJECTS_FILES, fileContents } from "./content";
+import { ALL_FILES, PROJECTS_FILES, commandOutputs, fileContents } from "./content";
 import {
   RECRUITER_METRICS,
   RECRUITER_PROFILE,
@@ -90,6 +90,17 @@ describe("recruiter quick view content", () => {
       Object.values(commandSkills),
     );
     expect(RECRUITER_SKILLS).toHaveLength(Object.keys(commandSkills).length);
+  });
+
+  it("matches the terminal skills command", () => {
+    const output = commandOutputs.skills;
+
+    for (const group of RECRUITER_SKILLS) {
+      expect(output).toContain(group.label);
+      for (const item of group.items) {
+        expect(output).toContain(item);
+      }
+    }
   });
 
   it("has education and certification context", () => {
