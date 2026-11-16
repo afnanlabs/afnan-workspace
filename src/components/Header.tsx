@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Sun, Moon, Download } from 'lucide-react'
+import { Sun, Moon, Download, Sparkles } from 'lucide-react'
 import { useTheme } from '@/components/theme-provider'
 import { useAudio } from '@/hooks/use-audio.ts'
 import { RESUME_URL } from '@/lib/resume'
@@ -7,6 +7,7 @@ import { RESUME_URL } from '@/lib/resume'
 interface HeaderProps {
   mode: 'terminal' | 'standard'
   onModeChange: (mode: 'terminal' | 'standard') => void
+  onOpenRecruiter?: () => void
   onDragStart?: (e: React.MouseEvent) => void
   isDragging?: boolean
 }
@@ -36,7 +37,7 @@ function useTemperature() {
   return temp
 }
 
-export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderProps) {
+export function Header({ mode, onModeChange, onOpenRecruiter, onDragStart, isDragging }: HeaderProps) {
   const clock = useClock()
   const temp = useTemperature()
   const { theme, setTheme } = useTheme()
@@ -66,6 +67,7 @@ export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderPr
           onClick={() => onModeChange('terminal')}
           className="hover:opacity-80 transition-opacity shrink-0"
           style={{ color: 'var(--vs-accent)', fontWeight: 500, whiteSpace: 'nowrap' }}
+          title="Go to terminal"
         >
           afnan@workspace
         </button>
@@ -115,15 +117,34 @@ export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderPr
           </IconButton>
         </span>
 
-        {/* Resume download — hidden on tiny screens */}
-        <span className="hidden sm:inline">
-          <IconButton as="a" href={RESUME_URL} download title="Download resume">
-            <Download size={14} />
-          </IconButton>
-        </span>
+        {/* Resume download — always visible so recruiters can grab it on mobile */}
+        <IconButton as="a" href={RESUME_URL} download title="Download resume">
+          <Download size={14} />
+        </IconButton>
 
         {/* Divider — hidden on tiny screens */}
         <div className="w-px h-4 mx-1 hidden sm:block" style={{ background: 'var(--vs-border)' }} />
+
+        {/* Recruiter quick view — the primary conversion action */}
+        <button
+          type="button"
+          onClick={onOpenRecruiter}
+          className="header-hire flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded transition-colors hover:opacity-85"
+          style={{
+            background: 'color-mix(in srgb, var(--vs-accent) 16%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--vs-accent) 45%, transparent)',
+            color: 'var(--vs-accent)',
+            fontFamily: 'var(--font-sans)',
+            fontWeight: 600,
+            fontSize: 'clamp(9px, 2.5vw, 11px)',
+            letterSpacing: '0.01em',
+          }}
+          aria-label="Open recruiter quick view"
+          title="Recruiter quick view"
+        >
+          <Sparkles size={12} aria-hidden="true" />
+          <span>Hire</span>
+        </button>
 
         {/* View switch — compact on small screens */}
         <button
@@ -137,6 +158,8 @@ export function Header({ mode, onModeChange, onDragStart, isDragging }: HeaderPr
             fontSize: 'clamp(9px, 2.5vw, 11px)',
             letterSpacing: '0.01em',
           }}
+          aria-label={mode === 'terminal' ? 'Switch to Standard view' : 'Switch to Terminal view'}
+          title={mode === 'terminal' ? 'Switch to Standard view' : 'Switch to Terminal view'}
         >
           <span className="hidden sm:inline">{mode === 'terminal' ? 'Standard' : 'Terminal'}</span>
           <span className="sm:ml-0.5">→</span>
@@ -160,6 +183,7 @@ function IconButton({
   return (
     <Tag
       title={title}
+      aria-label={title}
       className="flex items-center justify-center w-7 h-7 rounded transition-colors hover:opacity-75"
       style={{ color: 'var(--vs-text-muted)' }}
       {...props}
