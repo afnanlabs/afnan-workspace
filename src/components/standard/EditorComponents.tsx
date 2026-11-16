@@ -278,7 +278,7 @@ export function EditorContent({ fileId }: EditorContentProps) {
 function LineGutter({ count }: { count: number }) {
   return (
     <div
-      className="select-none shrink-0 py-4 text-right"
+      className="select-none shrink-0 py-4 text-right max-md:hidden"
       style={{
         color: "var(--vs-text-muted)",
         fontFamily: "var(--font-mono)",
@@ -569,15 +569,15 @@ function TypeScriptRenderer({ content }: { content: string }) {
   return (
     <div className="flex h-full">
       <LineGutter count={lines.length} />
-      <div className="flex-1 px-5 py-4 overflow-x-auto">
+      <div className="flex-1 min-w-0 px-3 sm:px-5 py-4 overflow-x-auto">
         {lines.map((line, i) => (
           <div
             key={i}
+            className="code-line whitespace-pre max-md:whitespace-pre-wrap max-md:[overflow-wrap:anywhere]"
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "13px",
               lineHeight: 1.6,
-              whiteSpace: "pre",
             }}
           >
             {renderTsLine(line)}
@@ -678,15 +678,15 @@ function JsonRenderer({ content }: { content: string }) {
   return (
     <div className="flex h-full">
       <LineGutter count={lines.length} />
-      <div className="flex-1 px-5 py-4 overflow-x-auto">
+      <div className="flex-1 min-w-0 px-3 sm:px-5 py-4 overflow-x-auto">
         {lines.map((line, i) => (
           <div
             key={i}
+            className="code-line whitespace-pre max-md:whitespace-pre-wrap max-md:[overflow-wrap:anywhere]"
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "13px",
               lineHeight: 1.6,
-              whiteSpace: "pre",
             }}
           >
             {renderJsonLine(line)}
