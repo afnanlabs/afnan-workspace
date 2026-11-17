@@ -66,9 +66,7 @@ export const WELCOME_MESSAGE = `Initializing Afnan Workspace Runtime Engine v2.0
     ██ █ ██ ██    ██ ██████  █████    ███████ ██████  ████████ ██       ██████
     ███████ ██    ██ ██   ██ ██  ██        ██ ██      ██▓  ▓██ ██       ██▓
      ██  ██  ██████  ██   ██ ██   ██  ███████ ██      ██▓  ▓██  ██████  ████████
-                              
-  Type 'help' to explore available commands.  
-  Tip: press Tab to autocomplete · try the hidden commands!`;
+                              `;
 
 export const PROMPT = "afnan@workspace:~$ ";
 
@@ -755,7 +753,12 @@ export const PROJECTS_FILES: FileEntry[] = [
 ];
 
 export const ASSETS_FILES: FileEntry[] = [
-  { id: "resume", name: "resume", extension: "pdf", displayName: "Afnan_Khan_Resume.pdf" },
+  {
+    id: "resume",
+    name: "resume",
+    extension: "pdf",
+    displayName: "Afnan_Khan_Resume.pdf",
+  },
 ];
 
 export const EXPLORER_FOLDERS: FolderEntry[] = [
@@ -799,12 +802,7 @@ export const SKILL_GROUPS = {
     "Ansible",
     "GitHub Actions",
   ],
-  agentic_systems: [
-    "OpenAI Agents SDK",
-    "CrewAI",
-    "LangGraph",
-    "LangChain",
-  ],
+  agentic_systems: ["OpenAI Agents SDK", "CrewAI", "LangGraph", "LangChain"],
   tools: [
     "Git",
     "GitHub",
