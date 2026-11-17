@@ -1,16 +1,16 @@
-# Graph Report - Portfolio v5  (2026-11-17)
+# Graph Report - Portfolio v5  (2026-11-18)
 
 ## Corpus Check
-- 113 files · ~85,042 words
+- 113 files · ~84,831 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 850 nodes · 1435 edges · 51 communities (48 shown, 3 thin omitted)
+- 848 nodes · 1431 edges · 50 communities (48 shown, 2 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f6137be2`
+- Built from commit: `0cd25c4c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,7 +59,6 @@
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
 - [[_COMMUNITY_Community 43|Community 43]]
-- [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 48|Community 48]]
 
 ## God Nodes (most connected - your core abstractions)
@@ -89,7 +88,7 @@
 ## Import Cycles
 - 3-file cycle: `src/App.tsx -> src/components/terminal/ArcadeWindow.tsx -> src/components/terminal/ArcadeLobby.tsx -> src/App.tsx`
 
-## Communities (51 total, 3 thin omitted)
+## Communities (50 total, 2 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -97,15 +96,15 @@ Nodes (36): Language, LANGUAGES, Book, BOOK_LIBRARY, CEFR_LEVELS, CefrLevel, SPA
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
-Nodes (39): Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle(), Sidebar() (+31 more)
+Nodes (40): Input(), Sheet(), SheetContent(), SheetDescription(), SheetFooter(), SheetHeader(), SheetOverlay(), SheetTitle() (+32 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.07
-Nodes (37): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Card() (+29 more)
+Cohesion: 0.08
+Nodes (35): cn(), Avatar(), AvatarBadge(), AvatarFallback(), AvatarGroup(), AvatarGroupCount(), AvatarImage(), Card() (+27 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.05
-Nodes (29): Header(), HeaderProps, useClock(), useTemperature(), ModeToggle(), ResolvedTheme, Theme, THEME_VALUES (+21 more)
+Cohesion: 0.06
+Nodes (25): Header(), HeaderProps, useClock(), useTemperature(), ModeToggle(), ResolvedTheme, Theme, THEME_VALUES (+17 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.05
@@ -128,12 +127,12 @@ Cohesion: 0.10
 Nodes (19): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+11 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.18
-Nodes (12): Item(), ItemActions(), ItemContent(), ItemDescription(), ItemFooter(), ItemGroup(), ItemHeader(), ItemMedia() (+4 more)
+Cohesion: 0.13
+Nodes (17): ButtonGroup(), ButtonGroupSeparator(), ButtonGroupText(), buttonGroupVariants, Item(), ItemActions(), ItemContent(), ItemDescription() (+9 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.09
-Nodes (21): AFNAN_FILES, ASSETS_FILES, CERTIFICATIONS, commandOutputs, EXPLORER_FOLDERS, FileEntry, FolderEntry, FORTUNES (+13 more)
+Cohesion: 0.11
+Nodes (14): AFNAN_FILES, ASSETS_FILES, FORTUNES, TERMINAL_COMMANDS, ARCADE_GAME_LABELS, FILE_ALIASES, resolveFileId(), downloadResume() (+6 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.11
@@ -144,8 +143,8 @@ Cohesion: 0.11
 Nodes (18): Afnan Workspace — Developer Portfolio, "Building practical applications, interactive experiences, and continuously improving through hands-on development.", Built-in Arcade, Connect With Me, Deployment, Develop, Getting Started, Highlights (+10 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.10
-Nodes (21): ALL_FILES, fileContents, FileType, CommandPaletteProps, EditorContentProps, Explorer(), ExplorerItem(), ExplorerProps (+13 more)
+Cohesion: 0.12
+Nodes (15): EXPLORER_FOLDERS, FileEntry, EditorContent(), EditorContentProps, ExplorerProps, MarkdownRenderer(), renderInlineMarkdown(), renderJsonLine() (+7 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.12
@@ -153,7 +152,7 @@ Nodes (11): Menubar(), MenubarCheckboxItem(), MenubarContent(), MenubarItem(), M
 
 ### Community 15 - "Community 15"
 Cohesion: 0.10
-Nodes (12): useIsMobile(), downloadResume(), EditorContent(), Menu, Menubar(), MenubarProps, MenuItem, ActivityBarProps (+4 more)
+Nodes (12): useIsMobile(), Explorer(), Menu, Menubar(), MenubarProps, MenuItem, SearchPanel(), ActivityBarProps (+4 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.12
@@ -164,20 +163,20 @@ Cohesion: 0.08
 Nodes (12): Badge(), badgeVariants, Checkbox(), HoverCardContent(), NativeSelect(), NativeSelectOptGroup(), Progress(), ResizableHandle() (+4 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.20
-Nodes (11): Button(), buttonVariants, Calendar(), CalendarDayButton(), Pagination(), PaginationContent(), PaginationEllipsis(), PaginationLink() (+3 more)
+Cohesion: 0.07
+Nodes (29): AlertDialogAction(), AlertDialogCancel(), AlertDialogContent(), AlertDialogDescription(), AlertDialogFooter(), AlertDialogHeader(), AlertDialogMedia(), AlertDialogOverlay() (+21 more)
 
 ### Community 19 - "Community 19"
-Cohesion: 0.17
-Nodes (9): useHighScore(), Board, emptyBoard(), initState(), Piece, PIECES, rndPiece(), SCORE_TABLE (+1 more)
+Cohesion: 0.18
+Nodes (8): Board, emptyBoard(), initState(), Piece, PIECES, rndPiece(), SCORE_TABLE, TetrisGame()
 
 ### Community 20 - "Community 20"
 Cohesion: 0.19
 Nodes (13): Carousel(), CarouselApi, CarouselContent(), CarouselContext, CarouselContextProps, CarouselItem(), CarouselNext(), CarouselOptions (+5 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.10
-Nodes (22): Field(), FieldContent(), FieldDescription(), FieldError(), FieldGroup(), FieldLabel(), FieldLegend(), FieldSeparator() (+14 more)
+Cohesion: 0.16
+Nodes (12): Field(), FieldContent(), FieldDescription(), FieldError(), FieldGroup(), FieldLabel(), FieldLegend(), FieldSeparator() (+4 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.24
@@ -189,23 +188,27 @@ Nodes (10): ChartConfig, ChartContainer(), ChartContext, ChartContextProps, Char
 
 ### Community 24 - "Community 24"
 Cohesion: 0.19
-Nodes (8): useAudio(), Bullet, COLORS, Enemy, GalagaGame(), initState(), POINTS, spawnWave()
+Nodes (8): useHighScore(), Bullet, COLORS, Enemy, GalagaGame(), initState(), POINTS, spawnWave()
 
 ### Community 25 - "Community 25"
-Cohesion: 0.15
-Nodes (9): AlertDialogAction(), AlertDialogCancel(), AlertDialogContent(), AlertDialogDescription(), AlertDialogFooter(), AlertDialogHeader(), AlertDialogMedia(), AlertDialogOverlay() (+1 more)
+Cohesion: 0.23
+Nodes (9): ALL_FILES, CERTIFICATIONS, fileContents, FileType, FolderEntry, CommandPaletteProps, ExplorerItem(), fileIcon() (+1 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.21
-Nodes (10): InputGroup(), InputGroupAddon(), inputGroupAddonVariants, InputGroupButton(), inputGroupButtonVariants, InputGroupInput(), InputGroupText(), InputGroupTextarea() (+2 more)
+Cohesion: 0.23
+Nodes (10): FormControl(), FormDescription(), FormFieldContext, FormFieldContextValue, FormItem(), FormItemContext, FormItemContextValue, FormLabel() (+2 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.33
-Nodes (8): useArcadeSwipe(), Dir, DIR_FROM_TOUCH, initState(), newApple(), Point, rng(), SnakeGame()
+Cohesion: 0.20
+Nodes (14): ArcadeButtonBar(), ArcadeButtonSpec, ArcadeDir, ArcadeDPad(), padBtn, useArcadeSwipe(), useCoarsePointer(), Dir (+6 more)
+
+### Community 28 - "Community 28"
+Cohesion: 0.22
+Nodes (7): SoundType, useAudio(), kbd, SettingsPanel(), THEME_OPTIONS, ThemeOption, TerminalView()
 
 ### Community 29 - "Community 29"
 Cohesion: 0.18
-Nodes (7): SelectContent(), SelectItem(), SelectLabel(), SelectScrollDownButton(), SelectScrollUpButton(), SelectSeparator(), SelectTrigger()
+Nodes (6): DrawerContent(), DrawerDescription(), DrawerFooter(), DrawerHeader(), DrawerOverlay(), DrawerTitle()
 
 ### Community 30 - "Community 30"
 Cohesion: 0.06
@@ -240,8 +243,8 @@ Cohesion: 0.29
 Nodes (6): compilerOptions, baseUrl, paths, files, @/*, references
 
 ### Community 39 - "Community 39"
-Cohesion: 0.14
-Nodes (16): CopyState, RecruiterWindow(), RecruiterWindowProps, TechBadge(), RECRUITER_METRICS, RECRUITER_PROFILE, RECRUITER_PROJECTS, RECRUITER_SKILLS (+8 more)
+Cohesion: 0.13
+Nodes (17): CopyState, RecruiterWindow(), RecruiterWindowProps, TechBadge(), commandOutputs, PROJECTS_FILES, SKILL_GROUPS, RECRUITER_PROFILE (+9 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.25
@@ -252,36 +255,32 @@ Cohesion: 0.40
 Nodes (5): Tabs(), TabsContent(), TabsList(), tabsListVariants, TabsTrigger()
 
 ### Community 42 - "Community 42"
-Cohesion: 0.38
-Nodes (6): ArcadeButtonBar(), ArcadeButtonSpec, ArcadeDir, ArcadeDPad(), padBtn, useCoarsePointer()
+Cohesion: 0.40
+Nodes (3): InputOTP(), InputOTPGroup(), InputOTPSlot()
 
 ### Community 43 - "Community 43"
 Cohesion: 0.50
 Nodes (4): Alert(), AlertDescription(), AlertTitle(), alertVariants
 
-### Community 45 - "Community 45"
-Cohesion: 0.38
-Nodes (5): ButtonGroup(), ButtonGroupSeparator(), ButtonGroupText(), buttonGroupVariants, Separator()
-
 ## Knowledge Gaps
-- **243 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+238 more)
+- **242 isolated node(s):** `$schema`, `style`, `rsc`, `tsx`, `config` (+237 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 2` to `Community 1`, `Community 3`, `Community 6`, `Community 9`, `Community 14`, `Community 16`, `Community 17`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 25`, `Community 26`, `Community 29`, `Community 31`, `Community 32`, `Community 34`, `Community 35`, `Community 37`, `Community 40`, `Community 41`, `Community 43`, `Community 45`?**
+- **Why does `cn()` connect `Community 2` to `Community 1`, `Community 3`, `Community 6`, `Community 9`, `Community 14`, `Community 16`, `Community 17`, `Community 18`, `Community 20`, `Community 21`, `Community 23`, `Community 26`, `Community 29`, `Community 31`, `Community 32`, `Community 34`, `Community 35`, `Community 37`, `Community 40`, `Community 41`, `Community 42`, `Community 43`?**
   _High betweenness centrality (0.379) - this node is a cross-community bridge._
 - **Why does `useIsMobile()` connect `Community 15` to `Community 1`?**
-  _High betweenness centrality (0.173) - this node is a cross-community bridge._
-- **Why does `useAudio()` connect `Community 24` to `Community 3`, `Community 7`, `Community 10`, `Community 15`, `Community 19`, `Community 27`, `Community 28`?**
+  _High betweenness centrality (0.172) - this node is a cross-community bridge._
+- **Why does `useAudio()` connect `Community 28` to `Community 3`, `Community 7`, `Community 10`, `Community 15`, `Community 19`, `Community 24`, `Community 27`?**
   _High betweenness centrality (0.072) - this node is a cross-community bridge._
 - **What connects `$schema`, `style`, `rsc` to the rest of the system?**
-  _243 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _242 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05764411027568922 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.057971014492753624 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05585106382978723 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.06938775510204082 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07878787878787878 - nodes in this community are weakly interconnected._
