@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "src/components/terminal/TerminalView.tsx": {
-    "mtime": 1794892172.1425042,
-    "ast_hash": "78f8ee62c3f9738a54bb40fcf898cecb",
+    "mtime": 1794893937.0767756,
+    "ast_hash": "0b5c16cfbdb5679aa4c284647578f61f",
     "semantic_hash": ""
   },
   "src/components/terminal/TetrisGame.tsx": {
@@ -580,8 +580,8 @@
     "semantic_hash": ""
   },
   "src/components/RecruiterWindow.tsx": {
-    "mtime": 1794893254.1385581,
-    "ast_hash": "8be4f723501315c0179b2e89313d94dc",
+    "mtime": 1794893923.6299157,
+    "ast_hash": "11e1d9f3f3f9895505ba0e83e6ca5cc4",
     "semantic_hash": ""
   },
   "src/components/terminal/QuickCommands.tsx": {
@@ -612,6 +612,16 @@
   "src/data/techBadges.ts": {
     "mtime": 1794893218.6172516,
     "ast_hash": "92dfe2a430f655368719d041d0f81ed1",
+    "semantic_hash": ""
+  },
+  "src/components/TechBadge.tsx": {
+    "mtime": 1794893901.8373263,
+    "ast_hash": "376372b14bf29c7a201b3d398ca2909d",
+    "semantic_hash": ""
+  },
+  "src/components/terminal/SkillsOutput.tsx": {
+    "mtime": 1794893901.8373263,
+    "ast_hash": "69583725cb4a3ba229db882d8f2925d4",
     "semantic_hash": ""
   }
 }
