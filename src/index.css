@@ -809,20 +809,14 @@
   gap: 4px;
 }
 
-.recruiter-chip {
-  display: inline-block;
-  padding: 1px 6px;
+/* Matches the height of the previous text chip (10px × 1.6 line-height + 2px padding). */
+.recruiter-badge {
+  display: block;
+  height: 18px;
+  width: auto;
+  max-width: 100%;
   border-radius: 3px;
-  background: var(--vs-surface-alt);
-  color: var(--vs-text-muted);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  line-height: 1.6;
-}
-
-.recruiter-chip-stack {
-  background: color-mix(in srgb, var(--vs-accent) 10%, var(--vs-surface-alt));
-  color: var(--vs-text);
+  object-fit: contain;
 }
 
 .recruiter-skills {
