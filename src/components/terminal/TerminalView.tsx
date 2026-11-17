@@ -458,11 +458,17 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
     >
       {/* Zone 1 — scrollable history buffer (welcome message + command log) */}
       <div
-        className="flex-1 min-h-0 overflow-y-auto px-2 sm:px-4 pt-4"
+        className="terminal-history flex-1 min-h-0 overflow-y-auto px-2 sm:px-4"
         style={{ overscrollBehavior: "contain", overflowWrap: "break-word", wordBreak: "break-word" }}
       >
-        <div style={{ whiteSpace: "pre-wrap", marginBottom: "0.5em" }}>
+        <div style={{ whiteSpace: "pre-wrap", marginBottom: "0.5em", paddingTop: "1rem" }}>
           {renderOutput(WELCOME_MESSAGE)}
+        </div>
+
+        {/* Quick actions — original spot under the welcome message, pinned so
+            command output scrolls beneath them instead of pushing them away. */}
+        <div className="quick-commands-dock">
+          <QuickCommands onRun={runCommand} />
         </div>
 
         {entries.map((entry) => (
@@ -492,12 +498,7 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
         <div ref={bottomRef} />
       </div>
 
-      {/* Zone 2 — persistent quick actions, always available */}
-      <div className="shrink-0 px-2 sm:px-4 pt-2">
-        <QuickCommands onRun={runCommand} />
-      </div>
-
-      {/* Zone 3 — active prompt row, pinned above footer */}
+      {/* Zone 2 — active prompt row, pinned above footer */}
       <div className="shrink-0 flex items-start px-2 sm:px-4 py-2">
         <span
           style={{
@@ -540,7 +541,7 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
         </div>
       </div>
 
-      {/* Zone 4 — ground floor copyright, pinned at bottom */}
+      {/* Zone 3 — ground floor copyright, pinned at bottom */}
       <div
         className="shrink-0 flex items-center justify-center pb-2 mt-auto select-none px-2"
         style={{
