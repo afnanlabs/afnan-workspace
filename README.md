@@ -18,7 +18,7 @@ Afnan Workspace is my personal portfolio, built around the experience of VS Code
 - **Terminal View** (default on desktop) — a fully typed command interface. Run `help`, browse `projects`, `open` a repository, or launch a game.
 - **Standard View** — a VS Code–styled editor with an Explorer, tabs, a working menubar, a command palette, search, settings and a live status bar.
 
-There is also a small **retro arcade** hidden inside (`arcade`, `snake`, `tetris`, `galaga`, `pacman`) complete with persistent high scores, plus a **Recruiter Quick View** (`hire`) that puts the résumé, contact links, proof points and featured projects in one scannable overlay.
+There is also a small **retro arcade** hidden inside (`arcade`, `snake`, `tetris`, `galaga`, `pacman`) complete with persistent high scores, plus a **Recruiter Quick View** (`hire`) that puts the résumé, contact links and featured projects in one scannable overlay.
 
 ---
 
@@ -52,7 +52,7 @@ A one-screen answer to “who is this, what has he built, and how do I reach him
 | Menubar | **Help → Recruiter Quick View** |
 | Command palette | **Profile: Open Recruiter Quick View** |
 
-The overlay includes the résumé download, copy-email, email / phone / LinkedIn / GitHub links, four measurable proof points, all six project case studies, core skills that mirror the `skills` command, and education. It reuses the draggable popup frame, so `Esc` closes it and keyboard focus is trapped inside while it is open.
+The overlay includes the résumé download, copy-email, email / phone / LinkedIn / GitHub links, all six project case studies, core skills that mirror the `skills` command, and education. It reuses the draggable popup frame, so `Esc` closes it and keyboard focus is trapped inside while it is open.
 
 ### Built-in Arcade
 
@@ -85,7 +85,7 @@ The overlay includes the résumé download, copy-email, email / phone / LinkedIn
 - **Installable PWA** — web app manifest plus an offline-first service worker.
 - **Privacy-first analytics** — Do-Not-Track / Global Privacy Control aware; completely silent unless `VITE_ANALYTICS_ENDPOINT` is configured at build time.
 - **Fast** — component-level code splitting keeps the arcade and command palette out of the initial bundle.
-- **Recruiter-ready** — résumé, contact, proof points and case studies are one tap away on any screen size.
+- **Recruiter-ready** — résumé, contact and case studies are one tap away on any screen size.
 - **Typed & tested** — strict TypeScript and a Vitest unit-test suite.
 
 ---
