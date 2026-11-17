@@ -580,8 +580,8 @@
     "semantic_hash": ""
   },
   "src/components/RecruiterWindow.tsx": {
-    "mtime": 1794818727.0422914,
-    "ast_hash": "62faba1f098c4a00345dc20e441921ef",
+    "mtime": 1794893254.1385581,
+    "ast_hash": "8be4f723501315c0179b2e89313d94dc",
     "semantic_hash": ""
   },
   "src/components/terminal/QuickCommands.tsx": {
@@ -590,8 +590,8 @@
     "semantic_hash": ""
   },
   "src/data/recruiter.test.ts": {
-    "mtime": 1794818918.3853376,
-    "ast_hash": "1fd674f5a81abf1341723d772703c401",
+    "mtime": 1794893280.2962325,
+    "ast_hash": "32405058792619c3c93dbb2e906f29e6",
     "semantic_hash": ""
   },
   "src/data/recruiter.ts": {
@@ -607,6 +607,11 @@
   "suggestion.md": {
     "mtime": 1794816577.1676018,
     "ast_hash": "351fb57a6750a82f01a5db0bf2712f6f",
+    "semantic_hash": ""
+  },
+  "src/data/techBadges.ts": {
+    "mtime": 1794893218.6172516,
+    "ast_hash": "92dfe2a430f655368719d041d0f81ed1",
     "semantic_hash": ""
   }
 }
