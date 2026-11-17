@@ -504,6 +504,39 @@
   font-weight: 600;
 }
 
+/* ─── Terminal skills badges ───────────────────────────────────────────────── */
+.terminal-skills {
+  margin: 4px 0 6px;
+}
+
+.terminal-skills-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--vs-text);
+}
+
+.terminal-skill-group {
+  margin-bottom: 10px;
+}
+
+.terminal-skill-group:last-child {
+  margin-bottom: 2px;
+}
+
+.terminal-skill-label {
+  margin-bottom: 5px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vs-text-muted);
+}
+
+.terminal-skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
 /* ─── Recruiter quick view ─────────────────────────────────────────────────── */
 .recruiter-body {
   padding: 22px 24px 20px;
@@ -810,7 +843,7 @@
 }
 
 /* Matches the height of the previous text chip (10px × 1.6 line-height + 2px padding). */
-.recruiter-badge {
+.tech-badge {
   display: block;
   height: 18px;
   width: auto;
