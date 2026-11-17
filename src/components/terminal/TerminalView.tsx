@@ -14,6 +14,7 @@ import { RESUME_URL, downloadResume } from "@/lib/resume";
 import { resolveFileId } from "@/lib/commands";
 import { ARCADE_GAMES, ARCADE_GAME_LABELS, getAllHighScores } from "@/lib/arcade";
 import { QuickCommands } from "./QuickCommands";
+import { SkillsOutput } from "./SkillsOutput";
 import type { ArcadeGame, PersonalWindow } from "@/App";
 
 interface HistoryEntry {
@@ -98,6 +99,10 @@ function autocomplete(input: string): string {
   if (!val) return input;
   const match = TERMINAL_COMMANDS.find((c) => c.startsWith(val) && c !== val);
   return match ?? input;
+}
+
+function isSkillsCommand(command: string): boolean {
+  return command.trim().toLowerCase() === "skills";
 }
 
 interface TerminalViewProps {
@@ -478,9 +483,13 @@ export function TerminalView({ onLaunchArcade, onOpenPersonal, onOpenInStandard,
               <span>{entry.command}</span>
             </div>
             {entry.output && (
-              <div style={{ whiteSpace: "pre-wrap" }}>
-                {renderOutput(entry.output)}
-              </div>
+              isSkillsCommand(entry.command) ? (
+                <SkillsOutput />
+              ) : (
+                <div style={{ whiteSpace: "pre-wrap" }}>
+                  {renderOutput(entry.output)}
+                </div>
+              )
             )}
           </div>
         ))}
