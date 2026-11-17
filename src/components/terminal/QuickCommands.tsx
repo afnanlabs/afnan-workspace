@@ -15,8 +15,9 @@ const QUICK_COMMANDS: QuickCommand[] = [
 
 /**
  * Clickable onboarding for visitors who do not know the command set.
- * Shown only while the terminal is empty; every chip runs a real command, so
- * the output stays in the same history and the visitor learns the command name.
+ * Every chip runs a real command, so the output stays in the same history and
+ * the visitor learns the command name. The block is pinned in place, so it
+ * remains available after the first command runs.
  */
 export function QuickCommands({
   onRun,
