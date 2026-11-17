@@ -83,6 +83,7 @@ export const RECRUITER_PROJECTS: RecruiterProject[] = [
     tagline: "Sleep quality analyzer that makes sleep data readable",
     stack: ["Web Application", "Vercel"],
     proof: "Publicly deployed · turns sleep data into a readable signal",
+    source: "https://github.com/afnanlabs/somnus",
   },
   {
     id: "fitscore",
@@ -90,6 +91,7 @@ export const RECRUITER_PROJECTS: RecruiterProject[] = [
     tagline: "Resume-to-role match analyzer",
     stack: ["Web Application"],
     proof: "Turns resume comparison into an actionable result",
+    source: "https://github.com/afnanlabs/fitscore-resume-analyzer",
   },
 ];
 
