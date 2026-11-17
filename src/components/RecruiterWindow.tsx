@@ -10,6 +10,7 @@ import {
   Phone,
 } from 'lucide-react'
 import { PersonalWindow } from './terminal/PersonalWindow'
+import { TechBadge } from './TechBadge'
 import { copyText } from '@/lib/clipboard'
 import { downloadResume } from '@/lib/resume'
 import {
@@ -19,7 +20,6 @@ import {
   RECRUITER_SKILLS,
   type RecruiterProject,
 } from '@/data/recruiter'
-import { getTechBadge } from '@/data/techBadges'
 
 interface RecruiterWindowProps {
   onClose: () => void
@@ -244,19 +244,6 @@ function ProjectCard({
         </a>
       )}
     </article>
-  )
-}
-
-function TechBadge({ label }: { label: string }) {
-  return (
-    <img
-      className="recruiter-badge"
-      src={getTechBadge(label)}
-      alt={label}
-      title={label}
-      loading="lazy"
-      decoding="async"
-    />
   )
 }
 
