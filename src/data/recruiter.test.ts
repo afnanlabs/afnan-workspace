@@ -6,6 +6,7 @@ import {
   RECRUITER_PROJECTS,
   RECRUITER_SKILLS,
 } from "./recruiter";
+import { TECH_BADGES, getTechBadge } from "./techBadges";
 
 describe("recruiter quick view content", () => {
   it("has the identity fields a recruiter needs", () => {
@@ -101,6 +102,26 @@ describe("recruiter quick view content", () => {
         expect(output).toContain(item);
       }
     }
+  });
+
+  it("has an explicit badge for every skill and project stack item", () => {
+    const labels = [
+      ...RECRUITER_SKILLS.flatMap((group) => group.items),
+      ...RECRUITER_PROJECTS.flatMap((project) => project.stack),
+    ];
+
+    for (const label of labels) {
+      expect(TECH_BADGES[label], `missing badge for ${label}`).toBeDefined();
+      expect(getTechBadge(label)).toMatch(
+        /^https:\/\/img\.shields\.io\/badge\//,
+      );
+    }
+  });
+
+  it("falls back to a neutral badge for unknown labels", () => {
+    expect(getTechBadge("New Tool")).toBe(
+      "https://img.shields.io/badge/New_Tool-4B5563?style=for-the-badge",
+    );
   });
 
   it("has education and certification context", () => {
