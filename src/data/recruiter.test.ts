@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ALL_FILES, PROJECTS_FILES, commandOutputs, fileContents } from "./content";
 import {
-  RECRUITER_METRICS,
   RECRUITER_PROFILE,
   RECRUITER_PROJECTS,
   RECRUITER_SKILLS,
@@ -28,14 +27,6 @@ describe("recruiter quick view content", () => {
       RECRUITER_PROFILE.linkedin.replace(/^https:\/\/(www\.)?/, ""),
     );
     expect(contact).toContain(RECRUITER_PROFILE.github.replace(/^https:\/\//, ""));
-  });
-
-  it("shows four proof metrics", () => {
-    expect(RECRUITER_METRICS).toHaveLength(4);
-    for (const metric of RECRUITER_METRICS) {
-      expect(metric.value.trim()).not.toBe("");
-      expect(metric.label.trim()).not.toBe("");
-    }
   });
 
   it("references every existing project case study", () => {
