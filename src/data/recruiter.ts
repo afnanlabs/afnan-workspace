@@ -1,19 +1,12 @@
 /**
  * Structured content for the Recruiter Quick View (`hire` command).
  *
- * Everything a recruiter needs in one place: identity, proof points, featured
- * projects, skills and contact links. Keeping it here means the overlay has no
+ * Everything a recruiter needs in one place: identity, featured projects,
+ * skills and contact links. Keeping it here means the overlay has no
  * hard-coded copy and the portfolio content stays editable in one file.
  */
 
 import { SKILL_GROUPS } from "./content";
-
-export interface RecruiterMetric {
-  /** The number or outcome, shown large. */
-  value: string;
-  /** Short explanation, shown underneath. */
-  label: string;
-}
 
 export interface RecruiterProject {
   /** Existing file id in `src/data/content.ts` — opens the case study. */
@@ -47,25 +40,6 @@ export const RECRUITER_PROFILE = {
   education: "BSc IT · D.G. Ruparel College, Mumbai · 2026",
   certifications: "12 certifications",
 } as const;
-
-// export const RECRUITER_METRICS: RecruiterMetric[] = [
-//   {
-//     value: '98.75–99.6%',
-//     label: 'faster letter generation',
-//   },
-//   {
-//     value: '34 hrs',
-//     label: 'saved per month',
-//   },
-//   {
-//     value: '25+',
-//     label: 'production bugs fixed',
-//   },
-//   {
-//     value: '31',
-//     label: 'framework tests, zero deps',
-//   },
-// ]
 
 /**
  * Ordered by signal strength for a recruiter: framework depth first, then
