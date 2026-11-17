@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "src/components/terminal/TerminalView.tsx": {
-    "mtime": 1794818638.7718706,
-    "ast_hash": "8b26db6a49ef08ed55a2a28a532d7c7b",
+    "mtime": 1794892172.1425042,
+    "ast_hash": "78f8ee62c3f9738a54bb40fcf898cecb",
     "semantic_hash": ""
   },
   "src/components/terminal/TetrisGame.tsx": {
@@ -385,8 +385,8 @@
     "semantic_hash": ""
   },
   "src/data/content.ts": {
-    "mtime": 1794818666.6220891,
-    "ast_hash": "a8cc1f985508d156622a972e31b24465",
+    "mtime": 1794819378.5846825,
+    "ast_hash": "1be314159d8154f74c80a134122f50d3",
     "semantic_hash": ""
   },
   "src/hooks/use-audio.ts": {
@@ -585,8 +585,8 @@
     "semantic_hash": ""
   },
   "src/components/terminal/QuickCommands.tsx": {
-    "mtime": 1794816660.5238805,
-    "ast_hash": "e448ccbcd17bbe9f8ff5b06621a6d04e",
+    "mtime": 1794819276.530372,
+    "ast_hash": "1b2ef85667bc6ee8e6831de947a1eb01",
     "semantic_hash": ""
   },
   "src/data/recruiter.test.ts": {
