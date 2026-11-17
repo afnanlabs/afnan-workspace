@@ -682,37 +682,6 @@
   color: var(--vs-accent);
 }
 
-.recruiter-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  border: 1px solid var(--vs-border);
-  border-radius: 4px;
-  background: var(--vs-border);
-  overflow: hidden;
-}
-
-.recruiter-metric {
-  padding: 12px 14px;
-  background: var(--vs-surface);
-}
-
-.recruiter-metric-value {
-  font-family: var(--font-mono);
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--vs-accent);
-}
-
-.recruiter-metric-label {
-  margin-top: 3px;
-  font-size: 10.5px;
-  line-height: 1.35;
-  color: var(--vs-text-muted);
-}
-
 .recruiter-body section {
   margin-top: 22px;
 }
@@ -936,10 +905,6 @@
   .recruiter-projects,
   .recruiter-skills {
     grid-template-columns: 1fr;
-  }
-
-  .recruiter-metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .recruiter-actions {
