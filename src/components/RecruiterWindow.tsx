@@ -19,6 +19,7 @@ import {
   RECRUITER_SKILLS,
   type RecruiterProject,
 } from '@/data/recruiter'
+import { getTechBadge } from '@/data/techBadges'
 
 interface RecruiterWindowProps {
   onClose: () => void
@@ -179,9 +180,7 @@ export function RecruiterWindow({ onClose, onOpenProject }: RecruiterWindowProps
                 <div className="recruiter-skill-label">{group.label}</div>
                 <div className="recruiter-chips">
                   {group.items.map((item) => (
-                    <span key={item} className="recruiter-chip">
-                      {item}
-                    </span>
+                    <TechBadge key={item} label={item} />
                   ))}
                 </div>
               </div>
@@ -226,9 +225,7 @@ function ProjectCard({
 
       <div className="recruiter-chips">
         {project.stack.map((item) => (
-          <span key={item} className="recruiter-chip recruiter-chip-stack">
-            {item}
-          </span>
+          <TechBadge key={item} label={item} />
         ))}
       </div>
 
@@ -247,6 +244,19 @@ function ProjectCard({
         </a>
       )}
     </article>
+  )
+}
+
+function TechBadge({ label }: { label: string }) {
+  return (
+    <img
+      className="recruiter-badge"
+      src={getTechBadge(label)}
+      alt={label}
+      title={label}
+      loading="lazy"
+      decoding="async"
+    />
   )
 }
 
