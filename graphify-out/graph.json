@@ -6717,7 +6717,7 @@
       "label": "SKILL_LABELS",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L96",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "data_recruiter_skill_labels",
       "community": 39,
@@ -6727,7 +6727,7 @@
       "label": "RECRUITER_SKILLS",
       "file_type": "code",
       "source_file": "src/data/recruiter.ts",
-      "source_location": "L110",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "data_recruiter_recruiter_skills",
       "community": 39,
@@ -23493,5 +23493,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0cd25c4c33d155d17b1b8c0af8b3e59848992823"
+  "built_at_commit": "5f234615523076c3c668493821e7a5e6722fda07"
 }
