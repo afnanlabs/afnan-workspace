@@ -14,7 +14,6 @@ import { TechBadge } from './TechBadge'
 import { copyText } from '@/lib/clipboard'
 import { downloadResume } from '@/lib/resume'
 import {
-  RECRUITER_METRICS,
   RECRUITER_PROFILE,
   RECRUITER_PROJECTS,
   RECRUITER_SKILLS,
@@ -140,17 +139,6 @@ export function RecruiterWindow({ onClose, onOpenProject }: RecruiterWindowProps
               `Could not copy automatically — ${RECRUITER_PROFILE.email}`}
           </div>
         </header>
-
-        <section aria-label="Proof points">
-          <div className="recruiter-metrics">
-            {RECRUITER_METRICS.map((metric) => (
-              <div key={metric.label} className="recruiter-metric">
-                <div className="recruiter-metric-value">{metric.value}</div>
-                <div className="recruiter-metric-label">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <section aria-labelledby="recruiter-projects-title">
           <div className="recruiter-section-head">
