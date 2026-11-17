@@ -325,6 +325,15 @@
   }
 }
 
+/* Mobile terminal stays on-screen and scrolls its history internally, so the
+   pinned quick actions remain reachable instead of scrolling away with the page. */
+@media (max-width: 767px) {
+  html.terminal-mode .app-window {
+    flex: none;
+    height: 100dvh;
+  }
+}
+
 /* ─── Scrollbar styling ────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 8px;
@@ -426,8 +435,24 @@
 }
 
 /* ─── Terminal quick actions ───────────────────────────────────────────────── */
+.quick-commands-dock {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin: 0 -8px;
+  padding: 2px 8px 8px;
+  background: var(--vs-bg);
+}
+
+@media (min-width: 640px) {
+  .quick-commands-dock {
+    margin: 0 -16px;
+    padding: 2px 16px 8px;
+  }
+}
+
 .quick-commands {
-  margin: 0 0 6px;
+  margin: 0;
   font-family: var(--font-mono);
 }
 
