@@ -52,6 +52,17 @@ describe("recruiter quick view content", () => {
     }
   });
 
+  it("links the public projects to their repositories", () => {
+    const sources = Object.fromEntries(
+      RECRUITER_PROJECTS.map((project) => [project.id, project.source]),
+    );
+
+    expect(sources.somnus).toBe("https://github.com/afnanlabs/somnus");
+    expect(sources.fitscore).toBe(
+      "https://github.com/afnanlabs/fitscore-resume-analyzer",
+    );
+  });
+
   it("features each project only once", () => {
     const ids = RECRUITER_PROJECTS.map((project) => project.id);
     expect(new Set(ids).size).toBe(ids.length);
